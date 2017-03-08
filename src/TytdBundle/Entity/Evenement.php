@@ -29,11 +29,9 @@ class Evenement
     private $nom;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="categorieId", type="integer")
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Categorie", inversedBy="evenement")
      */
-    private $categorieId;
+    private $categorie;
 
     /**
      * @var \DateTime
@@ -42,6 +40,47 @@ class Evenement
      */
     private $dateE;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Temoignage", mappedBy="evenement")
+     */
+    private $temoignage;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Utilisateur")
+     */
+    private $utilisateur;
+
+    /**
+     * @return mixed
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * @param mixed $utilisateur
+     */
+    public function setUtilisateur($utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTemoignage()
+    {
+        return $this->temoignage;
+    }
+
+    /**
+     * @param mixed $temoignage
+     */
+    public function setTemoignage($temoignage)
+    {
+        $this->temoignage = $temoignage;
+    }
 
     /**
      * Get id
@@ -78,27 +117,27 @@ class Evenement
     }
 
     /**
-     * Set categorieId
+     * Set categorie
      *
-     * @param integer $categorieId
+     * @param integer $categorie
      *
      * @return Evenement
      */
-    public function setCategorieId($categorieId)
+    public function setCategorie($categorie)
     {
-        $this->categorieId = $categorieId;
+        $this->categorie = $categorie;
 
         return $this;
     }
 
     /**
-     * Get categorieId
+     * Get categorie
      *
      * @return int
      */
-    public function getCategorieId()
+    public function getCategorie()
     {
-        return $this->categorieId;
+        return $this->categorie;
     }
 
     /**

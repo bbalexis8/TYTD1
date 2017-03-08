@@ -92,7 +92,7 @@ class Utilisateur
     private $descriptionU;
 
     /**
-     * @var text
+     * @var string
      *
      * @ORM\Column(name="imageU", type="string", length=255, nullable=true)
      */
@@ -105,6 +105,89 @@ class Utilisateur
      */
     private $dateinscription;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Evenement")
+     */
+    private $evenement;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Article", mappedBy="utilisateur")
+     */
+    private $article;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Commentaire", mappedBy="utilisateur")
+     */
+    private $commentaire;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Temoignage", mappedBy="utilisateur")
+     */
+    private $temoignage;
+
+    /**
+     * @return mixed
+     */
+    public function getTemoignage()
+    {
+        return $this->temoignage;
+    }
+
+    /**
+     * @param mixed $temoignage
+     */
+    public function setTemoignage($temoignage)
+    {
+        $this->temoignage = $temoignage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
+    }
+
+    /**
+     * @param mixed $commentaire
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaire = $commentaire;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * @param mixed $article
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEvenement()
+    {
+        return $this->evenement;
+    }
+
+    /**
+     * @param mixed $evenement
+     */
+    public function setEvenement($evenement)
+    {
+        $this->evenement = $evenement;
+    }
 
     /**
      * Get id

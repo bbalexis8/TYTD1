@@ -36,9 +36,7 @@ class Article
     private $description;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="categorie", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Categorie", inversedBy="article")
      */
     private $categorie;
 
@@ -50,11 +48,9 @@ class Article
     private $texte;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="auteur", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Utilisateur", inversedBy="article")
      */
-    private $auteur;
+    private $utilisateur;
 
     /**
      * @var \DateTime
@@ -70,6 +66,26 @@ class Article
      */
     private $image;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Commentaire", mappedBy="article")
+     */
+    private $commentaire;
+
+    /**
+     * @return mixed
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
+    }
+
+    /**
+     * @param mixed $commentaire
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaire = $commentaire;
+    }
 
     /**
      * Get id
@@ -178,27 +194,27 @@ class Article
     }
 
     /**
-     * Set auteur
+     * Set utilisateur
      *
-     * @param string $auteur
+     * @param string $utilisateur
      *
      * @return Article
      */
-    public function setAuteur($auteur)
+    public function setUtilisateur($utilisateur)
     {
-        $this->auteur = $auteur;
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
 
     /**
-     * Get auteur
+     * Get utilisateur
      *
      * @return string
      */
-    public function getAuteur()
+    public function getUtilisateur()
     {
-        return $this->auteur;
+        return $this->utilisateur;
     }
 
     /**

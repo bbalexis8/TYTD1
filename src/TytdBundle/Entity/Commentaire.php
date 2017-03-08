@@ -22,18 +22,14 @@ class Commentaire
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="articleId", type="integer", unique=true)
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Article", inversedBy="article")
      */
-    private $articleId;
+    private $article;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="auteurC", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Utilisateur", inversedBy="commentaire")
      */
-    private $auteurC;
+    private $utilisateur;
 
     /**
      * @var string
@@ -68,51 +64,51 @@ class Commentaire
     }
 
     /**
-     * Set articleId
+     * Set article
      *
-     * @param integer $articleId
+     * @param integer $article
      *
      * @return Commentaire
      */
-    public function setArticleId($articleId)
+    public function setArticle($article)
     {
-        $this->articleId = $articleId;
+        $this->article = $article;
 
         return $this;
     }
 
     /**
-     * Get articleId
+     * Get article
      *
      * @return int
      */
-    public function getArticleId()
+    public function getArticle()
     {
-        return $this->articleId;
+        return $this->article;
     }
 
     /**
-     * Set auteurC
+     * Set utilisateur
      *
-     * @param string $auteurC
+     * @param string $utilisateur
      *
      * @return Commentaire
      */
-    public function setAuteurC($auteurC)
+    public function setUtilisateur($utilisateur)
     {
-        $this->auteurC = $auteurC;
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
 
     /**
-     * Get auteurC
+     * Get utilisateur
      *
      * @return string
      */
-    public function getAuteurC()
+    public function getUtilisateur()
     {
-        return $this->auteurC;
+        return $this->utilisateur;
     }
 
     /**
@@ -134,6 +130,7 @@ class Commentaire
      *
      * @return string
      */
+
     public function getTexteC()
     {
         return $this->texteC;

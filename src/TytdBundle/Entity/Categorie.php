@@ -35,6 +35,47 @@ class Categorie
      */
     private $imageCa;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Article", mappedBy="categorie")
+     */
+    private $article;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Evenement", mappedBy="categorie")
+     */
+    private $evenement;
+
+    /**
+     * @return mixed
+     */
+    public function getEvenement()
+    {
+        return $this->evenement;
+    }
+
+    /**
+     * @param mixed $evenement
+     */
+    public function setEvenement($evenement)
+    {
+        $this->evenement = $evenement;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * @param mixed $article
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
+    }
 
     /**
      * Get id

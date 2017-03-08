@@ -22,18 +22,14 @@ class Temoignage
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="evenementId", type="integer", unique=true)
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Evenement", inversedBy="temoignage")
      */
-    private $evenementId;
+    private $evenement;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="auteurT", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Utilisateur", inversedBy="temoignage")
      */
-    private $auteurT;
+    private $utilisateur;
 
     /**
      * @var string
@@ -61,51 +57,51 @@ class Temoignage
     }
 
     /**
-     * Set evenementId
+     * Set evenement
      *
-     * @param integer $evenementId
+     * @param integer $evenement
      *
      * @return Temoignage
      */
-    public function setEvenementId($evenementId)
+    public function setEvenement($evenement)
     {
-        $this->evenementId = $evenementId;
+        $this->evenement = $evenement;
 
         return $this;
     }
 
     /**
-     * Get evenementId
+     * Get evenement
      *
      * @return int
      */
-    public function getEvenementId()
+    public function getEvenement()
     {
-        return $this->evenementId;
+        return $this->evenement;
     }
 
     /**
-     * Set auteurT
+     * Set utilisateur
      *
-     * @param string $auteurT
+     * @param string $utilisateur
      *
      * @return Temoignage
      */
-    public function setAuteurT($auteurT)
+    public function setUtilisateur($utilisateur)
     {
-        $this->auteurT = $auteurT;
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
 
     /**
-     * Get auteurT
+     * Get utilisateur
      *
      * @return string
      */
-    public function getAuteurT()
+    public function getUtilisateur()
     {
-        return $this->auteurT;
+        return $this->utilisateur;
     }
 
     /**
