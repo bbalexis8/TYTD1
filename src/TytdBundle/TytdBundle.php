@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace TytdBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class TytdBundle extends Bundle
 {
 }
