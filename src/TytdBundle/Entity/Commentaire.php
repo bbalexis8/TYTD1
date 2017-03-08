@@ -40,7 +40,7 @@ class Commentaire
      *
      * @ORM\Column(name="texte", type="text")
      */
-    private $texte;
+    private $texteC;
 
     /**
      * @var \DateTime

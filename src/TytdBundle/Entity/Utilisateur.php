@@ -92,7 +92,7 @@ class Utilisateur
     private $descriptionU;
 
     /**
-     * @var string
+     * @var text
      *
      * @ORM\Column(name="imageU", type="string", length=255, nullable=true)
      */
