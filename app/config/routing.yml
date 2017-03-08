@@ -1,0 +1,5 @@
+tytd:
+    resource: "@TytdBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
