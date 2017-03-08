@@ -122,9 +122,9 @@ class Commentaire
      *
      * @return Commentaire
      */
-    public function setTexte($texte)
+    public function setTexteC($texteC)
     {
-        $this->texte = $texte;
+        $this->texteC = $texteC;
 
         return $this;
     }
@@ -134,9 +134,9 @@ class Commentaire
      *
      * @return string
      */
-    public function getTexte()
+    public function getTexteC()
     {
-        return $this->texte;
+        return $this->texteC;
     }
 
     /**
