@@ -134,5 +134,6 @@ class Categorie
     {
         return $this->imageCa;
     }
+
 }
 

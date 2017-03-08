@@ -486,5 +486,6 @@ class Utilisateur
     {
         return $this->dateinscription;
     }
+
 }
 
