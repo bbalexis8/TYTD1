@@ -12,7 +12,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('TytdBundle:Default:index.html.twig');
+        return $this->render('vuesclient/Default/index.html.twig');
     }
 
     /**
@@ -20,7 +20,7 @@ class DefaultController extends Controller
      */
     public function articles()
     {
-        return $this->render('TytdBundle::arti&temo.html.twig');
+        return $this->render('vuesclient/listeArtiTemo.html.twig');
     }
 
 }
