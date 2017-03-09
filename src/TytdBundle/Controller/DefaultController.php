@@ -14,4 +14,13 @@ class DefaultController extends Controller
     {
         return $this->render('TytdBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/blog")
+     */
+    public function articles()
+    {
+        return $this->render('TytdBundle::arti&temo.html.twig');
+    }
+
 }
