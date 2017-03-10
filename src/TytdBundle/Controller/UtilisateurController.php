@@ -58,8 +58,6 @@ class UtilisateurController extends Controller
     }
 
     /**
-     * Finds and displays a utilisateur entity.
-     *
      * @Route("/{id}", name="utilisateur_show")
      * @Method("GET")
      */
@@ -75,7 +73,6 @@ class UtilisateurController extends Controller
 
     /**
      * Displays a form to edit an existing utilisateur entity.
-     *
      * @Route("/{id}/edit", name="utilisateur_edit")
      * @Method({"GET", "POST"})
      */
@@ -119,8 +116,7 @@ class UtilisateurController extends Controller
     }
 
     /**
-     * Creates a form to delete a utilisateur entity.
-     *
+     * Creates a form to delete a utilisateur entity
      * @param Utilisateur $utilisateur The utilisateur entity
      *
      * @return \Symfony\Component\Form\Form The form

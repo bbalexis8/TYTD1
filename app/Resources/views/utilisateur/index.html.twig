@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'vuesclient/Default/basic.html.twig' %}
 
 {% block body %}
     <h1>Utilisateurs list</h1>
@@ -37,7 +37,7 @@
                 <td>{{ utilisateur.password }}</td>
                 <td>{{ utilisateur.descriptionU }}</td>
                 <td>{{ utilisateur.imageU }}</td>
-                <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d ') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
