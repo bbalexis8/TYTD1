@@ -134,17 +134,126 @@ class DefaultController extends Controller
     /**
      * @Route("/")
      */
-    public function indexAction()
+    public function indexAppli()
     {
         return $this->render('vuesclient/Default/index.html.twig');
     }
 
+
     /**
-     * @Route("/blog")
+     * Lists all commentaire entities.
+     *
+     * @Route("/commentaire", name="commentaire_index")
+     * @Method("GET")
      */
-    public function articles()
+    public function indexCom()
     {
-        return $this->render('vuesclient/listeArtiTemo.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $commentaires = $em->getRepository('TytdBundle:Commentaire')->findAll();
+
+        return $this->render('commentaire/index.html.twig', array(
+            'commentaires' => $commentaires,
+        ));
     }
+
+    /**
+     * Creates a new commentaire entity.
+     *
+     * @Route("/commentaire_new", name="commentaire_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newCom(Request $request)
+    {
+        $commentaire = new Commentaire();
+        $form = $this->createForm('TytdBundle\Form\CommentaireType', $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush($commentaire);
+
+            return $this->redirectToRoute('commentaire_show', array('id' => $commentaire->getId()));
+        }
+
+        return $this->render('commentaire/new.html.twig', array(
+            'commentaire' => $commentaire,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/commentaire/{id}", name="commentaire_show")
+     * @Method("GET")
+     */
+    public function showCom(Commentaire $commentaire)
+    {
+        $deleteForm = $this->createDeleteFormCom($commentaire);
+
+        return $this->render('commentaire/show.html.twig', array(
+            'commentaire' => $commentaire,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/commentaire/{id}/edit", name="commentaire_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editCom(Request $request, Commentaire $commentaire)
+    {
+        $deleteForm = $this->createDeleteFormCom($commentaire);
+        $editForm = $this->createForm('TytdBundle\Form\CommentaireType', $commentaire);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('commentaire_edit', array('id' => $commentaire->getId()));
+        }
+
+        return $this->render('commentaire/edit.html.twig', array(
+            'commentaire' => $commentaire,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/commentaire/{id}", name="commentaire_delete")
+     * @Method("DELETE")
+     */
+    public function deleteCom(Request $request, Commentaire $commentaire)
+    {
+        $form = $this->createDeleteFormCom($commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($commentaire);
+            $em->flush($commentaire);
+        }
+        return $this->redirectToRoute('commentaire_index');
+    }
+
+    /**
+     * Creates a form to delete a commentaire entity.
+     * @param Commentaire $commentaire The commentaire entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteFormCom(Commentaire $commentaire)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('commentaire_delete', array('id' => $commentaire->getId())))
+            ->setMethod('DELETE')
+            ->getForm();
+    }
+
+
+
+
+
 
 }
