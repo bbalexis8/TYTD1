@@ -7,21 +7,20 @@
     <link href="{{ asset('css/freelancer.css') }}" rel="stylesheet">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 
     <section id="page-top" class="index">
 
-
         <!-- Header -->
         <header>
-            <div class="container" id="maincontent" tabindex="-1">
+            <div class="container-fluid" id="maincontent" tabindex="-1">
                 <div class="row">
                     <div class="col-lg-12">
-                        <img class="img-responsive" src="{{ asset('image/profile.png') }}" alt="">
+                        <img class="img-responsive" src="{{ asset('image/Logo x300.png') }}" alt="">
                         <div class="intro-text">
                             <h1 class="name">Bienvenue Chez "To You, To Do"</h1>
-                            <hr class="star-light">
+                            {#<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>#}
                             <span class="skills">De l'Organisation à la Suprise, Votre événement comme Vous le rêvez</span>
                         </div>
                     </div>
@@ -30,12 +29,12 @@
         </header>
 
         <!-- Evénements -->
-        <section id="portfolio">
+        <section class=success id="portfolio">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2>Blog : Nos derniers articles </h2>
-                        <hr class="star-primary">
+                        <hr>
                     </div>
                 </div>
                 <div class="row">
@@ -78,23 +77,24 @@
             </div>
 
         </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Calendrier ; rappel des événements à venir
-                    </div>
-                </div>
-            </div>
-        </section>
+
+            <section  class="rose">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h3> Calendrier ; rappel des événements à venir</h3>
+                        </div>
+                     </div>
+                 </div>
+             </section>
 
         <!-- Blog -->
-        <section class="success" id="about">
+        <section class="success" id="evenements">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2>Catégorie d'événements</h2>
-                        <hr class="star-primary">
+                        <hr>
                     </div>
                 </div>
                 <div class="row">
@@ -135,22 +135,20 @@
                         créez votre événement sur mesure gràce à notre outil
                     </button>
                 </div>
-
             </div>
-
         </section>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                Sondage : question + case à cocher avec renvoi vers page de la cat"gorie
+
+        <section class="rose">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h3> Sondage : question + case à cocher avec renvoi vers page de la cat"gorie</h3>
+                   </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
-        <!-- Footer -->
         <footer class="text-center">
             <div class="footer-above">
                 <div class="container">
