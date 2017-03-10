@@ -18,7 +18,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #18BC9C;
+  color: #DCB647;
 }
 h1,
 h2,
@@ -41,8 +41,8 @@ hr.star-primary {
 }
 hr.star-light:after,
 hr.star-primary:after {
-  content: "\f005";
-  font-family: FontAwesome;
+  content: "@icon-font-path";
+  font-family: "Glyphicons Halflings";
   display: inline-block;
   position: relative;
   top: -0.8em;
@@ -52,10 +52,10 @@ hr.star-primary:after {
 hr.star-light {
   border-color: white;
 }
-hr.star-light:after {
-  background-color: #18BC9C;
-  color: white;
-}
+/*hr.star-light:after {*/
+  /*background-color: #18BC9C;*/
+  /*color: white;*/
+/*}*/
 hr.star-primary {
   border-color: #2C3E50;
 }
@@ -68,7 +68,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18BC9C;
+  background: #01717D;
   color: white;
 }
 header .container {
@@ -91,9 +91,9 @@ header .intro-text .skills {
   font-weight: 300;
 }
 @media (min-width: 768px) {
-  header .container {
-    padding-top: 200px;
-    padding-bottom: 100px;
+  header .container-fluid {
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -110,48 +110,48 @@ header .intro-text .skills {
   border: none;
 }
 .navbar-custom .navbar-brand {
-  color: white;
+  color: #B0D4C8;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: white;
+  color: #B0D4C8;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: white;
+  color: #B0D4C8;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: #18BC9C;
+  color: #DCB647;
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-  color: white;
+  color: #B0D4C8;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: white;
-  background: #18BC9C;
+  color: #B0D4C8;
+  background: #DCB647;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: white;
-  background: #18BC9C;
+  color: #4D7783;
+  background: #DCB647;
 }
 .navbar-custom .navbar-toggle {
-  color: white;
+  color: #4D7783;
   text-transform: uppercase;
   font-size: 10px;
-  border-color: white;
+  border-color: #4D7783;
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #18BC9C;
-  color: white;
-  border-color: #18BC9C;
+  background-color: #DCB647;
+  color: #4D7783;
+  border-color: #DCB647;
 }
 @media (min-width: 768px) {
   .navbar-custom {
@@ -181,8 +181,13 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #18BC9C;
-  color: white;
+  background: #F0DBDA;
+  color: #1C2834;
+}
+
+section.rose {
+  background: #01717D;
+  color:#8DE6B6 ;
 }
 @media (max-width: 767px) {
   section {
@@ -319,12 +324,12 @@ footer .footer-below {
 .btn-outline:active,
 .btn-outline.active {
   color: #18BC9C;
-  background: white;
+  background: #4D7783;
   border: solid 2px white;
 }
 .btn-primary {
-  color: white;
-  background-color: #2C3E50;
+  color: #1C2834;
+  background-color:#FFC6BB ;
   border-color: #2C3E50;
   font-weight: 700;
 }
@@ -333,7 +338,7 @@ footer .footer-below {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: white;
+  color: #C32830;
   background-color: #1a242f;
   border-color: #161f29;
 }
