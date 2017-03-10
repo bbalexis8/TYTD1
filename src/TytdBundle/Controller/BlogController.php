@@ -1,6 +1,6 @@
 <?php
 
-namespace TytdBundle\BlogController;
+namespace TytdBundle\Controller;
 
 use TytdBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,6 +11,18 @@ use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends Controller
 {
+
+    /**
+     * @Route("/")
+     */
+    public function indexAppli()
+    {
+        return $this->render('vuesclient/Default/index.html.twig');
+    }
+
+
+
+
     /**
      * Lists all article entities.
      *
@@ -129,16 +141,6 @@ class BlogController extends Controller
             ->setMethod('DELETE')
             ->getForm();
     }
-
-
-    /**
-     * @Route("/")
-     */
-    public function indexAppli()
-    {
-        return $this->render('vuesclient/Default/index.html.twig');
-    }
-
 
     /**
      * Lists all commentaire entities.

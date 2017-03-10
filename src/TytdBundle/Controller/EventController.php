@@ -1,6 +1,6 @@
 <?php
 
-namespace TytdBundle\EventController;
+namespace TytdBundle\Controller;
 
 use TytdBundle\Entity\Evenement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
