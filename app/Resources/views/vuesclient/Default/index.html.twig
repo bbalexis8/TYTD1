@@ -2,53 +2,250 @@
 
 {% block body %}
     {% include 'vuesclient/Default/nav.html.twig' %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> TYTD</h1>
+
+    <!-- Theme CSS -->
+    <link href="{{ asset('css/freelancer.css') }}" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <section id="page-top" class="index">
+
+
+        <!-- Header -->
+        <header>
+            <div class="container" id="maincontent" tabindex="-1">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img class="img-responsive" src="{{ asset('image/profile.png') }}" alt="">
+                        <div class="intro-text">
+                            <h1 class="name">Bienvenue Chez "To You, To Do"</h1>
+                            <hr class="star-light">
+                            <span class="skills">De l'Organisation à la Suprise, Votre événement comme Vous le rêvez</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Evénements -->
+        <section id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>Blog : Nos derniers articles </h2>
+                        <hr class="star-primary">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Cabin">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Slice of cake">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Circus tent">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <br>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Voir plus d'articles...</button>
+                </div>
             </div>
 
-            <div id="status">
-                <p>
-                    Your application is now ready. You can start working on it at:
-                </p>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Calendrier ; rappel des événements à venir
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog -->
+        <section class="success" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>Catégorie d'événements</h2>
+                        <hr class="star-primary">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Cabin">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Slice of cake">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Circus tent">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Parcourez toutes les catégories et
+                        créez votre événement sur mesure gràce à notre outil
+                    </button>
+                </div>
+
             </div>
 
-            <div id="next">
-                <h2>What's next?</h2>
-                <p>
-
-                </p>
+        </section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                Sondage : question + case à cocher avec renvoi vers page de la cat"gorie
             </div>
-
         </div>
     </div>
+</section>
+
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="footer-above">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col col-md-4">
+                            <h3>ADRESSE</h3>
+                            <p>21, rue des Francs-Bourgeois
+                                <br>75 004 PARIS</p>
+                        </div>
+                        <div class="footer-col col-md-4">
+                            <h3>Notre équipe</h3>
+                            <ul class="list-inline">
+                               <!--- <li>
+                                    <a href="AUTEUR ALEXIS" ></a>
+                                </li>
+                                <li>
+                                    <a href="AUTEYR ELO></a>
+                                </li>
+                              --->
+                            </ul>
+                        </div>
+                        <div class="footer-col col-md-4">
+                            <h3>REJOIGNEZ NOUS !</h3>
+                            <p>Vous souhaitez devenir partenaire de "To You, To Do"? Contactez-nous!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Copyright &copy; TYTD Corp. 2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!-- Portfolio Modals -->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>Project Title</h2>
+                                <hr class="star-primary">
+                                <img src="{{ asset('image/cake.png') }}" class="img-responsive img-centered" alt="">
+                                <p>Use this area of the page to describe your project. The icon above is part of a free
+                                    icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their
+                                    website, you can download their free set with 16 icons, or you can purchase the
+                                    entire set with 146 icons for only $12!</p>
+                                <ul class="list-inline item-details">
+                                    <li>Client:
+                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                        </strong>
+                                    </li>
+                                    <li>Date:
+                                        <strong><a href="http://startbootstrap.com">April 2014</a>
+                                        </strong>
+                                    </li>
+                                    <li>Service:
+                                        <strong><a href="http://startbootstrap.com">Web Development</a>
+                                        </strong>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i
+                                            class="fa fa-times"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
 {% endblock %}
 
 {% block stylesheets %}
-    <style>
-        body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-        h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-        h1 { font-size: 36px; }
-        h2 { font-size: 21px; margin-bottom: 1em; }
-        p { margin: 0 0 1em 0; }
-        a { color: #0000F0; }
-        a:hover { text-decoration: none; }
-        code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-        #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-        #container { padding: 2em; }
-        #welcome, #status { margin-bottom: 2em; }
-        #welcome h1 span { display: block; font-size: 75%; }
-        #icon-book { display: none; }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-        @media (min-width: 768px) {
-            #wrapper { width: 80%; margin: 2em auto; }
-            #icon-book { display: inline-block; }
-            #status a, #next a { display: block; }
+    <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('js/contact_me.js') }}"></script>
 
-            @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-            @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-            .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-        }
-    </style>
+    <script src="{{ asset('js/freelancer.js') }}"></script>
 {% endblock %}
