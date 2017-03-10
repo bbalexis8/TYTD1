@@ -25,8 +25,8 @@ class UtilisateurType extends AbstractType
             ->add('password')
             ->add('descriptionU')
             ->add('imageU')
-            ->add('dateinscription')
-            ->add('evenement');
+            ->add('dateinscription');
+           // ->add('evenement');
     }
     
     /**
