@@ -35,7 +35,7 @@ class BlogController extends Controller
 
         $articles = $em->getRepository('TytdBundle:Article')->findAll();
 
-        return $this->render('vuesclient/arti&temo.html.twig', array(
+        return $this->render('vuesclient/listeArtiTemo.html.twig', array(
             'articles' => $articles,
         ));
     }
@@ -76,7 +76,7 @@ class BlogController extends Controller
     {
         $deleteForm = $this->createDeleteFormArticle($article);
 
-        return $this->render('article/show.html.twig', array(
+        return $this->render('vuesclient/arti&temo.html.twig', array(
             'article' => $article,
             'delete_form' => $deleteForm->createView(),
         ));

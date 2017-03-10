@@ -4,19 +4,45 @@
 {% block body %}
 
 
-        Voici la liste de nos entreprises partenaires :
+    <h1>Articles list</h1>
 
-        <table border="1px solid black">
-            {% for entreprise in entreprises %}
-                <tr>
-                    <td>{{entreprise.Nom}}</td>
-                    <td>{{entreprise.Adresse}}</td>
-                    <td>{{entreprise.Dirigeant}}</td>
+    <table border="1px solid black">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Auteur</th>
+            <th>Voir plus</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.image }}</td>
+                <td>{{ article.description }}</td>
+                <td>auteur</td>
+
+                <td>{% if article.date %}{{ article.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 
-                </tr>
-            {% endfor %}
-        </table>
 
 
 
