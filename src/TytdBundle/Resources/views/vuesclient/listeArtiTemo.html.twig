@@ -4,19 +4,31 @@
 {% block body %}
 
 
-        Voici la liste de nos entreprises partenaires :
-
-        <table border="1px solid black">
-            {% for entreprise in entreprises %}
-                <tr>
-                    <td>{{entreprise.Nom}}</td>
-                    <td>{{entreprise.Adresse}}</td>
-                    <td>{{entreprise.Dirigeant}}</td>
+    {% for article1 in article %}
 
 
-                </tr>
-            {% endfor %}
-        </table>
+        <article class="post clearfix">
+            <div class="post-inner">
+                <h2 class="post-title"><span class="post-type"><i class="icon-file-alt"></i></span><a href="single_post.html">{{ article1.titre }}</a></h2>
+                <div class="post-meta">
+                    <span class="meta-author"><i class="icon-user"></i><a href="#">{{ article1. }}</a></span>
+                    <span class="meta-date"><i class="icon-time"></i>{{ post1.date_post }}</span>
+                    <span class="meta-categories"><i class="icon-suitcase"></i><a href="#">Wordpress</a></span>
+                    <span class="meta-comment"><i class="icon-comments-alt"></i><a href="#">15 comments</a></span>
+                </div>
+                <div class="post-content">
+                    <p>{{ post1.text }}</p>
+                    <a href="single_post.html" class="post-read-more button color small">Article complet</a>
+                </div><!-- End post-content -->
+            </div><!-- End post-inner -->
+        </article><!-- End article.post -->
+
+    {% endfor %}
+
+
+
+
+
 
 
 
