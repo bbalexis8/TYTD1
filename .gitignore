@@ -16,6 +16,5 @@
 /web/bundles/
 /.idea/
 composer.phar
-/app/Resources/Connection/connect.php
-
+app/Ressources/Connection/connect.php
 composer\.phar
