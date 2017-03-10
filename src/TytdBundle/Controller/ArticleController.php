@@ -26,7 +26,7 @@ class ArticleController extends Controller
 
         $articles = $em->getRepository('TytdBundle:Article')->findAll();
 
-        return $this->render('', array(
+        return $this->render('article/index.html.twig', array(
             'articles' => $articles,
         ));
     }
