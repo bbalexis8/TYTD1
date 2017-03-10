@@ -1,6 +1,6 @@
 <?php
 
-namespace TytdBundle\Controller;
+namespace TytdBundle\BlogController;
 
 use TytdBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class DefaultController extends Controller
+class BlogController extends Controller
 {
     /**
      * Lists all article entities.
