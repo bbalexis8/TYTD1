@@ -18,3 +18,4 @@
 composer.phar
 app/Ressources/Connection/connect.php
 composer\.phar
+/app/Resources/Connection/connect.php
