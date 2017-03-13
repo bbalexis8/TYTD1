@@ -33,6 +33,7 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+
         $articles = $em->getRepository('TytdBundle:Article')->findAll();
 
         return $this->render('article/index.html.twig', array(
