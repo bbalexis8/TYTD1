@@ -4,6 +4,8 @@ namespace TytdBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TytdBundle\Entity\Categorie;
@@ -17,8 +19,12 @@ class EvenementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom')
-            ->add('dateE')
+            ->add('nom', TextType::class, array(
+                'label' => 'Nom de l\'évènement'
+            ))
+            ->add('dateE', DateTimeType::class, array(
+                'label' => 'Date de l\'évènement'
+            ))
             ->add('categorie', EntityType::class, array(
         "class" => Categorie::class,
         "choice_label" => 'nomCa'

@@ -4,6 +4,8 @@ namespace TytdBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TytdBundle\Entity\Evenement;
@@ -17,8 +19,12 @@ class TemoignageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('texteT')
-            ->add('dateT')
+            ->add('texteT', TextType::class, array(
+                'label' => 'Texte'
+            ))
+            ->add('dateT', DateTimeType::class, array(
+                'label' => 'Date'
+            ))
             ->add('evenement', EntityType::class, array(
         "class" => Evenement::class,
         "choice_label" => 'nom'
