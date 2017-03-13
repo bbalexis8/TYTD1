@@ -4,6 +4,8 @@ namespace TytdBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TytdBundle\Entity\Article;
@@ -17,9 +19,15 @@ class CommentaireType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('texteC')
-            ->add('dateC')
-            ->add('titreC')
+            ->add('texteC', TextType::class, array(
+                'label' => 'Texte'
+            ))
+            ->add('dateC', DateTimeType::class, array(
+                'label' => 'Date'
+            ))
+            ->add('titreC', TextType::class, array(
+                'label' => 'Titre'
+            ))
             ->add('article', EntityType::class, array(
                 "class" => Article::class,
                 "choice_label" => 'titre'
