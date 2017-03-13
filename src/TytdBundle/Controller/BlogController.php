@@ -35,7 +35,7 @@ class BlogController extends Controller
 
         $articles = $em->getRepository('TytdBundle:Article')->findAll();
 
-        return $this->render('vuesclient/listeArtiTemo.html.twig', array(
+        return $this->render('article/index.html.twig', array(
             'articles' => $articles,
         ));
     }

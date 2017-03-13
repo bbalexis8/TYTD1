@@ -39,6 +39,51 @@ class Temoignage
     private $texteT;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="description_t", type="text")
+     */
+    private $descriptionT;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre_t", type="text")
+     */
+    private $titreT;
+
+    /**
+     * @return string
+     */
+    public function getTitreT(): string
+    {
+        return $this->titreT;
+    }
+
+    /**
+     * @param string $titreT
+     */
+    public function setTitreT(string $titreT)
+    {
+        $this->titreT = $titreT;
+    }
+    /**
+     * @return string
+     */
+    public function getDescriptionT(): string
+    {
+        return $this->descriptionT;
+    }
+
+    /**
+     * @param string $descriptionT
+     */
+    public function setDescriptionT(string $descriptionT)
+    {
+        $this->descriptionT = $descriptionT;
+    }
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateT", type="datetime")
