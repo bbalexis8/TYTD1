@@ -179,8 +179,8 @@ header .intro-text .skills {
   }
 }
 section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 section h2 {
   margin: 0;
@@ -189,6 +189,8 @@ section h2 {
 section.success {
   background: #F0DBDA;
   color: #1C2834;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 section.rose {
