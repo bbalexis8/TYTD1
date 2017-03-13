@@ -1,41 +1,35 @@
 {% extends 'vuesclient/Default/basic.html.twig' %}
 
 {% block body %}
-    <h1>Temoignages list</h1>
+    <div class="container">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Textet</th>
-                <th>Datet</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="blog-header">
+        <h1 class="blog-title">Liste des Témoignages</h1>
+        <p class="lead blog-description">Retrouvez tous les témoignages liés aux événements créés via l'outil TYTD !</p>
+    </div>
+
+
+    <div class="row">
+
+    <div class="col-sm-12 blog-main">
+
         {% for temoignage in temoignages %}
-            <tr>
-                <td><a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">{{ temoignage.id }}</a></td>
-                <td>{{ temoignage.texteT }}</td>
-                <td>{% if temoignage.dateT %}{{ temoignage.dateT|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('temoignage_edit', { 'id': temoignage.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{ temoignage.titreT }}</h2>
+                <p class="blog-post-meta">Posté le {% if temoignage.dateT %}{{ temoignage.dateT|date('Y-m-d') }}
+                    {% endif %}</p>
+                <p>En quelques mots ... <br>{{ temoignage.descriptionT }}</p>
 
-    <ul>
-        <li>
-            <a href="{{ path('temoignage_new') }}">Create a new temoignage</a>
-        </li>
-    </ul>
+                <a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">
+                    Plus de détails</a>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+
+    </div>
+
+    </div>
+
+
 {% endblock %}

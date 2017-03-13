@@ -328,9 +328,9 @@ footer .footer-below {
   border: solid 2px white;
 }
 .btn-primary {
-  color: #1C2834;
-  background-color:#FFC6BB ;
-  border-color: #2C3E50;
+  color:#DCB647;
+  background-color:#01717D ;
+  border-color: #01717D;
   font-weight: 700;
 }
 .btn-primary:hover,
