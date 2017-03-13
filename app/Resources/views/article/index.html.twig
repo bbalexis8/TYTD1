@@ -16,11 +16,11 @@
 
                     {% for article in articles %}
                         <div class="blog-post">
-                            <h2 class="blog-post-title">{{ article.titreT }}</h2>
+                            <h2 class="blog-post-title">{{ article. }}</h2>
                             <p class="blog-post-meta">Posté le {% if article.dateT %}
-                                    {{ article.dateT|date('Y-m-d') }}
+                                    {{ article.da|date('Y-m-d') }}
                                 {% endif %} Par {{ article.utilisateur }}</p>
-                            <p>En quelques mots ... <br>{{ article.descriptionT }}</p>
+                            <p>En quelques mots ... <br>{{ article.de }}</p>
 
                             <a href="{{ path('article_show', { 'id': article.id }) }}">
                                 Plus de détails</a>

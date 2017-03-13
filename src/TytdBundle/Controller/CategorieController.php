@@ -46,7 +46,7 @@ class CategorieController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($categorie);
-            $em->flush($categorie);
+            $em->flush();
 
             return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
         }

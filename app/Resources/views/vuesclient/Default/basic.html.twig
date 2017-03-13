@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -17,7 +18,9 @@
 </head>
 <body>
 
-{% block body %}{% endblock %}
+{% block body %}{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% endblock %}
 
 <footer class="scroll-top page-scroll">
     <a class="btn btn-primary" href="#page-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
