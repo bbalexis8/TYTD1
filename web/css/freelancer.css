@@ -30,6 +30,11 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+/*h2 {*/
+  /*padding-top: 20px;*/
+/*}*/
+
 hr.star-light,
 hr.star-primary {
   padding: 0;
@@ -92,8 +97,8 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container-fluid {
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -174,7 +179,8 @@ header .intro-text .skills {
   }
 }
 section {
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 section h2 {
   margin: 0;
@@ -191,7 +197,7 @@ section.rose {
 }
 @media (max-width: 767px) {
   section {
-    padding: 75px 0;
+    padding: 75px;
   }
   section.first {
     padding-top: 75px;
