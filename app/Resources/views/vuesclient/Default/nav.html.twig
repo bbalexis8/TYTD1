@@ -1,25 +1,43 @@
 {% block nav %}
 
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <nav class="navbar-custom">
-<nav class="navbar navbar-custom navbar-default navbar-fixed-top">
+<nav class="navbar navbar-custom navbar-fixed-top">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-custom">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Menu</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span> Menu <i class="glyphicon glyphicon-menu-up"></i>
             </button>
-         <a class="navbar-brand" href="#"><img id="logonav" alt="Brand" src="{{ asset('image/Logo x48.png') }}"></a>
+            <a class="navbar-brand" href="#{{ path('blog') }}">Nos articles</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#blog"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#event">Evenements</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#temoignagess">Témoignages</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact_form">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div><a class="navbar-brand" href="#"><img id="logonav" alt="Brand" src="{{ asset('image/Logo x48.png') }}"></a></div>
             <ul class="nav navbar-nav">
-                <li><a href="{{ path('article_index') }}">Blog : articles</a></li>
+
+                <li><a href="{{ path('article_index') }}" id ="blog">Blog : articles</a></li>
                 <li class="dropdown" >
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evénements<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false" id="event">Evénements<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ path('evenement_index') }}">Liste des événements</a></li>
                         <li role="separator" class="divider"></li>
@@ -28,12 +46,16 @@
                         <li><a href="{{ path('evenement_show', {'id': '3'}) }}">Voyages</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ path('temoignage_index') }}">Témoignages</a></li>
+                <li><a href="{{ path('temoignage_index') }}" id="temoignagess">Témoignages</a></li>
                 <li><a href="#">Partenaires</a></li>
             </ul>
         </div>
     </div>
+
+
 </nav>
-    </nav>
+
+
+
 
 {% endblock %}

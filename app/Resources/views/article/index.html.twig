@@ -2,36 +2,50 @@
 
 
     {% block body %}
-        <div class="container">
 
-            <div class="blog-header">
-                <h1 class="blog-title">Liste des Articles</h1>
-                <p class="lead blog-description">Parcourez tous les articles de notre blog... </p>
-            </div>
-
-
-            <div class="row">
-
-                <div class="col-sm-12 blog-main">
-
-                    {% for article in articles %}
-                        <div class="blog-post">
-                            <h2 class="blog-post-title">{{ article.titreT }}</h2>
-                            <p class="blog-post-meta">Posté le {% if article.dateT %}
-                                    {{ article.dateT|date('Y-m-d') }}
-                                {% endif %} Par {{ article.utilisateur }}</p>
-                            <p>En quelques mots ... <br>{{ article.descriptionT }}</p>
-
-                            <a href="{{ path('article_show', { 'id': article.id }) }}">
-                                Plus de détails</a>
-                            <hr>
-                        </div>
-                    {% endfor %}
+        <section  class="rose">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="jumbotron">
+                        <h1> Liste des Articles</h1>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+            <div class="col-lg-12 text-center">
+
+        {% for article in articles %}
+
+            <section>
+
+            <div class="success" id="about">
+
+                <div class="col-sm-12">
+
+                    <h2 class="post-title"><span class="post-type"><i class=""></i></span>
+                    <a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a></h2>
+                <br>
+                <div class="post-meta">
+                    <span class="meta-author"><i class="glyphicon glyphicon-user"></i><a href="#"></a></span>
+                    <span class="meta-date"><i class="glyphicon glyphicon-time"></i>{% if article.date %}
+                                    {{ article.date|date('Y-m-d') }}
+                                {% endif %}</span>
+                    <span class="meta-categories"><i class="glyphicon glyphicon-folder-open"></i><a href="#"></a></span>
+                    <span class="meta-comment"><i class="glyphicon glyphicon-pencil"></i><a href="#">15 comments</a></span>
+                </div>
+                <div class="post-content">
+                    <p>{{ article.description }}</p>
+                    <a href="{{ path('article_show', { 'id': article.id }) }}" class="post-read-more button color small">Article complet</a>
+                </div><!-- End post-content -->
+                 </div><!-- End post-inner -->
 
             </div>
 
-        </div>
+                </section>
+        {% endfor %}
 
+
+            </div>
 
     {% endblock %}

@@ -6,6 +6,7 @@
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  padding-top: 10px;
 }
 p {
   font-size: 20px;
@@ -175,12 +176,14 @@ header .intro-text .skills {
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {
+    margin: 0;
+    padding: 0;
     font-size: 1.5em;
   }
 }
 section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 section h2 {
   margin: 0;
@@ -189,6 +192,8 @@ section h2 {
 section.success {
   background: #F0DBDA;
   color: #1C2834;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 section.rose {
@@ -524,4 +529,9 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
 }
