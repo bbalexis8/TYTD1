@@ -2,7 +2,14 @@
 
 namespace TytdBundle\Form;
 
+
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,21 +21,39 @@ class UtilisateurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomU')
-            ->add('prenomU')
-            ->add('email')
+            ->add('nomU', TextType::class, array(
+                'label' => 'Nom'
+            ))
+            ->add('prenomU', TextType::class, array(
+                'label' => 'Prenom'
+            ))
+            ->add('email', EmailType::class, array(
+                'label' => 'Email'
+            ))
             ->add('adresse')
-            ->add('codepostal')
+            ->add('codepostal', IntegerType::class, array(
+                'label' => 'Code Postal'
+            ))
             ->add('ville')
-            ->add('pays')
-            ->add('username')
-            ->add('password')
-            ->add('descriptionU')
-            ->add('imageU')
-            ->add('dateinscription');
-           // ->add('evenement');
+            ->add('pays', CountryType::class, array(
+                'label' => 'Pays'))
+            ->add('username', TextType::class, array(
+                'label' => 'Pseudo'
+            ))
+            ->add('password', PasswordType::class, array(
+                'label' => 'Mot de passe'
+            ))
+            ->add('descriptionU', TextType::class, array(
+                'label' => 'Description'
+            ))
+            ->add('imageU', TextType::class, array(
+                'label' => 'Avatar'
+            ))
+            ->add('dateinscription', DateTimeType::class, array(
+                'label' => 'Date d\'inscription'
+            ));
     }
-    
+
     /**
      * {@inheritdoc}
      */

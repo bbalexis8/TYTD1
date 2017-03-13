@@ -20,6 +20,14 @@ class BlogController extends Controller
         return $this->render('vuesclient/Default/index.html.twig');
     }
 
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function ContactForm()
+    {
+        return $this->render("vuesclient/contactForm.html.twig");
+    }
+
 
 
 
