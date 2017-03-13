@@ -12,23 +12,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-         <a class="navbar-brand" href="#"><img id="logonav" alt="Brand" src="{{ asset('image/Logo x50.png') }}"></a>
+         <a class="navbar-brand" href="#"><img id="logonav" alt="Brand" src="{{ asset('image/Logo x48.png') }}"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Blog : articles</a></li>
+                <li><a href="{{ path('article_index') }}">Blog : articles</a></li>
                 <li class="dropdown" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evénements<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Liste des événements</a></li>
+                        <li><a href="{{ path('evenement_index') }}">Liste des événements</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Anniversaires</a></li>
-                        <li><a href="#">Mariages</a></li>
-                        <li><a href="#">Voyages</a></li>
+                        <li><a href="{{ path('evenement_show', {'id': '1'}) }}">Anniversaires</a></li>
+                        <li><a href="{{ path('evenement_show', {'id': '2'}) }}">Mariages</a></li>
+                        <li><a href="{{ path('evenement_show', {'id': '3'}) }}">Voyages</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Témoignages</a></li>
+                <li><a href="{{ path('temoignage_index') }}">Témoignages</a></li>
                 <li><a href="#">Partenaires</a></li>
             </ul>
         </div>
