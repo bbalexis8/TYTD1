@@ -1,47 +1,37 @@
 {% extends 'vuesclient/Default/basic.html.twig' %}
 
-{% block body %}
-    <h1>Articles list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Texte</th>
-                <th>Date</th>
-                <th>Image</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                <td>{{ article.titre }}</td>
-                <td>{{ article.description }}</td>
-                <td>{{ article.texte }}</td>
-                <td>{% if article.date %}{{ article.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ article.image }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% block body %}
+        <div class="container">
 
-    <ul>
-        <li>
-            <a href="{{ path('article_new') }}">Create a new article</a>
-        </li>
-    </ul>
-{% endblock %}
+            <div class="blog-header">
+                <h1 class="blog-title">Liste des Articles</h1>
+                <p class="lead blog-description">Parcourez tous les articles de notre blog... </p>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-sm-12 blog-main">
+
+                    {% for article in articles %}
+                        <div class="blog-post">
+                            <h2 class="blog-post-title">{{ article.titreT }}</h2>
+                            <p class="blog-post-meta">Posté le {% if article.dateT %}
+                                    {{ article.dateT|date('Y-m-d') }}
+                                {% endif %} Par {{ article.utilisateur }}</p>
+                            <p>En quelques mots ... <br>{{ article.descriptionT }}</p>
+
+                            <a href="{{ path('article_show', { 'id': article.id }) }}">
+                                Plus de détails</a>
+                            <hr>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+
+    {% endblock %}
