@@ -34,17 +34,17 @@
                 </div>
                 {#{% for article in range (3,0) %}#}
                     {#{{ article }}#}
-                <div class="row">
-                <a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a>
-                    <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="...">
-                        <p>{{ article.description }}</p>
-                   <p> par {{ article.utilisateur }}, le {{ article.date|date('d/m/Y') }}</p>
-                    <br>
-                </div>
+                {#<div class="row">#}
+                {#<a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a>#}
+                    {#<img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="...">#}
+                        {#<p>{{ article.description }}</p>#}
+                   {#<p> par {{ article.utilisateur }}, le {{ article.date|date('d/m/Y') }}</p>#}
+                    {#<br>#}
+                {#</div>#}
                 {#{% endfor %}#}
                 <div class="row">
                     <br>
-                    <button><a href="{{ path('article_index') }}"style="text-decoration:none" >Voir plus d'articles...</a></button>
+                    <button><a href="{{ path('article_index') }}" style="text-decoration:none" >Voir plus d'articles...</a></button>
                 </div>
             </div>
 
