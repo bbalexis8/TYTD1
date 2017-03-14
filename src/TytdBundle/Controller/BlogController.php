@@ -84,7 +84,7 @@ class BlogController extends Controller
     {
         $deleteForm = $this->createDeleteFormArticle($article);
 
-        return $this->render('vuesclient/arti&temo.html.twig', array(
+        return $this->render('article/show.html.twig', array(
             'article' => $article,
             'delete_form' => $deleteForm->createView(),
         ));
