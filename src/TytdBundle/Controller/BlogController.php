@@ -15,7 +15,7 @@ class BlogController extends Controller
     /**
      * Lists all article entities.
      *
-     * @Route("/admin/article_index", name="article_index")
+     * @Route("/admin/article", name="article_index")
      * @Method("GET")
      */
     public function indexArticle()
