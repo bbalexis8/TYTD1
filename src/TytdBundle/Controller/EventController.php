@@ -3,17 +3,19 @@
 namespace TytdBundle\Controller;
 
 use TytdBundle\Entity\Evenement;
+use TytdBundle\Entity\Temoignage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 
+
 class EventController extends Controller
 {
     /**
      * Lists all event entities.
-     * @Route("/event", name="evenement_index")
+     * @Route("/admin/event", name="evenement_index")
      * @Method("GET")
      */
     public function indexEvent()
@@ -29,7 +31,7 @@ class EventController extends Controller
 
     /**
      * Creates a new evenement entity.
-     * @Route("/event/new", name="evenement_new")
+     * @Route("/admin/event_new", name="evenement_new")
      * @Method({"GET", "POST"})
      */
     public function newEvent(Request $request)
@@ -53,7 +55,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/event/{id}", name="evenement_show")
+     * @Route("/admin/event/{id}", name="evenement_show")
      * @Method("GET")
      */
     public function showEvent(Evenement $evenement)
@@ -67,7 +69,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/event/{id}/edit", name="evenement_edit")
+     * @Route("/admin/event/{id}/edit", name="evenement_edit")
      * @Method({"GET", "POST"})
      */
     public function editEvent(Request $request, Evenement $evenement)
@@ -90,7 +92,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/event/{id}", name="evenement_delete")
+     * @Route("/admin/event/{id}", name="evenement_delete")
      * @Method("DELETE")
      */
     public function deleteEvent(Request $request, Evenement $evenement)
@@ -125,7 +127,7 @@ class EventController extends Controller
     /**
      * Lists all temoignage entities.
      *
-     * @Route("/temoignage", name="temoignage_index")
+     * @Route("/admin/temoignage", name="temoignage_index")
      * @Method("GET")
      */
     public function indexTemoignage()
@@ -140,7 +142,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/temoignage/new", name="temoignage_new")
+     * @Route("/admin/temoignage/new", name="temoignage_new")
      * @Method({"GET", "POST"})
      */
     public function newTemoignage(Request $request)
@@ -164,7 +166,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/temoignage/{id}", name="temoignage_show")
+     * @Route("/admin/temoignage/{id}", name="temoignage_show")
      * @Method("GET")
      */
     public function showTemoignage(Temoignage $temoignage)
@@ -178,7 +180,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/temoignage/{id}/edit", name="temoignage_edit")
+     * @Route("/admin/temoignage/{id}/edit", name="temoignage_edit")
      * @Method({"GET", "POST"})
      */
     public function editTemoignage(Request $request, Temoignage $temoignage)
@@ -201,7 +203,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/temoignage/{id}", name="temoignage_delete")
+     * @Route("/admin/temoignage/{id}", name="temoignage_delete")
      * @Method("DELETE")
      */
     public function deleteTemoignage(Request $request, Temoignage $temoignage)
