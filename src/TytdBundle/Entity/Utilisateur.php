@@ -129,7 +129,7 @@ class Utilisateur
     private $dateinscription;
 
     /**
-     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Evenement", mappedBy=utilisateur")
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Evenement", mappedBy="utilisateur")
      */
     private $evenement;
 
