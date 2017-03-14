@@ -6,7 +6,7 @@
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
-  padding-top: 10px;
+  padding-top: 100px;
 }
 p {
   font-size: 20px;
@@ -78,7 +78,7 @@ header {
   color: white;
 }
 header .container {
-  padding-top: 100px;
+  padding-top: -100px;
   padding-bottom: 50px;
 }
 header img {
@@ -198,8 +198,14 @@ section.success {
 
 section.rose {
   background: #01717D;
-  color:#8DE6B6 ;
+  color: #ffffff;
+  padding-bottom: 20px;
 }
+
+section.rose h3 {
+  color: #FFC6BB;
+}
+
 @media (max-width: 767px) {
   section {
     padding: 75px;
@@ -529,6 +535,7 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
+  margin-top: -100px;
 }
 
 .navbar-brand {
