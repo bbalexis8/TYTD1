@@ -21,10 +21,10 @@ class UtilisateurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomU', TextType::class, array(
+            ->add('nom', TextType::class, array(
                 'label' => 'Nom'
             ))
-            ->add('prenomU', TextType::class, array(
+            ->add('prenom', TextType::class, array(
                 'label' => 'Prenom'
             ))
             ->add('email', EmailType::class, array(
@@ -35,6 +35,8 @@ class UtilisateurType extends AbstractType
                 'label' => 'Code Postal'
             ))
             ->add('ville')
+
+            
             ->add('pays', CountryType::class, array(
                 'label' => 'Pays'))
             ->add('username', TextType::class, array(
@@ -43,10 +45,10 @@ class UtilisateurType extends AbstractType
             ->add('password', PasswordType::class, array(
                 'label' => 'Mot de passe'
             ))
-            ->add('descriptionU', TextType::class, array(
+            ->add('description', TextType::class, array(
                 'label' => 'Description'
             ))
-            ->add('imageU', TextType::class, array(
+            ->add('image', TextType::class, array(
                 'label' => 'Avatar'
             ))
             ->add('dateinscription', DateTimeType::class, array(

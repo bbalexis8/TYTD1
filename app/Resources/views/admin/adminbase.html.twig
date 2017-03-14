@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
-    <title>{% block title %}Bienvenue sur To You To Do!{% endblock %}</title>
+    <title>{% block title %}Bienvenue sur l'espace Administrateur de TYTD{% endblock %}</title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -19,26 +18,20 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {#{% block nav %}{% include ':Default:nav.html.twig' %}{% endblock %}#}
-
 </head>
-
 <body>
+<h1>Espace d'admin To You To Do</h1>
+<ul>
+    <li><a href="#">Accueil du site</a></li>
+    <li><a href="{{ path('article_index') }}">Articles</a></li>
+    <li><a href="{{ path('categorie_index') }}">Catégorie</a></li>
+    <li><a href="{{ path('commentaire_index') }}">Commentaire</a></li>
+    <li><a href="{{ path('evenement_index') }}">Evénement</a></li>
+    <li><a href="{{ path('temoignage_index') }}">Témoignage</a></li>
+    <li><a href="{{ path('utilisateur_index') }}">Utilisateur</a></li>
+</ul>
 
-{% block body %}{% form_theme form 'bootstrap_3_layout.html.twig' %}
-
-{% endblock %}
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-
-<footer class="scroll-top page-scroll">
-    <a class="btn btn-primary" href="#page-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-
-    </a>
-</footer>
+{% block body %}{% endblock %}
 
 </body>
 </html>
