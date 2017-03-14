@@ -7,24 +7,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use TytdBundle\Entity\Commentaire;
 
 
 class BlogController extends Controller
 {
-
-    /**
-     * @Route("/", name="accueil")
-     */
-    public function indexAppli()
-    {
-        return $this->render('Default/index.html.twig');
-    }
-
-
     /**
      * Lists all article entities.
      *
-     * @Route("/blog", name="article_index")
+     * @Route("/admin/article_index", name="article_index")
      * @Method("GET")
      */
     public function indexArticle()
@@ -41,7 +32,7 @@ class BlogController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/article_new", name="article_new")
+     * @Route("/admin/article_new", name="article_new")
      * @Method({"GET", "POST"})
      */
     public function newArticle(Request $request)
@@ -67,7 +58,7 @@ class BlogController extends Controller
     /**
      * Finds and displays a article entity.
      *
-     * @Route("/article/{id}", name="article_show")
+     * @Route("/admin/article/{id}", name="article_show")
      * @Method("GET")
      */
     public function showArticle(Article $article)
@@ -83,7 +74,7 @@ class BlogController extends Controller
     /**
      * Displays a form to edit an existing article entity.
      *
-     * @Route("/article/{id}/edit", name="article_edit")
+     * @Route("/admin/article/{id}/edit", name="article_edit")
      * @Method({"GET", "POST"})
      */
     public function editArticle(Request $request, Article $article)
@@ -108,7 +99,7 @@ class BlogController extends Controller
     /**
      * Deletes a article entity.
      *
-     * @Route("/article/{id}", name="article_delete")
+     * @Route("/admin/article/{id}", name="article_delete")
      * @Method("DELETE")
      */
     public function deleteArticle(Request $request, Article $article)
@@ -143,7 +134,7 @@ class BlogController extends Controller
     /**
      * Lists all commentaire entities.
      *
-     * @Route("/commentaire", name="commentaire_index")
+     * @Route("/admin/commentaire", name="commentaire_index")
      * @Method("GET")
      */
     public function indexCom()
@@ -160,7 +151,7 @@ class BlogController extends Controller
     /**
      * Creates a new commentaire entity.
      *
-     * @Route("/commentaire_new", name="commentaire_new")
+     * @Route("/admin/commentaire_new", name="commentaire_new")
      * @Method({"GET", "POST"})
      */
     public function newCom(Request $request)
@@ -184,7 +175,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/commentaire/{id}", name="commentaire_show")
+     * @Route("/admin/commentaire/{id}", name="commentaire_show")
      * @Method("GET")
      */
     public function showCom(Commentaire $commentaire)
@@ -198,7 +189,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/commentaire/{id}/edit", name="commentaire_edit")
+     * @Route("/admin/commentaire/{id}/edit", name="commentaire_edit")
      * @Method({"GET", "POST"})
      */
     public function editCom(Request $request, Commentaire $commentaire)
@@ -221,7 +212,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/commentaire/{id}", name="commentaire_delete")
+     * @Route("/admin/commentaire/{id}", name="commentaire_delete")
      * @Method("DELETE")
      */
     public function deleteCom(Request $request, Commentaire $commentaire)
