@@ -35,6 +35,7 @@ class UtilisateurType extends AbstractType
                 'label' => 'Code Postal'
             ))
             ->add('ville')
+
             ->add('pays', CountryType::class, array(
                 'label' => 'Pays'))
             ->add('username', TextType::class, array(
