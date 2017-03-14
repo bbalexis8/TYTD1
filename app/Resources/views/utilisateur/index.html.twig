@@ -26,8 +26,8 @@
         {% for utilisateur in utilisateurs %}
             <tr>
                 <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">{{ utilisateur.id }}</a></td>
-                <td>{{ utilisateur.nomU }}</td>
-                <td>{{ utilisateur.prenomU }}</td>
+                <td>{{ utilisateur.nom }}</td>
+                <td>{{ utilisateur.prenom }}</td>
                 <td>{{ utilisateur.email }}</td>
                 <td>{{ utilisateur.adresse }}</td>
                 <td>{{ utilisateur.codepostal }}</td>
@@ -35,8 +35,8 @@
                 <td>{{ utilisateur.pays }}</td>
                 <td>{{ utilisateur.username }}</td>
                 <td>{{ utilisateur.password }}</td>
-                <td>{{ utilisateur.descriptionU }}</td>
-                <td>{{ utilisateur.imageU }}</td>
+                <td>{{ utilisateur.description }}</td>
+                <td>{{ utilisateur.image }}</td>
                 <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d ') }}{% endif %}</td>
                 <td>
                     <ul>
