@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img alt="Brand" src="images/logo.png"></a>
+                <a class="navbar-brand" href="#"><img alt="Brand" src="{{ asset('image/Logo x48.png') }}"></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,10 +22,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('evenement_index') }}">Liste des évènements</a></li>
                             <li role="separator" class="divider"></li>
-                            {% for categorie in categories %}
-                                <li><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.nomCa }}</a></li>
-                                <br>
-                            {% endfor %}
+                            <li>Catégories :</li>
+                            {#{% for cat1 in categorie %}#}
+                                {#<li><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.nomCa }}</a></li>#}
+                                {#<br>#}
+                            {#{% endfor %}#}
                         </ul>
                     </li>
                     <li><a href="{{ path('temoignage_index') }}">Témoignages</a></li>
