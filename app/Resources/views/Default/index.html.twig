@@ -1,37 +1,35 @@
 {% extends ':Default:basic.html.twig' %}
 
-{% block nav %}{% endblock %}
+
 
 {% block body %}
 
+    {#<section id="page-top" class="index">#}
 
-
-    <section id="page-top" class="index">
-
-        <!-- Header -->
-        <header>
-            <div class="container-fluid" id="maincontent" tabindex="-1">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <img class="img-responsive" src="{{ asset('image/Logo x300.png') }}" alt="">
-                        <div class="intro-text">
-                            <h1 class="name">Bienvenue Chez "To You, To Do"</h1>
+        {#<!-- Header -->#}
+        {#<header>#}
+            {#<div class="container-fluid" id="maincontent" tabindex="-1">#}
+                {#<div class="row">#}
+                    {#<div class="col-lg-12">#}
+                        {#<img class="img-responsive" src="{{ asset('image/Logo x300.png') }}" alt="">#}
+                        {#<div class="intro-text">#}
+                            {#<h1 class="name">Bienvenue Chez "To You, To Do"</h1>#}
                             {#<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>#}
-                            <span class="skills">De l'Organisation à la Suprise, Votre événement comme Vous le rêvez</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+                            {#<span class="skills">De l'Organisation à la Suprise, Votre événement comme Vous le rêvez</span>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</header>#}
 
-        <section >
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2>Blog : Nos derniers articles </h2>
-                        <hr>
-                    </div>
-                </div>
+        {#<section >#}
+            {#<div class="container">#}
+                {#<div class="row">#}
+                    {#<div class="col-lg-12 text-center">#}
+                        {#<h2>Blog : Nos derniers articles </h2>#}
+                        {#<hr>#}
+                    {#</div>#}
+                {#</div>#}
                 {#{% for article in range (3,0) %}#}
                     {#{{ article }}#}
                 {#<div class="row">#}
@@ -42,186 +40,269 @@
                     {#<br>#}
                 {#</div>#}
                 {#{% endfor %}#}
-                <div class="row">
-                    <br>
-                    <button><a href="{{ path('article_index') }}" style="text-decoration:none" >Voir plus d'articles...</a></button>
-                </div>
+                {#<div class="row">#}
+                    {#<br>#}
+                    {#<button><a href="{{ path('article_index') }}" style="text-decoration:none" >Voir plus d'articles...</a></button>#}
+                {#</div>#}
+            {#</div>#}
+
+        {#</section>#}
+
+            {#<section  class="rose">#}
+                {#<div class="container">#}
+                    {#<div class="row">#}
+                        {#<div class="col-lg-12 text-center">#}
+                            {#<h3> Calendrier ; rappel des événements à venir</h3>#}
+
+                            {#<div id="myCarousel" class="carousel slide" data-ride="carousel">#}
+                                {#<!-- Indicators -->#}
+                                {#<ol class="carousel-indicators">#}
+                                    {#<li data-target="#myCarousel" data-slide-to="0" class="active"></li>#}
+                                    {#<li data-target="#myCarousel" data-slide-to="1"></li>#}
+                                    {#<li data-target="#myCarousel" data-slide-to="2"></li>#}
+                                    {#<li data-target="#myCarousel" data-slide-to="3"></li>#}
+                                {#</ol>#}
+
+                                {#<!-- Wrapper for slides -->#}
+                                {#<div class="carousel-inner" role="listbox">#}
+                                    {#<div class="item active">#}
+                                        {#<img src="{{ asset('image/cake.png') }}" alt="...">#}
+                                    {#</div>#}
+
+                                    {#<div class="item">#}
+                                        {#<img src="{{ asset('image/cake.png') }}" alt="...">#}
+                                    {#</div>#}
+
+                                    {#<div class="item">#}
+                                        {#<img src="{{ asset('image/cake.png') }}" alt="...">#}
+                                    {#</div>#}
+
+                                    {#<div class="item">#}
+                                        {#<img src="{{ asset('image/cake.png') }}" alt="...">#}
+                                    {#</div>#}
+                                {#</div>#}
+
+                                {#<!-- Left and right controls -->#}
+                                {#<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">#}
+                                    {#<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>#}
+                                    {#<span class="sr-only">Previous</span>#}
+                                {#</a>#}
+                                {#<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">#}
+                                    {#<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>#}
+                                    {#<span class="sr-only">Next</span>#}
+                                {#</a>#}
+                            {#</div>#}
+
+
+
+                        {#</div>#}
+                     {#</div>#}
+                 {#</div>#}
+             {#</section>#}
+
+        {#<!-- Blog -->#}
+        {#<section class="success" id="evenements">#}
+            {#<div class="container">#}
+                {#<div class="row">#}
+                    {#<div class="col-lg-12 text-center">#}
+                        {#<h2>Catégorie d'événements</h2>#}
+                        {#<hr>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="row">#}
+                    {#<div class="col-sm-4 portfolio-item">#}
+                        {#<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">#}
+                            {#<div class="caption">#}
+                                {#<div class="caption-content">#}
+                                    {#<i class="fa fa-search-plus fa-3x"></i>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Cabin">#}
+                        {#</a>#}
+                    {#</div>#}
+                    {#<div class="col-sm-4 portfolio-item">#}
+                        {#<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">#}
+                            {#<div class="caption">#}
+                                {#<div class="caption-content">#}
+                                    {#<i class="fa fa-search-plus fa-3x"></i>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Slice of cake">#}
+                        {#</a>#}
+                    {#</div>#}
+                    {#<div class="col-sm-4 portfolio-item">#}
+                        {#<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">#}
+                            {#<div class="caption">#}
+                                {#<div class="caption-content">#}
+                                    {#<i class="fa fa-search-plus fa-3x"></i>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Circus tent">#}
+                        {#</a>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="row">#}
+                    {#<br>#}
+                    {#<button type="button" class="btn btn-primary btn-lg btn-block" >#}
+                    {#<a href=#}
+                        {#"{{ path('article_index') }}"style="text-decoration:none" >Parcourez toutes les catégories et#}
+                        {#créez votre événement sur mesure grâce à notre outil</a>#}
+                    {#</button>#}
+                {#</div>#}
+            {#</div>#}
+        {#</section>#}
+
+        {#<section class="rose">#}
+            {#<div class="container">#}
+                {#<div class="row">#}
+                    {#<div class="col-lg-12 text-center">#}
+                        {#<h3> Sondage : Pour Votre ANNIVERSAIRE ...</h3>#}
+                   {#</div>#}
+                    {#<div class="form-group" >#}
+                        {#<form action="{{ path('categorie_show',{ 'id': 1 }) }}">vous êtes plutôt dîner entre amis ou grande fête de famille?#}
+                        {#<div>#}
+                            {#<div class="radio">#}
+                                {#<label><input type="radio" name="choix"> Un bon repas en petit comité avec le gâteau comme#}
+                                {#pièce maitresse</label>#}
+                            {#</div>#}
+                            {#<div class="radio">#}
+                                {#<label><input type="radio" name="choix"> Une fête mémorable où la musique bat son plein</label>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<input type="button" value="OK" >#}
+                        {#</form>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</section>#}
+
+
+        {#<footer class="text-center">#}
+            {#<div class="footer-above">#}
+                {#<div class="container">#}
+                    {#<div class="row">#}
+                        {#<div class="footer-col col-md-4">#}
+                            {#<h3>ADRESSE</h3>#}
+                            {#<p>21, rue des Francs-Bourgeois#}
+                                {#<br>75 004 PARIS</p>#}
+                        {#</div>#}
+                        {#<div class="footer-col col-md-4">#}
+                            {#<h3>NOTRE EQUIPE</h3>#}
+                            {#<ul class="list-inline">#}
+                               {#<!--- <li>#}
+                                    {#<a href="AUTEUR ALEXIS" ></a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                    {#<a href="AUTEYR ELO></a>#}
+                                {#</li>#}
+                              {#--->#}
+                            {#</ul>#}
+                        {#</div>#}
+                        {#<div class="footer-col col-md-4">#}
+                            {#<h3>REJOIGNEZ NOUS !</h3>#}
+                            {#<p>Vous souhaitez devenir partenaire de "To You, To Do"? Contactez-nous!</p>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+
+            {#<div class="footer-below">#}
+                {#<div class="container">#}
+                    {#<div class="row">#}
+                        {#<div class="col-lg-12">#}
+                            {#Copyright &copy; TYTD Corp. 2017#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</footer>#}
+
+
+    {#</section>#}
+
+
+
+
+
+
+<div id="bienv" class="jumbotron col-xs-12 text-center">
+    <div class="text-center">
+        <img id="logogd" src="{{ asset('image/Logo x300.png') }}"><br>
+    </div>
+    <div class="text-center">
+        <h2>Bienvenue sur TO YOU, TO DO !</h2>
+        <p>De l'Organisation à la Suprise, Votre événement comme Vous le rêvez</p>
+    </div>
+    <div class="col-xs-8 col-xs-offset-2">
+        <div id="btnsacc" class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default ">Assistant</button>
             </div>
-
-        </section>
-
-            <section  class="rose">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h3> Calendrier ; rappel des événements à venir</h3>
-
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                                </ol>
-
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <img src="{{ asset('image/cake.png') }}" alt="...">
-                                    </div>
-
-                                    <div class="item">
-                                        <img src="{{ asset('image/cake.png') }}" alt="...">
-                                    </div>
-
-                                    <div class="item">
-                                        <img src="{{ asset('image/cake.png') }}" alt="...">
-                                    </div>
-
-                                    <div class="item">
-                                        <img src="{{ asset('image/cake.png') }}" alt="...">
-                                    </div>
-                                </div>
-
-                                <!-- Left and right controls -->
-                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-
-
-
-                        </div>
-                     </div>
-                 </div>
-             </section>
-
-        <!-- Blog -->
-        <section class="success" id="evenements">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2>Catégorie d'événements</h2>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 portfolio-item">
-                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <i class="fa fa-search-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Cabin">
-                        </a>
-                    </div>
-                    <div class="col-sm-4 portfolio-item">
-                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <i class="fa fa-search-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Slice of cake">
-                        </a>
-                    </div>
-                    <div class="col-sm-4 portfolio-item">
-                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <i class="fa fa-search-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="Circus tent">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <br>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" >
-                    <a href=
-                        "{{ path('article_index') }}"style="text-decoration:none" >Parcourez toutes les catégories et
-                        créez votre événement sur mesure grâce à notre outil</a>
-                    </button>
-                </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Blog</button>
             </div>
-        </section>
+        </div>
+    </div>
+</div>
 
-        <section class="rose">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h3> Sondage : Pour Votre ANNIVERSAIRE ...</h3>
-                   </div>
-                    <div class="form-group" >
-                        <form action="{{ path('categorie_show',{ 'id': 1 }) }}">vous êtes plutôt dîner entre amis ou grande fête de famille?
-                        <div>
-                            <div class="radio">
-                                <label><input type="radio" name="choix"> Un bon repas en petit comité avec le gâteau comme
-                                pièce maitresse</label>
-                            </div>
-                            <div class="radio">
-                                <label><input type="radio" name="choix"> Une fête mémorable où la musique bat son plein</label>
-                            </div>
-                        </div>
-                        <input type="button" value="OK" >
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div id="divblog" class="jumbotron col-xs-12">
+    <div class="col-xs-12">
+        <h2>Nos derniers articles<br><br></h2>
+    </div>
+
+    <div class="row col-xs-12">
+
+        <div class="col-xs-2 col-xs-offset-1">
+            <a href="#" class="thumbnail">
+                <img src="{{ asset('image/image (9).jpg') }}" class="img-circle">
+            </a>
+        </div>
+
+        <div class="col-xs-2 col-xs-offset-2">
+            <a href="#" class="thumbnail">
+                <img src="{{ asset('image/image (9).jpg') }}" class="img-circle">
+            </a>
+        </div>
 
 
-        <footer class="text-center">
-            <div class="footer-above">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer-col col-md-4">
-                            <h3>ADRESSE</h3>
-                            <p>21, rue des Francs-Bourgeois
-                                <br>75 004 PARIS</p>
-                        </div>
-                        <div class="footer-col col-md-4">
-                            <h3>NOTRE EQUIPE</h3>
-                            <ul class="list-inline">
-                               <!--- <li>
-                                    <a href="AUTEUR ALEXIS" ></a>
-                                </li>
-                                <li>
-                                    <a href="AUTEYR ELO></a>
-                                </li>
-                              --->
-                            </ul>
-                        </div>
-                        <div class="footer-col col-md-4">
-                            <h3>REJOIGNEZ NOUS !</h3>
-                            <p>Vous souhaitez devenir partenaire de "To You, To Do"? Contactez-nous!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-xs-2 col-xs-offset-2">
+            <a href="#" class="thumbnail">
+                <img src="{{ asset('image/image (15).jpg') }}" class="img-circle">
+            </a>
+        </div>
 
-            <div class="footer-below">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            Copyright &copy; TYTD Corp. 2017
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    </div>
+</div>
 
+<div id="divsondage" class="jumbotron col-xs-12">
+    <div class="col-xs-12">
+        <h2>Sondage<br><br></h2>
+    </div>
+</div>
 
-    </section>
+<div id="divevents" class="jumbotron col-xs-12">
+    <div class="col-xs-12">
+        <h2>Organisez votre évènement<br><br></h2>
+    </div>
 
+    <div class="row col-xs-12">
+        <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+                <img src="images/birthdays.jpg" class="img-circle">
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+                <img src="images/birthdays.jpg" class="img-circle">
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#" class="thumbnail">
+                <img src="images/birthdays.jpg" class="img-circle">
+            </a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 
