@@ -1,4 +1,4 @@
-{% extends 'basic.html.twig' %}
+{% extends ':Default:basic.html.twig' %}
 
 {% block nav %}{% endblock %}
 
@@ -32,8 +32,8 @@
                         <hr>
                     </div>
                 </div>
-                {% for article in range (3,0) %}
-                    {{ article }}
+                {#{% for article in range (3,0) %}#}
+                    {#{{ article }}#}
                 <div class="row">
                 <a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a>
                     <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="...">
@@ -41,7 +41,7 @@
                    <p> par {{ article.utilisateur }}, le {{ article.date|date('d/m/Y') }}</p>
                     <br>
                 </div>
-                {% endfor %}
+                {#{% endfor %}#}
                 <div class="row">
                     <br>
                     <button><a href="{{ path('article_index') }}"style="text-decoration:none" >Voir plus d'articles...</a></button>
@@ -161,7 +161,7 @@
                         <h3> Sondage : Pour Votre ANNIVERSAIRE ...</h3>
                    </div>
                     <div class="form-group" >
-                        <form action="{{ path('categorie_show'{ 'id'= 1 }) }}">vous êtes plutôt dîner entre amis ou grande fête de famille?
+                        <form action="{{ path('categorie_show',{ 'id': 1 }) }}">vous êtes plutôt dîner entre amis ou grande fête de famille?
                         <div>
                             <div class="radio">
                                 <label><input type="radio" name="choix"> Un bon repas en petit comité avec le gâteau comme

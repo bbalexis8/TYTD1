@@ -17,7 +17,7 @@ class BlogController extends Controller
      */
     public function indexAppli()
     {
-        return $this->render('vuesclient/Default/index.html.twig');
+        return $this->render('Default/index.html.twig');
     }
 
     /**
