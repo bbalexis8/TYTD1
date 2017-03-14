@@ -46,7 +46,7 @@ class Evenement
     private $temoignage;
 
     /**
-     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Utilisateur")
+     * @ORM\ManyToOne(targetEntity="TytdBundle\Entity\Utilisateur",inversedBy="evenement" )
      */
     private $utilisateur;
 
