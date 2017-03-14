@@ -1,0 +1,47 @@
+body {
+    padding-top: 50px;
+}
+
+.navbar-brand {
+    margin: 0px;
+    padding: 0px;
+}
+
+.jumbotron {
+    padding: 15px;
+    margin: 0;
+    background-color: darkcyan;
+    color: white;
+    text-align: justify;
+}
+
+#logogd {
+    max-width: 220px;
+}
+
+.jumbotron h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#btnsacc {
+    padding: 0;
+    padding-top: 10px;
+}
+
+#divblog {
+    padding-bottom: 20px;
+    background-color: #ebcccc;
+    color: white;
+}
+
+.thumbnail {
+    background-color: transparent;
+    border: transparent;
+}
+
+#divevents {
+    padding-bottom: 20px;
+    background-color: gold;
+    color: white;
+}
