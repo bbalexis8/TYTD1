@@ -63,6 +63,9 @@ li {
     text-align: center;
 }
 
-/*#divblog, #divevents img {*/
-    /*max*/
-/*}*/
+/*style de la page admin*/
+
+#menuadmin li {
+    text-align: left;;
+}
+

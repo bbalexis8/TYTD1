@@ -13,6 +13,9 @@
                 <td>texte</td>
                 <td>description</td>
                 <td>image</td>
+                <td>catégorie</td>
+                <td>date de publication</td>
+                <td>auteur</td>
                 <td>ACTIONS</td>
             </tr>
             </thead>
@@ -26,6 +29,7 @@
                     <td>{{ article.image }}</td>
                     <td>{{ article.categorie.nomCa }}</td>
                     <td>{{ article.date|date('d-m-Y') }}</td>
+                    <td>{{ article.utilisateur.username }}</td>
                     <td>
                         <ul>
                             <li>

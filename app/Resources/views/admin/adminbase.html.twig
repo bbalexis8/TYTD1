@@ -18,10 +18,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-<body>
+
 <h1>Espace d'admin To You To Do</h1>
-<ul>
+<div id="menuadmin">
+    <ul>
     <li><a href="#">Accueil du site</a></li>
     <li><a href="{{ path('article_index') }}">Articles</a></li>
     <li><a href="{{ path('categorie_index') }}">Catégorie</a></li>
@@ -29,8 +29,10 @@
     <li><a href="{{ path('evenement_index') }}">Evénement</a></li>
     <li><a href="{{ path('temoignage_index') }}">Témoignage</a></li>
     <li><a href="{{ path('utilisateur_index') }}">Utilisateur</a></li>
-</ul>
-
+    </ul>
+</div>
+</head>
+<body>
 {% block body %}{% endblock %}
 
 </body>
