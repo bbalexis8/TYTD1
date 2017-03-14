@@ -22,7 +22,7 @@ class EventController extends Controller
 
         $evenements = $em->getRepository('TytdBundle:Evenement')->findAll();
 
-        return $this->render('vuesclient/listeEvenements.html.twig', array(
+        return $this->render('evenement/index.html.twig', array(
             'evenements' => $evenements,
         ));
     }

@@ -1,6 +1,5 @@
 {% block nav %}
 
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 <nav class="navbar navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -16,13 +15,17 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ path('evenement_index') }}">Liste des événements</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{ path('evenement_show', {'id': '1'}) }}">Anniversaires</a></li>
-                        <li><a href="{{ path('evenement_show', {'id': '2'}) }}">Mariages</a></li>
-                        <li><a href="{{ path('evenement_show', {'id': '3'}) }}">Voyages</a></li>
+                         {% for categorie in categories %}
+                           <li><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.nomCa }}</a></li>
+                             <br>
+                         {% endfor %}
                     </ul>
                 </li>
-                <li><a href="{{ path('temoignage_index') }}" id="temoignagess">Témoignages</a></li>
-                <li><a href="#">Partenaires</a></li>
+                <li><a href="{{ path('temoignage_index') }}">Témoignages</a></li>
+                <li><a href="{{ path('utilisateur_index') }}">Partenaires</a></li>
+                             //****where type=partenaire***//
+
+
             </ul>
         </div>
     </div>

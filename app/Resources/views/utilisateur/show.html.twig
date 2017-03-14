@@ -1,4 +1,4 @@
-{% extends 'vuesclient/Default/basic.html.twig' %}
+{% extends ':Default:basic.html.twig' %}
 
 {% block body %}
     <h1>Utilisateur</h1>
@@ -11,11 +11,11 @@
             </tr>
             <tr>
                 <th>Nomu</th>
-                <td>{{ utilisateur.nomU }}</td>
+                <td>{{ utilisateur.nom }}</td>
             </tr>
             <tr>
                 <th>Prenomu</th>
-                <td>{{ utilisateur.prenomU }}</td>
+                <td>{{ utilisateur.prenom }}</td>
             </tr>
             <tr>
                 <th>Email</th>
@@ -47,11 +47,11 @@
             </tr>
             <tr>
                 <th>Descriptionu</th>
-                <td>{{ utilisateur.descriptionU }}</td>
+                <td>{{ utilisateur.description }}</td>
             </tr>
             <tr>
                 <th>Imageu</th>
-                <td>{{ utilisateur.imageU }}</td>
+                <td>{{ utilisateur.image }}</td>
             </tr>
             <tr>
                 <th>Dateinscription</th>

@@ -24,16 +24,16 @@ class Utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="nomU", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $nomU;
+    private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenomU", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=255)
      */
-    private $prenomU;
+    private $prenom;
 
     /**
      * @var string
@@ -52,7 +52,7 @@ class Utilisateur
     /**
      * @var int
      *
-     * @ORM\Column(name="codepostal", type="integer", nullable=true)
+     * @ORM\Column(name="code_postal", type="integer", nullable=true)
      */
     private $codepostal;
 
@@ -80,6 +80,29 @@ class Utilisateur
     /**
      * @var string
      *
+     * @ORM\Column(name="type", type="string", length=255, unique=false)
+     */
+    private $type;
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType(string $type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
@@ -87,26 +110,26 @@ class Utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="descriptionU", type="text", nullable=true)
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $descriptionU;
+    private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imageU", type="string", length=255, nullable=true)
+     * @ORM\Column(name="avatar", type="string", length=255, nullable=true)
      */
-    private $imageU;
+    private $image;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateinscription", type="datetime", nullable=true)
+     * @ORM\Column(name="date_inscription", type="datetime", nullable=true)
      */
     private $dateinscription;
 
     /**
-     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Evenement")
+     * @ORM\OneToMany(targetEntity="TytdBundle\Entity\Evenement", mappedBy=utilisateur")
      */
     private $evenement;
 
@@ -202,49 +225,49 @@ class Utilisateur
     /**
      * Set nomU
      *
-     * @param string $nomU
+     * @param string $nom
      *
      * @return Utilisateur
      */
-    public function setNomU($nomU)
+    public function setNom($nom)
     {
-        $this->nomU = $nomU;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Get nomU
+     * Get nom
      *
      * @return string
      */
-    public function getNomU()
+    public function getNom()
     {
-        return $this->nomU;
+        return $this->nom;
     }
 
     /**
-     * Set prenomU
+     * Set prenom
      *
-     * @param string $prenomU
+     * @param string $prenom
      *
      * @return Utilisateur
      */
-    public function setPrenomU($prenomU)
+    public function setPrenom($prenom)
     {
-        $this->prenomU = $prenomU;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     /**
-     * Get prenomU
+     * Get prenom
      *
      * @return string
      */
-    public function getPrenomU()
+    public function getPrenom()
     {
-        return $this->prenomU;
+        return $this->prenom;
     }
 
     /**
@@ -296,7 +319,7 @@ class Utilisateur
     }
 
     /**
-     * Set codepostal
+     * Set code_postal
      *
      * @param integer $codepostal
      *
@@ -310,7 +333,7 @@ class Utilisateur
     }
 
     /**
-     * Get codepostal
+     * Get code_postal
      *
      * @return int
      */
@@ -416,55 +439,55 @@ class Utilisateur
     }
 
     /**
-     * Set descriptionU
+     * Set description
      *
-     * @param string $descriptionU
+     * @param string $description
      *
      * @return Utilisateur
      */
-    public function setDescriptionU($descriptionU)
+    public function setDescription($description)
     {
-        $this->descriptionU = $descriptionU;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get descriptionU
+     * Get description
      *
      * @return string
      */
-    public function getDescriptionU()
+    public function getDescription()
     {
-        return $this->descriptionU;
+        return $this->description;
     }
 
     /**
-     * Set imageU
+     * Set avatar
      *
-     * @param string $imageU
+     * @param string $image
      *
      * @return Utilisateur
      */
-    public function setImageU($imageU)
+    public function setImage($image)
     {
-        $this->imageU = $imageU;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get imageU
+     * Get avatar
      *
      * @return string
      */
-    public function getImageU()
+    public function getImage()
     {
-        return $this->imageU;
+        return $this->image;
     }
 
     /**
-     * Set dateinscription
+     * Set date_inscription
      *
      * @param \DateTime $dateinscription
      *

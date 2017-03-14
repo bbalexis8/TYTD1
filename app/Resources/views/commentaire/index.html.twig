@@ -1,4 +1,4 @@
-{% extends 'vuesclient/Default/basic.html.twig' %}
+{% extends ':Default:basic.html.twig' %}
 
 {% block body %}
     <h1>Commentaires list</h1>
@@ -17,7 +17,7 @@
         {% for commentaire in commentaires %}
             <tr>
                 <td><a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">{{ commentaire.id }}</a></td>
-                <td>{{ commentaire.texteC }}</td>
+                <td>{{ commentaire.texte }}</td>
                 <td>{% if commentaire.dateC %}{{ commentaire.dateC|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ commentaire.titreC }}</td>
                 <td>
