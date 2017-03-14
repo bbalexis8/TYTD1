@@ -4,6 +4,7 @@ namespace TytdBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TytdBundle\Entity\Categorie;
@@ -18,7 +19,8 @@ class ArticleType extends AbstractType
             ->add('titre')
             ->add('description')
             ->add('texte')
-            ->add('date')
+            ->add('date', DateTimeType::class, array(
+        'label' => 'Date de publication'))
             ->add('image')
             ->add('categorie', EntityType::class, array(
                 "class" => Categorie::class,

@@ -22,6 +22,9 @@ class TemoignageType extends AbstractType
             ->add('texteT', TextType::class, array(
                 'label' => 'Texte'
             ))
+            ->add('titre_t', TextType::class, array(
+                'label' => 'Titre'
+            ))
             ->add('dateT', DateTimeType::class, array(
                 'label' => 'Date'
             ))

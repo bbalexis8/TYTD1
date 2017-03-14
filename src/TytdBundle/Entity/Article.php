@@ -234,7 +234,7 @@ class Article
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {

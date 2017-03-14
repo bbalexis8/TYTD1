@@ -36,7 +36,7 @@ class Commentaire
      *
      * @ORM\Column(name="texte", type="text")
      */
-    private $texteC;
+    private $texte;
 
     /**
      * @var \DateTime
@@ -118,9 +118,9 @@ class Commentaire
      *
      * @return Commentaire
      */
-    public function setTexteC($texteC)
+    public function setTexte($texte)
     {
-        $this->texteC = $texteC;
+        $this->texte = $texte;
 
         return $this;
     }
@@ -131,9 +131,9 @@ class Commentaire
      * @return string
      */
 
-    public function getTexteC()
+    public function getTexte()
     {
-        return $this->texteC;
+        return $this->texte;
     }
 
     /**
