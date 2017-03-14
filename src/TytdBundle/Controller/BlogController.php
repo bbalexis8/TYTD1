@@ -13,22 +13,12 @@ class BlogController extends Controller
 {
 
     /**
-     * @Route("/")
+     * @Route("/", name="accueil")
      */
     public function indexAppli()
     {
         return $this->render('Default/index.html.twig');
     }
-
-    /**
-     * @Route("/contact", name="contact")
-     */
-    public function ContactForm()
-    {
-        return $this->render("vuesclient/contactForm.html.twig");
-    }
-
-
 
 
     /**
