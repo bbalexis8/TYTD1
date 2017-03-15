@@ -4,7 +4,10 @@ namespace TytdBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use TytdBundle\Entity\Article;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Request;
+use TytdBundle\Entity\Commentaire;
 
 class AdminController extends Controller
 {
