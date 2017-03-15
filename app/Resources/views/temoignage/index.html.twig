@@ -1,35 +1,54 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <div class="container">
+    <div class="bobody">
+        <h2>Témoignages</h2>
 
-    <div class="blog-header">
-        <h1 class="blog-title">Liste des Témoignages</h1>
-        <p class="lead blog-description">Retrouvez tous les témoignages liés aux événements créés via l'outil TYTD !</p>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase" >
+                    <td>Voir</td>
+                    <td>titre</td>
+                    <td>texte</td>
+                    <td>description</td>
+                    <td>événement</td>
+                    <td>date de publication</td>
+                    <td>auteur</td>
+                    <td>supprimer/ modifier</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for temoignage in temoignages %}
+                    <tr>
+                        <td><li><a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">N°{{ temoignage.id }}</a></li></td>
+                        <td>{{ temoignage.titre }}</td>
+                        <td>{{ temoignage.texte }}</td>
+                        <td>{{ temoignage.description }}</td>
+                        <td>{{ temoignage.evenement.nom }}</td>
+                        <td>{{ temoignage.date|date('d-m-Y') }}</td>
+                        <td>{{ temoignage.utilisateur.username }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">Voir</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('temoignage_edit', { 'id': temoignage.id }) }}">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ path('temoignage_new') }}">Créer un témoignage</a>
+            </li>
+        </ul>
+
     </div>
-
-
-    <div class="row">
-
-    <div class="col-sm-12 blog-main">
-
-        {% for temoignage in temoignages %}
-            <div class="blog-post">
-                <h2 class="blog-post-title">{{ temoignage.titreT }}</h2>
-                <p class="blog-post-meta">Posté le {% if temoignage.dateT %}{{ temoignage.dateT|date('Y-m-d') }}
-                    {% endif %}</p>
-                <p>En quelques mots ... <br>{{ temoignage.descriptionT }}</p>
-
-                <a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">
-                    Plus de détails</a>
-                <hr>
-            </div>
-        {% endfor %}
-    </div>
-
-    </div>
-
-    </div>
-
-
 {% endblock %}
