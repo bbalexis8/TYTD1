@@ -65,7 +65,56 @@ li {
 
 /*style de la page admin*/
 
-#menuadmin li {
-    text-align: left;;
+#headerAdmin{
+    background-color: #F5E5E5 ;
+    padding: 2em;
+    color: #F5E5E5;
 }
 
+#headerAdmin h1 {
+    color: #1C2834;
+    margin: 1em;
+}
+#headerAdmin a {
+    color: #F5E5E5;
+}
+
+.divine {
+    margin: 1em;
+
+}
+
+.divine .btn-group {
+    margin: 2em;
+}
+
+.divine .un{
+    background-color: #FFAEA0 ;
+
+}
+
+.divine .trois{
+    background-color: #D48286 ;
+
+}
+
+.divine .deux{
+    background-color: #C32830 ;
+
+}
+
+.divine ul {
+    background-color: #FFC6BB;
+}
+
+#bodyAdmin  {
+    padding-top: 0;
+    text-align: left;
+    background-color: #F0DBDA ;
+    padding: 2em;
+}
+
+#bodyAdmin li {
+    text-align: left;
+
+}
