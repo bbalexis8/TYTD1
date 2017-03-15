@@ -1,44 +1,49 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-<div class="bobody">
-    <h2>Liste des Commentaires</h2>
+    <div class="bobody">
+        <h2>Liste des Commentaires</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Voir</th>
-                <th>Texte</th>
-                <th>Date</th>
-                <th>Titre</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for commentaire in commentaires %}
-            <tr>
-                <td><a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">N°{{ commentaire.id }}</a></td>
-                <td>{{ commentaire.texte }}</td>
-                <td>{% if commentaire.dateC %}{{ commentaire.dateC|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ commentaire.titreC }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">voir</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('commentaire_edit', { 'id': commentaire.id }) }}">modifier</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <th>Voir</th>
+                    <th>Texte</th>
+                    <th>Date</th>
+                    <th>Titre</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for commentaire in commentaires %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">N°{{ commentaire.id }}</a>
+                        </td>
+                        <td>{{ commentaire.texte }}</td>
+                        <td>{% if commentaire.dateC %}{{ commentaire.dateC|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ commentaire.titreC }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">voir</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('commentaire_edit', { 'id': commentaire.id }) }}">modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('commentaire_new') }}">Créer un commentaire</a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="{{ path('commentaire_new') }}">Créer un commentaire</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

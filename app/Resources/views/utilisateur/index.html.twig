@@ -1,61 +1,67 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Utilisateurs list</h1>
+    <div class="bobody">
+        <h2>Utilisateurs </h2>
 
-    <table border="1px black">
-        <thead>
-            <tr>
-                <th>Id </th>
-                <th>Nom </th>
-                <th>Prenom </th>
-                <th>Email </th>
-                <th>Adresse </th>
-                <th>Codepostal </th>
-                <th>Ville </th>
-                <th>Pays </th>
-                <th>Username </th>
-                <th>Password </th>
-                <th>Description </th>
-                <th>Image </th>
-                <th>Date d'inscription </th>
-                <th>Actions </th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for utilisateur in utilisateurs %}
-            <tr>
-                <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">{{ utilisateur.id }}</a></td>
-                <td>{{ utilisateur.nom }}</td>
-                <td>{{ utilisateur.prenom }}</td>
-                <td>{{ utilisateur.email }}</td>
-                <td>{{ utilisateur.adresse }}</td>
-                <td>{{ utilisateur.codepostal }}</td>
-                <td>{{ utilisateur.ville }}</td>
-                <td>{{ utilisateur.pays }}</td>
-                <td>{{ utilisateur.username }}</td>
-                <td>{{ utilisateur.password }}</td>
-                <td>{{ utilisateur.description }}</td>
-                <td>{{ utilisateur.image }}</td>
-                <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d ') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('utilisateur_new') }}">Create a new utilisateur</a>
-        </li>
-    </ul>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <th>Voir</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th>Code postal</th>
+                    <th>Ville</th>
+                    <th>Pays</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Date d'inscription</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for utilisateur in utilisateurs %}
+                    <tr>
+                        <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">{{ utilisateur.id }}</a>
+                        </td>
+                        <td>{{ utilisateur.nom }}</td>
+                        <td>{{ utilisateur.prenom }}</td>
+                        <td>{{ utilisateur.email }}</td>
+                        <td>{{ utilisateur.adresse }}</td>
+                        <td>{{ utilisateur.codepostal }}</td>
+                        <td>{{ utilisateur.ville }}</td>
+                        <td>{{ utilisateur.pays }}</td>
+                        <td>{{ utilisateur.username }}</td>
+                        <td>{{ utilisateur.password }}</td>
+                        <td>{{ utilisateur.type }}</td>
+                        <td>{{ utilisateur.description }}</td>
+                        <td>{{ utilisateur.image }}</td>
+                        <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d ') }}{% endif %}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">Voir</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('utilisateur_edit', { 'id': utilisateur.id }) }}">modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ path('utilisateur_new') }}">Créer une fiche utilisateur</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
