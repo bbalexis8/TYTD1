@@ -19,14 +19,19 @@ class CommentaireType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('titreC', TextType::class, array(
+                'label' => 'Titre',
+                "attr" => array('class' => 'tailletitlesforms')
+            ))
             ->add('texte', TextType::class, array(
-                'label' => 'Texte'
+                'label' => 'Texte',
+                "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('dateC', DateTimeType::class, array(
-                'label' => 'Date'
-            ))
-            ->add('titreC', TextType::class, array(
-                'label' => 'Titre'
+                'label' => 'Date',
+                'format' => 'dd:MM:yyyy',
+                'input' => 'datetime',
+                'data' => new \DateTime('now')
             ))
             ->add('article', EntityType::class, array(
                 "class" => Article::class,

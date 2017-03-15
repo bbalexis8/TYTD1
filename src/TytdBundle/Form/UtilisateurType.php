@@ -22,35 +22,48 @@ class UtilisateurType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, array(
-                'label' => 'Nom'
+                'label' => 'Nom',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('prenom', TextType::class, array(
-                'label' => 'Prenom'
+                'label' => 'Prenom',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('email', EmailType::class, array(
-                'label' => 'Email'
+                'label' => 'Email',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
-            ->add('adresse')
+            ->add('adresse', EmailType::class, array(
+                "attr" => array('class' => 'tailletitlesforms')))
             ->add('codepostal', IntegerType::class, array(
-                'label' => 'Code Postal'
+                'label' => 'Code Postal',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
-            ->add('ville')
+            ->add('ville', TextType::class, array(
+                "attr" => array('class' => 'tailletitlesforms')))
             ->add('pays', CountryType::class, array(
                 'label' => 'Pays'))
             ->add('username', TextType::class, array(
-                'label' => 'Pseudo'
+                'label' => 'Pseudo',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('password', PasswordType::class, array(
-                'label' => 'Mot de passe'
+                'label' => 'Mot de passe',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('description', TextType::class, array(
-                'label' => 'Description'
+                'label' => 'Description',
+                "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('image', TextType::class, array(
-                'label' => 'Avatar'
+                'label' => 'Avatar',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('dateinscription', DateTimeType::class, array(
-                'label' => 'Date d\'inscription'
+                'label' => 'Date d\'inscription',
+                'format' => 'dd:MM:yyyy',
+                'input' => 'datetime',
+                'data' => new \DateTime('now')
             ));
     }
 
