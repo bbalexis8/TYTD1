@@ -55,7 +55,7 @@ class Temoignage
     /**
      * @return string
      */
-    public function getTitreT(): string
+    public function getTitreT()
     {
         return $this->titreT;
     }
@@ -63,14 +63,14 @@ class Temoignage
     /**
      * @param string $titreT
      */
-    public function setTitreT(string $titreT)
+    public function setTitreT($titreT)
     {
         $this->titreT = $titreT;
     }
     /**
      * @return string
      */
-    public function getDescriptionT(): string
+    public function getDescriptionT()
     {
         return $this->descriptionT;
     }
@@ -78,7 +78,7 @@ class Temoignage
     /**
      * @param string $descriptionT
      */
-    public function setDescriptionT(string $descriptionT)
+    public function setDescriptionT($descriptionT)
     {
         $this->descriptionT = $descriptionT;
     }
