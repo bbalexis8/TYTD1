@@ -2,54 +2,57 @@
 
 
     {% block body %}
+        <div class="bobody">
+            <h2>Publications</h2>
 
-        <h1>Publications</h1>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr class="text-uppercase" >
+                        <td>voir l'article</td>
+                        <td>titre</td>
+                        <td>texte</td>
+                        <td>description</td>
+                        <td>image</td>
+                        <td>catégorie</td>
+                        <td>date de publication</td>
+                        <td>auteur</td>
+                        <td>supprimer/ modifier</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for article in articles %}
+                        <tr>
+                            <td><li><a href="{{ path('article_show', { 'id': article.id }) }}">N°{{ article.id }}</a></li></td>
+                            <td>{{ article.titre }}</td>
+                            <td>{{ article.texte }}</td>
+                            <td>{{ article.description }}</td>
+                            <td>{{ article.image }}</td>
+                            <td>{{ article.categorie.nomCa }}</td>
+                            <td>{{ article.date|date('d-m-Y') }}</td>
+                            <td>{{ article.utilisateur.username }}</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <ul>
+                <li>
+                    <a href="{{ path('article_new') }}">Créer un article</a>
+                </li>
+            </ul>
 
-        <table border 1px black>
-            <thead>
-            <tr>
-                <td>ID</td>
-                <td>titre</td>
-                <td>texte</td>
-                <td>description</td>
-                <td>image</td>
-                <td>catégorie</td>
-                <td>date de publication</td>
-                <td>auteur</td>
-                <td>ACTIONS</td>
-            </tr>
-            </thead>
-            <tbody>
-            {% for article in articles %}
-                <tr>
-                    <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                    <td>{{ article.titre }}</td>
-                    <td>{{ article.texte }}</td>
-                    <td>{{ article.description}}</td>
-                    <td>{{ article.image }}</td>
-                    <td>{{ article.categorie.nomCa }}</td>
-                    <td>{{ article.date|date('d-m-Y') }}</td>
-                    <td>{{ article.utilisateur.username }}</td>
-                    <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-        <ul>
-            <li>
-                <a href="{{ path('article_new') }}">Créer un article</a>
-            </li>
-        </ul>
+        </div>
     {% endblock %}
 
 
