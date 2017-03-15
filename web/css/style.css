@@ -68,7 +68,7 @@ li {
 #headerAdmin{
     background-color: #F5E5E5 ;
     padding: 2em;
-    color: #F5E5E5;
+    color: white;
 }
 
 #headerAdmin h1 {
@@ -76,7 +76,7 @@ li {
     margin: 1em;
 }
 #headerAdmin a {
-    color: #F5E5E5;
+    color: #1C2834;
 }
 
 .divine {
@@ -99,7 +99,7 @@ li {
 }
 
 .divine .deux{
-    background-color: #C32830 ;
+    background-color: #D5686E ;
 
 }
 
