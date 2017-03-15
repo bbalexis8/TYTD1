@@ -5,9 +5,9 @@
 <div class="col-xs-8 col-xs-offset-2">
         <div class="row">
             <h2>{{ article.titre }}</h2>
-
-            <p>{{ article.texte }}</p>
-            <p> par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</p>
+            <ul> Publié par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</ul>
+            <br>
+            <p class="text-justify">{{ article.texte }}</p>
             <br>
         </div>
 </div>
