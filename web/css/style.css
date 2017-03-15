@@ -151,3 +151,8 @@ li {
 .table-responsive{
     border-radius: 12px;
 }
+
+.tailletextsforms {
+    width: 800px;
+    height: 200px;
+}
