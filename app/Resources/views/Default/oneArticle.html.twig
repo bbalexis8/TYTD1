@@ -3,15 +3,13 @@
 {% block body %}
 
 <div class="col-xs-8 col-xs-offset-2">
-    {% for article in articles %}
         <div class="row">
-            <a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a>
+            <a href="{{ path('onearticle', { 'id': article.id }) }}">{{ article.titre }}</a>
             <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="...">
             <p>{{ article.description }}</p>
             <p> par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</p>
             <br>
         </div>
-    {% endfor %}
 </div>
 
 {% endblock %}
