@@ -34,9 +34,10 @@ class ArticleType extends AbstractType
                 "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('date', DateType::class, array(
-                //'format' => \IntlDateFormatter::SHORT,
+                'label' => 'Date',
+                'format' => 'dd:MM:yyyy',
                 'input' => 'datetime',
-                'data' => new \DateTime('now'), 'format' => 'dd:MM:yyyy'
+                'data' => new \DateTime('now')
             ))
 
             ->add('image', FileType::class, array('label' => 'image (PDF file)'))

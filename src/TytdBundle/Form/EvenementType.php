@@ -20,10 +20,14 @@ class EvenementType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, array(
-                'label' => 'Nom de l\'évènement'
+                'label' => 'Nom de l\'évènement',
+                "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('dateE', DateTimeType::class, array(
-                'label' => 'Date de l\'évènement'
+                'label' => 'Date de l\'évènement',
+                'format' => 'dd:MM:yyyy',
+                'input' => 'datetime',
+                'data' => new \DateTime('now')
             ))
             ->add('categorie', EntityType::class, array(
         "class" => Categorie::class,
