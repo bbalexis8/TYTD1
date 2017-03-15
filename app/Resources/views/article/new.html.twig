@@ -1,16 +1,18 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>CREATION D'UN ARTICLE</h1>
+    <div class="bobody">
+        <h2>Rédaction d'un nouvel article</h2>
 
-    {{ form_start(form) }}
+        {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <input type="submit" value="Créer"/>
+        {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('article_index') }}">Retour à la liste</a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="{{ path('article_index') }}">Retour à la liste</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

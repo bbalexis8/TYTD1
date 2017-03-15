@@ -1,41 +1,48 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Evenements list</h1>
+    <div class="bobody">
+        <h2>Liste des événements </h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Datee</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for evenement in evenements %}
-            <tr>
-                <td><a href="{{ path('evenement_show', { 'id': evenement.id }) }}">{{ evenement.id }}</a></td>
-                <td>{{ evenement.nom }}</td>
-                <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('evenement_new') }}">Create a new evenement</a>
-        </li>
-    </ul>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <th>Voir</th>
+                    <th>Titre</th>
+                    <th>Catégorie</th>
+                    <th>Auteur</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for evenement in evenements %}
+                    <tr>
+                        <td><a href="{{ path('evenement_show', { 'id': evenement.id }) }}">{{ evenement.id }}</a></td>
+                        <td>{{ evenement.nom }}</td>
+                        <td>{{ evenement.categorie.nomCa }}</td>
+                        <td>{{ evenement.utilisateur.username }}</td>
+                        <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">Voir</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ path('evenement_new') }}">Créer un nouvel événement</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
