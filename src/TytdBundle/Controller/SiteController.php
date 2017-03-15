@@ -5,6 +5,7 @@ namespace TytdBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use TytdBundle\Entity\Article;
 
 class SiteController extends Controller
 {
@@ -41,17 +42,13 @@ class SiteController extends Controller
     /**
      * Affiche un article du blog
      *
-     * @Route("blog/one-article", name="onearticle")
+     * @Route("blog/one-article/{id}", name="onearticle")
      * @Method("GET")
      */
-    public function showOneArticle()
+    public function showOneArticle(Article $onearticle)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $onearticle = $em->getRepository('TytdBundle:Article')->findAll();
-
         return $this->render(':Default:oneArticle.html.twig', array(
-            'articles' => $onearticle,
+            'article' => $onearticle,
         ));
     }
 

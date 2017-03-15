@@ -4,10 +4,10 @@
 
 <div class="col-xs-8 col-xs-offset-2">
         <div class="row">
-            <a href="{{ path('onearticle', { 'id': article.id }) }}">{{ article.titre }}</a>
-            <img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="...">
-            <p>{{ article.description }}</p>
-            <p> par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</p>
+            <h2>{{ article.titre }}</h2>
+            <ul> Publié par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</ul>
+            <br>
+            <p class="text-justify">{{ article.texte }}</p>
             <br>
         </div>
 </div>
