@@ -26,17 +26,17 @@
         </table>
 
         <ul>
-            <li>
+            <li><br>
                 <a href="{{ path('commentaire_index') }}">Retour à la liste</a>
             </li>
-            <li>
+            <li><br>
                 <a href="{{ path('commentaire_edit', { 'id': commentaire.id }) }}">Modifier</a>
             </li>
-            <li>
+            <li><br>
                 {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer le commentaire">
                 {{ form_end(delete_form) }}
             </li>
-        </ul>
+        </ul><hr>
     </div>
 {% endblock %}

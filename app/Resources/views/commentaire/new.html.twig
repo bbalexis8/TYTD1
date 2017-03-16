@@ -5,14 +5,16 @@
         <h2>Rédaction d'un Commentaire</h2>
 
         {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer"/>
+        {{ form_widget(form) }}<br>
+        <input type="submit" value="Valider ce commentaire"/>
         {{ form_end(form) }}
+        <hr>
 
         <ul>
             <li>
-                <a href="{{ path('commentaire_index') }}">Voir liste</a>
+                <a href="{{ path('commentaire_index') }}">Voir liste complète des commentaires</a>
             </li>
         </ul>
+        <hr>
     </div>
 {% endblock %}

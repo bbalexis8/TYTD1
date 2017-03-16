@@ -5,9 +5,6 @@
         <h2>Témoignage</h2>
 
 
-
-
-
         <table>
             <tbody>
             <tr>
@@ -15,7 +12,7 @@
                 <td>{{ temoignage.id }}</td>
             </tr>
             <tr>
-                <th>Texte  </th>
+                <th>Texte</th>
                 <td>{{ temoignage.texteT }}</td>
             </tr>
             <tr>
@@ -24,19 +21,21 @@
             </tr>
             </tbody>
         </table>
-
+        <br>
         <ul>
             <li>
                 <a href="{{ path('temoignage_index') }}">Retour à la liste</a>
             </li>
+            <br>
             <li>
                 <a href="{{ path('temoignage_edit', { 'id': temoignage.id }) }}">Modifier</a>
             </li>
             <li>
-                {{ form_start(delete_form) }}
+                {{ form_start(delete_form) }}<br>
                 <input type="submit" value="Supprimer">
                 {{ form_end(delete_form) }}
             </li>
         </ul>
+        <hr>
     </div>
 {% endblock %}
