@@ -2,21 +2,33 @@
 
 {% block body %}
     <div class="bobody">
-        <h2>Témoignage</h2>
+        <h2>Témoignage N°{{ temoignage.id }} </h2>
 
 
         <table>
             <tbody>
             <tr>
-                <th>N°</th>
-                <td>{{ temoignage.id }}</td>
+                <th>Titre</th>
+                <td>{{ temoignage.titreT }}</td>
             </tr>
             <tr>
                 <th>Texte</th>
                 <td>{{ temoignage.texteT }}</td>
             </tr>
             <tr>
-                <th>Datet</th>
+                <th>Description</th>
+                <td>{{ temoignage.descriptionT }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ temoignage.utilisateur.username }}</td>
+            </tr>
+            <tr>
+                <th>Evenement</th>
+                <td>{{ temoignage.evenement.nom }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
                 <td>{% if temoignage.dateT %}{{ temoignage.dateT|date('d-m-Y') }}{% endif %}</td>
             </tr>
             </tbody>
