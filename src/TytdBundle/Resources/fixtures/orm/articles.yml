@@ -1,4 +1,10 @@
 TytdBundle\Entity\Article:
     article_{1..10}:
         titre: <name()>
-        date: <date('Y-m-d')>
+        description: <firstName()>
+        texte: <firstName()>
+        image: <firstName()>
+        date: <datetime()>
+
+#        categorie_id:
+#        utilisateur_id:
