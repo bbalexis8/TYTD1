@@ -33,7 +33,11 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "nelmio/alice": "3.0.x-dev@dev",
+        "hautelook/alice-bundle": "2.x-dev@dev",
+        "theofidry/alice-data-fixtures": "1.x-dev@dev",
+        "doctrine/data-fixtures": "^1.2"
     },
     "scripts": {
         "symfony-scripts": [
