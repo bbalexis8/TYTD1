@@ -1,20 +1,20 @@
 {% extends  'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Utilisateur</h1>
+    <div class="bobody">
+        <h2>Utilisateur n° {{ utilisateur.id }}</h2>
 
-    <table border="1px black">
-        <tbody>
+
+            <div class="table">
+                <table class="table table-bordered">
+
+            <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ utilisateur.id }}</td>
-            </tr>
-            <tr>
-                <th>Nomu</th>
+                <th>Nom</th>
                 <td>{{ utilisateur.nom }}</td>
             </tr>
             <tr>
-                <th>Prenomu</th>
+                <th>Prenom</th>
                 <td>{{ utilisateur.prenom }}</td>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                 <td>{{ utilisateur.adresse }}</td>
             </tr>
             <tr>
-                <th>Codepostal</th>
+                <th>Code Postal</th>
                 <td>{{ utilisateur.codepostal }}</td>
             </tr>
             <tr>
@@ -46,31 +46,40 @@
                 <td>{{ utilisateur.password }}</td>
             </tr>
             <tr>
-                <th>Descriptionu</th>
+                <th>Description</th>
                 <td>{{ utilisateur.description }}</td>
             </tr>
             <tr>
-                <th>Imageu</th>
+                <th>Type</th>
+                <td>{{ utilisateur.type }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
                 <td>{{ utilisateur.image }}</td>
             </tr>
             <tr>
-                <th>Dateinscription</th>
+                <th>Date d'inscription</th>
                 <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+            </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('utilisateur_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <br>
+        <ul>
+            <li>
+                <a href="{{ path('utilisateur_index') }}">Retour à la liste</a>
+            </li>
+            <br>
+            <li>
+                <a href="{{ path('utilisateur_edit', { 'id': utilisateur.id }) }}">Modifier</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}<br>
+                <input type="submit" value="Supprimer">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+        <hr>
+    </div>
 {% endblock %}

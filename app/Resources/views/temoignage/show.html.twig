@@ -1,36 +1,53 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Temoignage</h1>
+    <div class="bobody">
+        <h2>Témoignage N°{{ temoignage.id }} </h2>
 
-    <table>
-        <tbody>
+
+        <table>
+            <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ temoignage.id }}</td>
+                <th>Titre</th>
+                <td>{{ temoignage.titreT }}</td>
             </tr>
             <tr>
-                <th>Textet</th>
+                <th>Texte</th>
                 <td>{{ temoignage.texteT }}</td>
             </tr>
             <tr>
-                <th>Datet</th>
-                <td>{% if temoignage.dateT %}{{ temoignage.dateT|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <th>Description</th>
+                <td>{{ temoignage.descriptionT }}</td>
             </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('temoignage_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('temoignage_edit', { 'id': temoignage.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ temoignage.utilisateur.username }}</td>
+            </tr>
+            <tr>
+                <th>Evenement</th>
+                <td>{{ temoignage.evenement.nom }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if temoignage.dateT %}{{ temoignage.dateT|date('d-m-Y') }}{% endif %}</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <ul>
+            <li>
+                <a href="{{ path('temoignage_index') }}">Retour à la liste</a>
+            </li>
+            <br>
+            <li>
+                <a href="{{ path('temoignage_edit', { 'id': temoignage.id }) }}">Modifier</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}<br>
+                <input type="submit" value="Supprimer">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+        <hr>
+    </div>
 {% endblock %}

@@ -50,27 +50,29 @@ class Temoignage
      *
      * @ORM\Column(name="titre_t", type="text")
      */
-    private $titreT;
+    private $titre_t;
 
     /**
      * @return string
      */
-    public function getTitreT(): string
+    public function getTitreT()
     {
-        return $this->titreT;
+        return $this->titre_t;
     }
 
     /**
-     * @param string $titreT
+     * @param string $titre_t
      */
-    public function setTitreT(string $titreT)
+    public function setTitreT(string $titre_t)
     {
-        $this->titreT = $titreT;
+        $this->titre_t = $titre_t;
     }
+
+
     /**
      * @return string
      */
-    public function getDescriptionT(): string
+    public function getDescriptionT()
     {
         return $this->descriptionT;
     }
@@ -78,7 +80,7 @@ class Temoignage
     /**
      * @param string $descriptionT
      */
-    public function setDescriptionT(string $descriptionT)
+    public function setDescriptionT($descriptionT)
     {
         $this->descriptionT = $descriptionT;
     }

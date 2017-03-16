@@ -1,36 +1,53 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Evenement</h1>
+    <div class="bobody">
+        <h2>Fiche événement</h2>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ evenement.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ evenement.nom }}</td>
-            </tr>
-            <tr>
-                <th>Datee</th>
-                <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <th>Titre</th>
+                    <th>Catégorie</th>
+                    <th>Auteur</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
 
-    <ul>
-        <li>
-            <a href="{{ path('evenement_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                <tr>
+                    <td>{{ evenement.nom }}</td>
+                    <td>{{ evenement.categorie.nomCa }}</td>
+                    <td>{{ evenement.utilisateur.username }}</td>
+                    <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group ">
+                    <a href="{{ path('evenement_index') }}">
+                        Retour à la liste </a>
+                </div>
+                <div class="btn-group ">
+                    <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Modifier</a>
+                </div>
+            </div>
+            <div>
+            <br>
+            <ul>
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
+
+

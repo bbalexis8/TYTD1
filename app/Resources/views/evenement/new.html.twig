@@ -5,10 +5,10 @@
         <h2>Création d'un nouvel événement</h2>
 
         {{ form_start(form) }}
-        {{ form_widget(form) }}
+        {{ form_widget(form) }}<br>
         <input type="submit" value="Créer"/>
         {{ form_end(form) }}
-
+<hr>
         <ul>
             <li>
                 <a href="{{ path('evenement_index') }}">Retour à la liste</a>
