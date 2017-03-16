@@ -1,3 +1,5 @@
+/** CSS PAGE ACCUEIL DU SITE**/
+
 body {
     padding-top: 50px;
 }
@@ -147,6 +149,8 @@ li {
 
 
 }
+
+/** CSS FORMULAIRES ADMIN**/
 
 .table-responsive{
     border-radius: 12px;
