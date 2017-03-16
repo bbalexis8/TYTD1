@@ -17,7 +17,7 @@
                         <td>catégorie</td>
                         <td>date de publication</td>
                         <td>auteur</td>
-                        <td>supprimer/ modifier</td>
+                        <td>options</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,10 +34,10 @@
                             <td>
                                 <ul>
                                     <li>
-                                        <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
+                                        <a href="{{ path('article_show', { 'id': article.id }) }}">Voir</a>
                                     </li>
                                     <li>
-                                        <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
+                                        <a href="{{ path('article_edit', { 'id': article.id }) }}">Modifier</a>
                                     </li>
                                 </ul>
                             </td>

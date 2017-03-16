@@ -1,52 +1,53 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <div class="bobody">
-        <h2>Fiche Article</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                <tr class="text-uppercase">
-                    <td>titre</td>
-                    <td>texte</td>
-                    <td>description</td>
-                    <td>image</td>
-                    <td>catégorie</td>
-                    <td>date de publication</td>
-                    <td>auteur</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ article.titre }}</td>
-                    <td>{{ article.texte }}</td>
-                    <td>{{ article.description }}</td>
-                    <td>{{ article.image }}</td>
-                    <td>{{ article.categorie.nomCa }}</td>
-                    <td>{{ article.date|date('d-m-Y') }}</td>
-                    <td>{{ article.utilisateur.username }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group ">
-                <a href="{{ path('article_index') }}">
-                    Retour à la liste </a>
-            </div>
-            <div class="btn-group ">
-                <a href="{{ path('article_edit', { 'id': article.id }) }}">Modifier</a>
-            </div>
-        </div>
-        <br>
-        <ul>
-            <li>
-                {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-                {{ form_end(delete_form) }}
-            </li>
-        </ul>
+<div class="bobody">
+    <h2>Fiche Article {{ article.id }}</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="text-uppercase">
+                <td>titre</td>
+                <td>texte</td>
+                <td>description</td>
+                <td>image</td>
+                <td>catégorie</td>
+                <td>date de publication</td>
+                <td>auteur</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.texte }}</td>
+                <td>{{ article.description }}</td>
+                <td>{{ article.image }}</td>
+                <td>{{ article.categorie.nomCa }}</td>
+                <td>{{ article.date|date('d-m-Y') }}</td>
+                <td>{{ article.utilisateur.username }}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
-{% endblock %}
+    <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group ">
+            <a href="{{ path('article_index') }}">
+                Retour à la liste </a>
+        </div>
+        <div class="btn-group ">
+            <a href="{{ path('article_edit', { 'id': article.id }) }}">Modifier</a>
+        </div>
+    </div>
+        <div>
+            <ul>
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% endblock %}
