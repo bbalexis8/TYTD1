@@ -1,0 +1,6 @@
+TytdBundle\Entity\Article:
+
+    article1:
+        titre: Yoshi
+        description: T. Yoshisaur Munchakoopas
+        texte: Lorem ip ipsum
