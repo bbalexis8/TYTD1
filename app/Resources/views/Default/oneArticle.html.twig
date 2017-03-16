@@ -7,6 +7,8 @@
             <h2>{{ article.titre }}</h2>
             <ul> Publié par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</ul>
             <br>
+            <img src="/imagesarticles/{{ article.image }}" class="img-responsive" alt="">
+            <br>
             <p class="text-justify">{{ article.texte }}</p>
             <br>
         </div>

@@ -6,7 +6,7 @@
     {% for article in articles %}
         <div class="row text-justify">
             <h2><a href="{{ path('onearticle', { 'id': article.id }) }}">{{ article.titre }}</a></h2>
-            <img src="{{ article.image }}" class="img-responsive" alt="">
+            <img src="/imagesarticles/{{ article.image }}" class="img-responsive" alt="">
             <p>{{ article.description }}</p>
             <p> par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</p>
             <br>
