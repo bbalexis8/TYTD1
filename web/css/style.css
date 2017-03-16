@@ -133,9 +133,8 @@ li {
 .bobody table thead{
     background-color:#D48286 ;
     color: #F5E5E5;
-
-
 }
+
 .bobody li {
     text-align: left;
     font-weight: bold;
@@ -144,8 +143,6 @@ li {
 
 .bobody{
     padding: 2em;
-
-
 }
 
 .table-responsive{
@@ -166,4 +163,16 @@ li {
     width: 150px;
     height: 50px;
 
+}
+
+#clockbox{
+    background-color: #606970;
+    padding: 1em;
+    margin: 2em;
+    width: 150px;
+    height: 50px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
 }

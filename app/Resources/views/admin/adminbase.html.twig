@@ -24,6 +24,8 @@
 
     <h1>Espace Administrateur <br> To You To Do</h1>
 
+    <div id="clockbox"></div>
+
     <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
 
         <div class="btn-group ">
@@ -33,10 +35,12 @@
                 Article <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="{{ path('article_index') }}">Consulter la liste des articles</a></li>
+                <li><a href="{{ path('article_index') }}">Consulter la liste des articles
+                <li>Sélectionner un article</li>
+                <li>Modifier ou Supprimer un article</li></a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="{{ path('article_new') }}">Créer un nouvel article</a></li>
-                {#<li><a href="{{ path('article_delete') }}">Supprimer un article</a></li>#}
+
             </ul>
         </div>
 
@@ -54,10 +58,11 @@
                 Commentaire <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="{{ path('commentaire_index') }}">Consulter la liste des commentaires</a></li>
+                <li><a href="{{ path('commentaire_index') }}">Consulter la liste des commentaires
+                <li>Sélectionner un commentaire</li>
+                <li>Modifier ou Supprimer un commentaire</li></a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="{{ path('commentaire_new') }}">Créer un nouveau commentaire</a></li>
-                {#<li><a href="{{ path('commentaire_delete') }}">Supprimer un commentaire</a></li>#}
             </ul>
         </div>
     </div>
@@ -70,10 +75,11 @@
                 Utilisateur <span class="caret"></span>
             </button>
         <ul class="dropdown-menu">
-            <li><a href="{{ path('utilisateur_index') }}">Consulter la liste des utilisateurs</a></li>
+            <li><a href="{{ path('utilisateur_index') }}">Consulter la liste des utilisateurs
+            <li>Sélectionner un utilisateur</li>
+            <li>Modifier ou Supprimer un utilisateur</li></a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{ path('utilisateur_new') }}">Créer un nouvel utilisateur</a></li>
-            {#<li><a href="{{ path('utilisateur_delete') }}">Supprimer un utilisateur</a></li>#}
         </ul>
         </div>
 
@@ -84,10 +90,11 @@
                 Evénement <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="{{ path('evenement_index') }}">Consulter la liste des événements</a></li>
+                <li><a href="{{ path('evenement_index') }}">Consulter la liste des événements
+                <li>Sélectionner un événement</li>
+                <li>Modifier ou Supprimer un événement</li></a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="{{ path('evenement_new') }}">Créer un nouvel événement</a></li>
-                {#<li><a href="{{ path('evenement_delete') }}">Supprimer un événement</a></li>#}
             </ul>
         </div>
 
@@ -98,10 +105,11 @@
                 Catégorie <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="{{ path('categorie_index') }}">Consulter la liste des catégories</a></li>
+                <li><a href="{{ path('categorie_index') }}">Consulter la liste des catégories
+                <li>Sélectionner une catégorie</li>
+                <li>Modifier ou Supprimer une Catégorie</li></a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="{{ path('categorie_new') }}">Créer un nouvelle catégorie</a></li>
-                {#<li><a href="{{ path('categorie_delete') }}">Supprimer une catégorie</a></li>#}
             </ul>
         </div>
 
@@ -112,10 +120,11 @@
                 Témoignage <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="{{ path('temoignage_index') }}">Consulter la liste des témoignages</a></li>
+                <li><a href="{{ path('temoignage_index') }}">Consulter la liste des témoignages
+                <li>Sélectionner un témoignage</li>
+                <li>Modifier ou Supprimer un témoignage</li></a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="{{ path('temoignage_new') }}">Créer un nouveau témoignage</a></li>
-                {#<li><a href="{{ path('temoignage_delete') }}">Supprimer un témoignage</a></li>#}
             </ul>
         </div>
 
@@ -140,6 +149,26 @@
         <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
     </a>
 </footer>
+
+
+<script type="text/javascript">
+    function GetClock(){
+        var d=new Date();
+        var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+        if(nyear<1000) nyear+=1900;
+        var nhour=d.getHours(),nmin=d.getMinutes();
+        if(nmin<=9) nmin="0"+nmin
+
+        document.getElementById('clockbox').innerHTML=""+ndate+"."+(nmonth+1)+"."+nyear+" "+nhour+":"+nmin+"";
+    }
+
+    window.onload=function(){
+        GetClock();
+        setInterval(GetClock,1000);
+    }
+</script>
+
+
 
 </body>
 </html>
