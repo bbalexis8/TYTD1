@@ -8,6 +8,8 @@ use TytdBundle\Entity\Article;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use TytdBundle\Entity\Commentaire;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
 
 class AdminController extends Controller
 {
@@ -49,6 +51,24 @@ class AdminController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // $file stores the uploaded PNG file
+
+            $file = $article->getImage();
+
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('image_directory'),
+                $fileName
+            );
+
+            // Update the 'picture' property to store the Png file name
+            // instead of its contents
+            $article->setImage($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush($article);
