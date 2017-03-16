@@ -152,7 +152,18 @@ li {
     border-radius: 12px;
 }
 
+.tailletitlesforms {
+    width: 800px;
+    height: 50px;
+}
+
 .tailletextsforms {
     width: 800px;
     height: 200px;
+}
+
+.bobody label{
+    width: 150px;
+    height: 50px;
+
 }
