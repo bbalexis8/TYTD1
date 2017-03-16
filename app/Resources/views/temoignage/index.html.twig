@@ -22,11 +22,11 @@
                 {% for temoignage in temoignages %}
                     <tr>
                         <td><li><a href="{{ path('temoignage_show', { 'id': temoignage.id }) }}">N°{{ temoignage.id }}</a></li></td>
-                        <td>{{ temoignage.titre }}</td>
-                        <td>{{ temoignage.texte }}</td>
-                        <td>{{ temoignage.description }}</td>
+                        <td>{{ temoignage.titre_t }}</td>
+                        <td>{{ temoignage.texteT }}</td>
+                        <td>{{ temoignage.descriptionT }}</td>
                         <td>{{ temoignage.evenement.nom }}</td>
-                        <td>{{ temoignage.date|date('d-m-Y') }}</td>
+                        <td>{{ temoignage.dateT|date('d-m-Y') }}</td>
                         <td>{{ temoignage.utilisateur.username }}</td>
                         <td>
                             <ul>
