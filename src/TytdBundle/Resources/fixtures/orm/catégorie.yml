@@ -1,0 +1,5 @@
+TytdBundle\Entity\Categorie:
+    article_{1..10}:
+        nomCa: <name()>
+        imageCa: <firstName()>
+       
