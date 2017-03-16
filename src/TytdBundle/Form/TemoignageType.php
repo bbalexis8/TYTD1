@@ -19,14 +19,19 @@ class TemoignageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('texteT', TextType::class, array(
-                'label' => 'Texte'
-            ))
             ->add('titre_t', TextType::class, array(
-                'label' => 'Titre'
+                'label' => 'Titre',
+                "attr" => array('class' => 'tailletitlesforms')
+            ))
+            ->add('texteT', TextType::class, array(
+                'label' => 'Texte',
+                "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('dateT', DateTimeType::class, array(
-                'label' => 'Date'
+                'label' => 'Date',
+                'format' => 'dd:MM:yyyy',
+                'input' => 'datetime',
+                'data' => new \DateTime('now')
             ))
             ->add('evenement', EntityType::class, array(
         "class" => Evenement::class,
