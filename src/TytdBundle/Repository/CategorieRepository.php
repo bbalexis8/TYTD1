@@ -10,4 +10,11 @@ namespace TytdBundle\Repository;
  */
 class CategorieRepository extends \Doctrine\ORM\EntityRepository
 {
+    function findWithLimit($nomCa = 'voyage') {
+        return $this->createQueryBuilder('c')
+            ->where('c.nomCa = :nomCa')
+            ->setParameter('nomCa', $nomCa)
+            ->getQuery()
+            ->execute();
+    }
 }
