@@ -63,8 +63,8 @@ class Article
     /**
      * @ORM\Column(type="string")
      *
-     * @Assert\NotBlank(message="Le fichier doit obligatoirement en png.")
-     * @Assert\File(mimeTypes={ "application/png" })
+     * @Assert\NotBlank(message="Le fichier doit obligatoirement en png")
+     * @Assert\File(mimeTypes={ "image/png" })
      */
     private $image;
 

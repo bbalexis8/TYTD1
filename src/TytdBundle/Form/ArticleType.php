@@ -40,7 +40,7 @@ class ArticleType extends AbstractType
                 'data' => new \DateTime('now')
             ))
 
-            ->add('image', FileType::class, array('label' => 'image (png file)'))
+            ->add('image', FileType::class, array('label' => 'image (PNG file)'))
             ->add('categorie', EntityType::class, array(
                 "class" => Categorie::class,
                 "choice_label" => 'nomCa'
