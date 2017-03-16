@@ -29,13 +29,15 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "twig/twig": "^1.0||^2.0",
-        "twbs/bootstrap": "4.0.0-alpha.6",
-        "hautelook/alice-bundle": "^1.4"
+        "twbs/bootstrap": "4.0.0-alpha.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
-        "doctrine/doctrine-fixtures-bundle": "^2.3"
+        "nelmio/alice": "3.0.x-dev@dev",
+        "hautelook/alice-bundle": "2.x-dev@dev",
+        "theofidry/alice-data-fixtures": "1.x-dev@dev",
+        "doctrine/data-fixtures": "^1.2"
     },
     "scripts": {
         "symfony-scripts": [

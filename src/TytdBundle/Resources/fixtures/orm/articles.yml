@@ -1,0 +1,4 @@
+TytdBundle\Entity\Article:
+    article_{1..10}:
+        titre: <name()>
+        date: <date('Y-m-d')>
