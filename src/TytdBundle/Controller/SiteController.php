@@ -19,7 +19,15 @@ class SiteController extends Controller
      */
     public function indexAction()
     {
-        return $this->render(':Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
+
+        return $this->render(':Default:index.html.twig', array(
+            'troisarticles' => $troisarticles,
+        ));
+
+
     }
 
 
