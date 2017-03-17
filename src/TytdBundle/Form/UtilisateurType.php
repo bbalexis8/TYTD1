@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -33,7 +34,7 @@ class UtilisateurType extends AbstractType
                 'label' => 'Email',
                 "attr" => array('class' => 'tailletitlesforms')
             ))
-            ->add('adresse', EmailType::class, array(
+            ->add('adresse', TextType::class, array(
                 "attr" => array('class' => 'tailletitlesforms')))
             ->add('codepostal', IntegerType::class, array(
                 'label' => 'Code Postal',
@@ -55,15 +56,15 @@ class UtilisateurType extends AbstractType
                 'label' => 'Description',
                 "attr" => array('class' => 'tailletextsforms')
             ))
-            ->add('image', TextType::class, array(
-                'label' => 'Avatar',
-                "attr" => array('class' => 'tailletitlesforms')
+            ->add('image', FileType::class, array('label' => 'image (PNG file)',
+                "attr" => array('class' => 'tailleautresforms')
             ))
             ->add('dateinscription', DateTimeType::class, array(
                 'label' => 'Date d\'inscription',
                 'format' => 'dd:MM:yyyy',
                 'input' => 'datetime',
-                'data' => new \DateTime('now')
+                'data' => new \DateTime('now'),
+                "attr" => array('class' => 'tailleautresforms')
             ));
     }
 

@@ -45,8 +45,12 @@ body {
 
 #divblog {
     padding-bottom: 20px;
-    background-color: #ebcccc;
+    background-color: #FFAEA0;
     color: white;
+}
+
+#divblog h2 {
+    color: #1C2834;
 }
 
 .thumbnail {
@@ -57,8 +61,12 @@ body {
 
 #divevents {
     padding-bottom: 20px;
-    background-color: gold;
+    background-color: #DCB647;
     color: white;
+}
+
+#divevents h2 {
+    color: #1C2834;
 }
 
 li {
@@ -171,6 +179,11 @@ h2{
     height: 50px;
 }
 
+.tailleautresforms {
+    width: 400px;
+    height: 50px;
+}
+
 .tailletextsforms {
     width: 800px;
     height: 200px;
@@ -191,5 +204,94 @@ h2{
     border-radius: 12px;
     text-align: center;
     font-size: medium;
+    font-weight: bold;
+}
+
+
+/**CSS LISTE ARTICLES - BLOG**/
+
+#divarticle {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #FFAEA0;
+    border-radius: 20px;
+    color: #1C2834;
+}
+
+#divarticle h2 > a{
+    color: #C32830;
+}
+
+#divarticle img {
+    max-height: 200px;
+}
+
+#btnartcpt {
+    background-color: #D48286;
+    color: white;
+}
+
+#btnartcpt:hover {
+    background-color: #DFA7AA;
+    color: #C32830;
+}
+
+#autdate {
+    color: #606970;
+}
+
+#pageblog{
+    padding-top: 20px;
+    background-color: #F0DBDA;
+}
+
+#pageblog h1 {
+    color: #1C2834;
+    font-weight: bold;
+}
+
+/**CSS LISTE TEMOIGNAGES **/
+
+#divtem {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #01717D;
+    border-radius: 20px;
+    color: white;
+}
+
+#divtem h2 > a, h2{
+    color: #8DE6B6;
+}
+
+#divtem img {
+    max-height: 200px;
+}
+
+#btntemcpt, #btnlistemcpt {
+    background-color: #DCB647;
+    color: #1C2834;
+}
+
+#btntemcpt:hover, #btnlistemcpt:hover {
+    background-color: #013F4E;
+    color: #DCB647;
+}
+
+#autdatetem {
+    color: #E6CB7E;
+}
+
+#pagetem{
+    padding-top: 20px;
+    background-color: #B0D4C8;
+}
+
+#pagetem h1 {
+    color: #1C2834;
     font-weight: bold;
 }

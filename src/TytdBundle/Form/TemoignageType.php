@@ -24,7 +24,8 @@ class TemoignageType extends AbstractType
             "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('descriptionT', TextType::class, array(
-                'label' => 'Description'
+                'label' => 'Description',
+                "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('texteT', TextType::class, array(
                 'label' => 'Texte',
@@ -34,15 +35,18 @@ class TemoignageType extends AbstractType
                 'label' => 'Date',
                 'format' => 'dd:MM:yyyy',
                 'input' => 'datetime',
-                'data' => new \DateTime('now')
+                'data' => new \DateTime('now'),
+                "attr" => array('class' => 'tailleautresforms')
             ))
             ->add('evenement', EntityType::class, array(
         "class" => Evenement::class,
-        "choice_label" => 'nom'
+        "choice_label" => 'nom',
+                "attr" => array('class' => 'tailleautresforms')
     ))
             ->add('utilisateur', EntityType::class, array(
                 "class" => Utilisateur::class,
-                "choice_label" => 'username'
+                "choice_label" => 'username',
+                "attr" => array('class' => 'tailleautresforms')
             ));
     }
     

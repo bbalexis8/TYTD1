@@ -3,6 +3,7 @@
 namespace TytdBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,11 +17,12 @@ class CategorieType extends AbstractType
     {
         $builder
             ->add('nomCa', TextType::class, array(
-                'label' => 'Nom de la catégorie'
+                'label' => 'Nom de la catégorie',
+                "attr" => array('class' => 'tailleautresforms')
             ))
-            ->add('imageCa', TextType::class, array(
-                'label' => 'Image'
-            ))        ;
+            ->add('imageCa', FileType::class, array('label' => 'image (PNG file)',
+                    "attr" => array('class' => 'tailleautresforms')
+                ));
     }
     
     /**

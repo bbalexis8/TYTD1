@@ -1,6 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
+<div class="bobody">
     <h2>Modification d'un événement</h2>
 
     {{ form_start(edit_form) }}
@@ -21,6 +22,6 @@
         {{ form_start(delete_form) }}
         <input type="submit" value="Supprimer">
         {{ form_end(delete_form) }}
-
     </div>
+</div>
 {% endblock %}

@@ -37,17 +37,21 @@ class ArticleType extends AbstractType
                 'label' => 'Date',
                 'format' => 'dd:MM:yyyy',
                 'input' => 'datetime',
-                'data' => new \DateTime('now')
+                'data' => new \DateTime('now'),
+                "attr" => array('class' => 'tailleautresforms')
             ))
 
-            ->add('image', FileType::class, array('label' => 'image (PNG file)'))
+            ->add('image', FileType::class, array('label' => 'image (PNG file)',
+                "attr" => array('class' => 'tailleautresforms')))
             ->add('categorie', EntityType::class, array(
                 "class" => Categorie::class,
-                "choice_label" => 'nomCa'
+                "choice_label" => 'nomCa',
+                "attr" => array('class' => 'tailleautresforms')
             ))
             ->add('utilisateur', EntityType::class, array(
                 "class" => Utilisateur::class,
-                "choice_label" => 'username'
+                "choice_label" => 'username',
+                "attr" => array('class' => 'tailleautresforms')
             ));
     }
     

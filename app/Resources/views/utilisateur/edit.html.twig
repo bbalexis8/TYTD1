@@ -1,6 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
+<div class="bobody">
     <h2>Modification de l'utilisateur {{ utilisateur.id }}</h2>
 
     {{ form_start(edit_form) }}
@@ -24,5 +25,5 @@
         {{ form_end(delete_form) }}
         <hr>
     </div>
-
+</div>
 {% endblock %}

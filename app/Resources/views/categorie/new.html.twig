@@ -1,6 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
+<div class="bobody">
     <h1>Categorie creation</h1>
 
     {{ form_start(form) }}
@@ -13,4 +14,5 @@
             <a href="{{ path('categorie_index') }}">Back to the list</a>
         </li>
     </ul>
+</div>
 {% endblock %}
