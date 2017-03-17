@@ -124,7 +124,7 @@ class Utilisateur
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_inscription", type="datetime", nullable=true)
+     * @ORM\Column(name="date_inscription", type="date", nullable=true)
      */
     private $dateinscription;
 

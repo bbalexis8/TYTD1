@@ -46,7 +46,7 @@ class UtilisateurController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($utilisateur);
-            $em->flush($utilisateur);
+            $em->flush();
 
             return $this->redirectToRoute('utilisateur_show', array('id' => $utilisateur->getId()));
         }
