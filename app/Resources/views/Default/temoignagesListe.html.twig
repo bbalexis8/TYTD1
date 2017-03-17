@@ -1,0 +1,23 @@
+{% extends ':Default:basic.html.twig' %}
+
+{% block body %}
+
+    <div id="pagetem" class="container col-xs-12 text-center">
+        <h1>Retrouvez tous nos témoignages</h1>
+        <hr>
+        <br>
+        <div class="col-xs-6 col-xs-offset-3">
+            {% for temoignage in temoignages %}
+                <div id="divtem" class="row text-justify">
+                    <h2><a href="{{ path('onetemoignage', { 'id': temoignage.id }) }}"><span class="glyphicon   glyphicon glyphicon-pencil"></span> «{{ temoignage.titreT }}»</a></h2>
+                    <p>En rapport avec l'évènement : {{ temoignage.evenement.nom }}</p><br>
+                    <p>{{ temoignage.descriptionT }}</p><br>
+                    <p id="autdatetem"><span class="glyphicon glyphicon glyphicon-menu-right"></span> Publié par : {{ temoignage.utilisateur.username }} - le {{ temoignage.dateT|date('d/m/Y') }}</p>
+                    <br>
+                    <a id="btntemcpt" href="{{ path('onetemoignage', { 'id': temoignage.id }) }}" class="btn btn-default col-xs-3 col-xs-offset-8"><span class="glyphicon  glyphicon glyphicon-chevron-right"></span> Témoignage complet</a>
+                </div>
+                <br><br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
