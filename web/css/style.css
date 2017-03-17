@@ -78,6 +78,14 @@ li {
 
 /*style de la page admin*/
 
+h1{
+    font-family: "Lie to Me";
+}
+
+h2{
+    font-family: "Lie to Me";
+}
+
 #headerAdmin {
     background-color: #F5E5E5;
     padding: 2em;
