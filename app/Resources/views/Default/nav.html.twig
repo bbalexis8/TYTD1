@@ -22,10 +22,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('eventcategorieslist') }}">Liste des évènements</a></li>
                             <li role="separator" class="divider"></li>
-                            <li>Catégories :</li>
-                            {#{% for cat1 in categorie %}#}
-                                {#<li><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.nomCa }}</a></li>#}
-                                {#<br>#}
+                            <ul>Catégories :</ul>
+                            {#{% for categorie in categories %}#}
+                            {#<li>{{ categorie.nomCa }}</li>#}
                             {#{% endfor %}#}
                         </ul>
                     </li>

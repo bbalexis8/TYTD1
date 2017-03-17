@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use TytdBundle\Entity\Article;
+use TytdBundle\Entity\Categorie;
 use TytdBundle\Entity\Temoignage;
 
 class SiteController extends Controller
@@ -64,10 +65,23 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $eventlist = $em->getRepository('TytdBundle:Categorie')->findAll();
+        $categorielist = $em->getRepository('TytdBundle:Categorie')->findAll();
 
         return $this->render(':Default:eventCategoriesList.html.twig', array(
-            'categories' => $eventlist,
+            'categories' => $categorielist,
+        ));
+    }
+
+    /**
+     * Affiche une categorie d evenement
+     *
+     * @Route("blog/one-categorie/{id}", name="onecategorie")
+     * @Method("GET")
+     */
+    public function showOneCategorie(Article $onecategorie)
+    {
+        return $this->render(':Default:nav.html.twig', array(
+            'article' => $onecategorie,
         ));
     }
 
