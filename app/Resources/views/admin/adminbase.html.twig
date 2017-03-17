@@ -22,9 +22,9 @@
 
 <header id="headerAdmin">
 
-    <h1>Espace Administrateur <br> To You To Do</h1>
+    <div><div class="col-lg-12 col-xs-6 text-center"><h1>Espace Administrateur To You To Do</h1></div><div class="col-lg-12 col-xs-6 clock" id="clockbox"></div></div>
 
-    <div id="clockbox"></div>
+
 
     <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
 
@@ -147,7 +147,7 @@
         var nhour=d.getHours(),nmin=d.getMinutes();
         if(nmin<=9) nmin="0"+nmin
 
-        document.getElementById('clockbox').innerHTML=""+ndate+"."+(nmonth+1)+"."+nyear+" "+nhour+":"+nmin+"";
+        document.getElementById('clockbox').innerHTML=""+ndate+"."+(nmonth+1)+"."+nyear+" - "+nhour+":"+nmin+"";
     }
 
     window.onload=function(){

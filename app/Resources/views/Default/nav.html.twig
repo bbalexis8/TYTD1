@@ -35,10 +35,28 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Contactez-nous <span class="glyphicon  glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
                     <li><a href="{{ path('homeAdmin') }}">Espace admin <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span></a></li>
+                    <li><div class="clock" id="clockbox"></div></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+
+    <script type="text/javascript">
+        function GetClock(){
+            var d=new Date();
+            var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+            if(nyear<1000) nyear+=1900;
+            var nhour=d.getHours(),nmin=d.getMinutes();
+            if(nmin<=9) nmin="0"+nmin
+
+            document.getElementById('clockbox').innerHTML=""+ndate+"."+(nmonth+1)+"."+nyear+" - "+nhour+":"+nmin+"";
+        }
+
+        window.onload=function(){
+            GetClock();
+            setInterval(GetClock,1000);
+        }
+    </script>
 
 {% endblock %}
 
