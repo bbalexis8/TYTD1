@@ -38,19 +38,19 @@ body {
 
 }
 
-#btnsacc {
-    padding: 0;
-    padding-top: 10px;
+#btnsacc a{
+    border: solid whitesmoke 1px;
 }
 
 #divblog {
     padding-bottom: 20px;
-    background-color: #FFAEA0;
+    background-color: #01717D;
     color: white;
+
 }
 
 #divblog h2 {
-    color: #1C2834;
+    color: white;
 }
 
 .thumbnail {
@@ -126,7 +126,6 @@ h2{
 
 .divine .un {
     background-color: #FFAEA0;
-
 }
 
 .divine .trois {
@@ -264,7 +263,7 @@ h2{
     color: white;
 }
 
-#divtem h2 > a, h2{
+#divtem h2 > a, #divtem h2{
     color: #8DE6B6;
 }
 

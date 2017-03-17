@@ -4,16 +4,16 @@
     <div class="bobody">
         <h2>Dernières publications ou modifications</h2>
 
-        <p>
+        <div>
             {% for article in articles %}
-            <tr>
-                <td><a href="{{ path('article_show', { 'id': article.id }) }}">N°{{ article.id }}</a></td>
-                <td>{{ article.titre }}</td>
-                <td>{{ article.texte }}</td>
-                <td>{{ article.description }}</td>
-            </tr>
+            <p>
+                <h3> <a href="{{ path('article_show', { 'id': article.id }) }}">N°{{ article.id }}</a>
+                {{ article.titre }}</h3>
+                <br>{{ article.description }}
+                {#<br>{{ article.utilisateur.username }}#}
+            </p>
                 {% endfor %}
-        </p>
+        </div>
 
 
     </div>
