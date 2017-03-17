@@ -24,7 +24,8 @@ class TemoignageType extends AbstractType
             "attr" => array('class' => 'tailletitlesforms')
             ))
             ->add('descriptionT', TextType::class, array(
-                'label' => 'Description'
+                'label' => 'Description',
+                "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('texteT', TextType::class, array(
                 'label' => 'Texte',
