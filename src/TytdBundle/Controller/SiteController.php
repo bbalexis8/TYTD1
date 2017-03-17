@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use TytdBundle\Entity\Article;
+use TytdBundle\Entity\Temoignage;
 
 class SiteController extends Controller
 {
@@ -67,6 +68,38 @@ class SiteController extends Controller
 
         return $this->render(':Default:eventCategoriesList.html.twig', array(
             'categories' => $eventlist,
+        ));
+    }
+
+
+    /**
+     * Affiche les temoignages liés aux outils de l assistant
+     *
+     * @Route("assist/temoignages-list", name="temoignageslist")
+     * @Method("GET")
+     */
+    public function showTemoignageList()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $temoignageslist = $em->getRepository('TytdBundle:Temoignage')->findAll();
+
+        return $this->render(':Default:temoignagesListe.html.twig', array(
+            'temoignages' => $temoignageslist,
+        ));
+    }
+
+    /**
+     * Affiche le temoignage
+     *
+     * @Route("assist/one-temoignage", name="onetemoignage")
+     * @Method("GET")
+     */
+    public function showOneTemoignage(Temoignage $onetemoignage)
+    {
+
+        return $this->render(':Default:oneTemoignage.html.twig', array(
+            'temoignage' => $onetemoignage,
         ));
     }
 }

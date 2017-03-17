@@ -203,6 +203,10 @@ li {
     color: #C32830;
 }
 
+#divarticle img {
+    max-height: 200px;
+}
+
 #btnartcpt {
     background-color: #D48286;
     color: white;
@@ -217,7 +221,56 @@ li {
     color: #606970;
 }
 
-#pageblog {
+#pageblog{
     padding-top: 20px;
     background-color: #F0DBDA;
+}
+
+#pageblog h1 {
+    color: #1C2834;
+    font-weight: bold;
+}
+
+/**CSS LISTE TEMOIGNAGES **/
+
+#divtem {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #01717D;
+    border-radius: 20px;
+    color: white;
+}
+
+#divtem h2 > a{
+    color: #8DE6B6;
+}
+
+#divtem img {
+    max-height: 200px;
+}
+
+#btntemcpt {
+    background-color: #DCB647;
+    color: white;
+}
+
+#btntemcpt:hover {
+    background-color: #013F4E;
+    color: #DCB647;
+}
+
+#autdatetem {
+    color: #E6CB7E;
+}
+
+#pagetem{
+    padding-top: 20px;
+    background-color: #B0D4C8;
+}
+
+#pagetem h1 {
+    color: #1C2834;
+    font-weight: bold;
 }
