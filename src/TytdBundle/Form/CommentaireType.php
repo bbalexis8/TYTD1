@@ -31,15 +31,18 @@ class CommentaireType extends AbstractType
                 'label' => 'Date',
                 'format' => 'dd:MM:yyyy',
                 'input' => 'datetime',
-                'data' => new \DateTime('now')
+                'data' => new \DateTime('now'),
+                "attr" => array('class' => 'tailleautresforms')
             ))
             ->add('article', EntityType::class, array(
                 "class" => Article::class,
-                "choice_label" => 'titre'
+                "choice_label" => 'titre',
+                "attr" => array('class' => 'tailleautresforms')
             ))
             ->add('utilisateur', EntityType::class, array(
                 "class" => Utilisateur::class,
-                "choice_label" => 'username'
+                "choice_label" => 'username',
+                "attr" => array('class' => 'tailleautresforms')
             ));
     }
     
