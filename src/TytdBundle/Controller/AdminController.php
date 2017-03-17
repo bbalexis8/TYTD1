@@ -8,8 +8,7 @@ use TytdBundle\Entity\Article;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use TytdBundle\Entity\Commentaire;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\File\File;
+
 
 class AdminController extends Controller
 {
@@ -114,6 +113,7 @@ class AdminController extends Controller
     {
         $deleteForm = $this->createDeleteFormArticle($article);
         $editForm = $this->createForm('TytdBundle\Form\ArticleType', $article);
+        $editForm->remove('image');
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

@@ -4,19 +4,6 @@
 
 {% block body %}
 
-
-    {#{% for article in range (3,0) %}#}
-    {#{{ article }}#}
-    {#<div class="row">#}
-    {#<a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a>#}
-    {#<img src="{{ asset('image/cake.png') }}" class="img-responsive" alt="...">#}
-    {#<p>{{ article.description }}</p>#}
-    {#<p> par {{ article.utilisateur }}, le {{ article.date|date('d/m/Y') }}</p>#}
-    {#<br>#}
-    {#</div>#}
-    {#{% endfor %}#}
-
-
     <div id="bienv" class="jumbotron col-xs-12 text-center">
         <div class="text-center">
             <img id="logogd" src="{{ asset('image/Logo x300.png') }}"><br>
@@ -25,8 +12,8 @@
             <h2>Bienvenue sur To You, To Do !</h2>
             <p>De l'Organisation à la Surprise, Votre événement comme Vous le rêvez</p>
         </div>
-        <div class="text-center">
-            <div class="col-xs-8 col-xs-offset-2" id="btnsacc">
+        <div class="btn-group text-center">
+            <div class="btn-default col-xs-8 col-xs-offset-2" id="btnsacc">
                 <a href="{{ path('eventcategorieslist') }}">Assistant</a>
                 <a href="{{ path('articleslist') }}">Blog</a>
             </div>
@@ -42,7 +29,7 @@
                 {% for article in troisarticles %}
                 <div class="col-lg-2 col-lg-offset-2 col-xs-12">
                     <a href="{{ path('article_show', { 'id': article.id }) }}" class="thumbnail">
-                        N°{{ article.id }}<img src="/imagesarticles/{{ article.image }}" class="img-circle">
+                        <img src="/imagesarticles/{{ article.image }}" class="img-circle">
                     </a>
                     {% endfor %}
                 </div>
