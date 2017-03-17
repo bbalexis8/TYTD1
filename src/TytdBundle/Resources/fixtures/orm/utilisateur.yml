@@ -1,0 +1,15 @@
+TytdBundle\Entity\Utilisateur:
+    utilisateur{1..45}:
+        nom: <lastName()>
+        prenom: <firstName()>
+        email: <safeEmail()>
+        adresse: <streetAddress()>
+        code_postal: 72000
+        ville: <city()>
+        pays: <country()>
+        username: <username()>
+        password: <password()>
+        type: partenaire
+        description: <image()>
+        image: <word()>
+        date_inscription: <dateTime('2017-03-17')>
