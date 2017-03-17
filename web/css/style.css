@@ -243,7 +243,7 @@ li {
     color: white;
 }
 
-#divtem h2 > a{
+#divtem h2 > a, h2{
     color: #8DE6B6;
 }
 
@@ -251,12 +251,12 @@ li {
     max-height: 200px;
 }
 
-#btntemcpt {
+#btntemcpt, #btnlistemcpt {
     background-color: #DCB647;
-    color: white;
+    color: #1C2834;
 }
 
-#btntemcpt:hover {
+#btntemcpt:hover, #btnlistemcpt:hover {
     background-color: #013F4E;
     color: #DCB647;
 }

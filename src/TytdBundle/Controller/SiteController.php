@@ -92,14 +92,14 @@ class SiteController extends Controller
     /**
      * Affiche le temoignage
      *
-     * @Route("assist/one-temoignage", name="onetemoignage")
+     * @Route("assist/one-temoignage/{id}", name="onetemoignage")
      * @Method("GET")
      */
-    public function showOneTemoignage(Temoignage $onetemoignage)
+    public function showOneTemoignage(Temoignage $temoignage)
     {
 
         return $this->render(':Default:oneTemoignage.html.twig', array(
-            'temoignage' => $onetemoignage,
+            'temoignage' => $temoignage,
         ));
     }
 }
