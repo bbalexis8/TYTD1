@@ -113,7 +113,7 @@ class AdminController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('article_edit', array('id' => $article->getId()));
+            return $this->redirectToRoute('article_show', array('id' => $article->getId()));
         }
 
         return $this->render('article/edit.html.twig', array(
@@ -228,7 +228,7 @@ class AdminController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('commentaire_edit', array('id' => $commentaire->getId()));
+            return $this->redirectToRoute('commentaire_show', array('id' => $commentaire->getId()));
         }
 
         return $this->render('commentaire/edit.html.twig', array(

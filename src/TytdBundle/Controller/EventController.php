@@ -81,7 +81,7 @@ class EventController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('evenement_edit', array('id' => $evenement->getId()));
+            return $this->redirectToRoute('evenement_show', array('id' => $evenement->getId()));
         }
 
         return $this->render('evenement/edit.html.twig', array(
@@ -192,7 +192,7 @@ class EventController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('temoignage_edit', array('id' => $temoignage->getId()));
+            return $this->redirectToRoute('temoignage_show', array('id' => $temoignage->getId()));
         }
 
         return $this->render('temoignage/edit.html.twig', array(

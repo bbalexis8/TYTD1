@@ -33,7 +33,7 @@ class UtilisateurType extends AbstractType
                 'label' => 'Email',
                 "attr" => array('class' => 'tailletitlesforms')
             ))
-            ->add('adresse', EmailType::class, array(
+            ->add('adresse', TextType::class, array(
                 "attr" => array('class' => 'tailletitlesforms')))
             ->add('codepostal', IntegerType::class, array(
                 'label' => 'Code Postal',
