@@ -10,4 +10,21 @@ namespace TytdBundle\Repository;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function derniersArticles($limite = null) {
+        {
+            $qb = $this->createQueryBuilder('a')
+                ->select('a, c')
+                ->leftJoin('a.commentaire', 'c')
+                ->addOrderBy('a.date', 'DESC');
+
+            if (false === is_null($limite))
+                $qb->setMaxResults($limite);
+
+            return $qb->getQuery()
+                ->getResult();
+        }
+    }
+
 }
+
+
