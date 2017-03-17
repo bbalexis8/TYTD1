@@ -264,7 +264,7 @@ h2{
     color: white;
 }
 
-#divtem h2 > a, h2{
+#divtem h2 > a, #divtem h2{
     color: #8DE6B6;
 }
 
