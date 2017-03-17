@@ -185,3 +185,39 @@ li {
     font-size: medium;
     font-weight: bold;
 }
+
+
+/**CSS LISTE ARTICLES - BLOG**/
+
+#divarticle {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #FFAEA0;
+    border-radius: 20px;
+    color: #1C2834;
+}
+
+#divarticle h2 > a{
+    color: #C32830;
+}
+
+#btnartcpt {
+    background-color: #D48286;
+    color: white;
+}
+
+#btnartcpt:hover {
+    background-color: #DFA7AA;
+    color: #C32830;
+}
+
+#autdate {
+    color: #606970;
+}
+
+#pageblog {
+    padding-top: 20px;
+    background-color: #F0DBDA;
+}
