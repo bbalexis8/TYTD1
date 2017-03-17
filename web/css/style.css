@@ -86,6 +86,11 @@ h2{
     font-family: "Lie to Me";
 }
 
+#acc{
+    font-family: "Lie to Me";
+    font-size: 20px;
+}
+
 #headerAdmin {
     background-color: #F5E5E5;
     padding: 2em;

@@ -18,7 +18,13 @@ class AdminController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('admin/adminbase.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('TytdBundle:Article')->derniersArticles(5);
+
+        return $this->render('admin/indexadmin.html.twig', array(
+            'articles' => $articles,
+        ));
     }
 
     /**

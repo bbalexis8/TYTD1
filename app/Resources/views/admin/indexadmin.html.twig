@@ -1,0 +1,20 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block body %}
+    <div class="bobody">
+        <h2>Dernières publications ou modifications</h2>
+
+        <p>
+            {% for article in articles %}
+            <tr>
+                <td><a href="{{ path('article_show', { 'id': article.id }) }}">N°{{ article.id }}</a></td>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.texte }}</td>
+                <td>{{ article.description }}</td>
+            </tr>
+                {% endfor %}
+        </p>
+
+
+    </div>
+{% endblock %}
