@@ -2,8 +2,10 @@
 
 {% block body %}
 
-<div class="col-xs-8 col-xs-offset-2">
-        <div class="row">
+    <div id="pageblog" class="container col-xs-12 text-center">
+
+<div class="col-lg-6 col-lg-offset-3 col-xs-8 col-xs-offset-2">
+        <div id="divarticle" class="text-justify">
             <h2>{{ article.titre }}</h2>
             <ul> Publié par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</ul>
             <br>
@@ -13,5 +15,6 @@
             <br>
         </div>
 </div>
+    </div>
 
 {% endblock %}

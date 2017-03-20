@@ -3,6 +3,10 @@
 body {
     padding-top: 50px;
 }
+/*#bodyacc {*/
+    /*height: 100%;*/
+    /*background-color: #F0DBDA;*/
+/*}*/
 
 .navbar-brand {
     margin: 0;
@@ -218,6 +222,7 @@ h2{
     padding-right: 25px;
     padding-bottom: 10px;
     padding-top: 10px;
+    height: 100%;
     background-color: #FFAEA0;
     border-radius: 20px;
     color: #1C2834;
@@ -247,6 +252,7 @@ h2{
 
 #pageblog{
     padding-top: 20px;
+    height: 100%;
     background-color: #F0DBDA;
 }
 
@@ -297,5 +303,12 @@ h2{
 #pagetem h1 {
     color: #1C2834;
     font-weight: bold;
+}
+
+/** CSS CATEGORIES **/
+
+#bodyeventcat {
+    height: 100%;
+    background-color: #B0D4C8;
 }
 
