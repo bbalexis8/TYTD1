@@ -38,8 +38,8 @@ body {
 
 }
 
-#btnsacc a{
-    border: solid whitesmoke 1px;
+.lienacc{
+    max-width: 100px;
 }
 
 #divblog {
