@@ -5,8 +5,8 @@ body {
 }
 
 .navbar-brand {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #logonav {
@@ -38,8 +38,9 @@ body {
 
 }
 
-.lienacc{
+.lienacc {
     max-width: 100px;
+    border: transparent;
 }
 
 #divblog {

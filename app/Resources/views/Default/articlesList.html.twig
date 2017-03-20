@@ -6,7 +6,7 @@
         <h1>To You : nos articles pour vos évènements</h1>
         <hr>
         <br>
-<div class="col-xs-6 col-xs-offset-3">
+<div class="col-lg-6 col-lg-offset-3 col-xs-8 col-xs-offset-2">
     {% for article in articles %}
         <div id="divarticle" class="row text-justify">
             <h2><a href="{{ path('onearticle', { 'id': article.id }) }}">{{ article.titre }}</a></h2>
@@ -14,7 +14,7 @@
             <p>{{ article.description }}</p><br>
             <p id="autdate"><span class="glyphicon glyphicon glyphicon-menu-right"></span> Publié par : {{ article.utilisateur.username }} - le {{ article.date|date('d/m/Y') }}</p>
             <br>
-            <a id="btnartcpt" href="{{ path('onearticle', { 'id': article.id }) }}" class="btn btn-default col-xs-2 col-xs-offset-8"><span class="glyphicon  glyphicon glyphicon-chevron-right "></span> Article complet</a>
+            <a id="btnartcpt" href="{{ path('onearticle', { 'id': article.id }) }}" class="btn btn-default col-lg-3 col-lg-offset-8 col-xs-4 col-xs-offset-4"><span class="glyphicon  glyphicon glyphicon-chevron-right "></span> Article complet</a>
         </div>
             <br><br>
     {% endfor %}
