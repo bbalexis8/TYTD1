@@ -20,12 +20,12 @@ class SiteController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
 
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $troisarticles,
         ));
+
 
 
     }
@@ -83,7 +83,7 @@ class SiteController extends Controller
     /**
      * Affiche une categorie d evenement
      *
-     * @Route("blog/one-categorie/{id}", name="onecategorie")
+     * @Route("assist/one-categorie/{id}", name="onecategorie")
      * @Method("GET")
      */
     public function showOneCategorie(Article $onecategorie)

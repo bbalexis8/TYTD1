@@ -1,0 +1,21 @@
+{% block sondage %}
+
+    <div id="divsondage" class="jumbotron col-xs-12">
+        <div class="col-xs-12">
+            <h2>Sondage</h2>
+
+            Pour votre anniversaire, la "cerise sur le gâteau" c'est...
+
+
+            <div class="radio">
+                <label><input type="radio" name="optradio"> la présence inattendue de votre famille venue
+                    de votre lointaine Normandie ET le champagne pour fêter ces retrouvailles !</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio"> le cadeau de folie : un baptême de l'air en amoureux
+                    ET la caméra embarquée pour se remémorer cet instant magique !  </label>
+            </div>
+    <div class="btn-default">
+    <a href="{{ path('') }}">OK</a>
+
+{% endblock %}

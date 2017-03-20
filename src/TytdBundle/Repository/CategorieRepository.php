@@ -10,11 +10,31 @@ namespace TytdBundle\Repository;
  */
 class CategorieRepository extends \Doctrine\ORM\EntityRepository
 {
-    function findWithLimit($nomCa = 'voyage') {
+    function findWithLimit($nomCa = 'voyage')
+    {
         return $this->createQueryBuilder('c')
             ->where('c.nomCa = :nomCa')
             ->setParameter('nomCa', $nomCa)
             ->getQuery()
             ->execute();
     }
+
+
+    function randomIndex($limite)
+    {
+        $count = $this->createQueryBuilder('cat')
+            ->select('COUNT(cat)')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        $this->createQueryBuilder('cat')
+            ->where('cat.nomCa = :nomCa')
+            ->setFirstResult(rand(0, $count - 1))
+            ->setMaxResults($limite);
+
+        return $count->getQuery();
+
+        }
+
+
 }
