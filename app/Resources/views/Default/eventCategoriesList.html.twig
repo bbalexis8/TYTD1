@@ -9,42 +9,13 @@
 
             <div class="row col-xs-12 text-center">
 
+                {% for categorie in categories %}
                 <div class="col-xs-2 col-xs-offset-1">
-                    <a href="#" class="thumbnail">
-                        <img src="{{ asset('image/image (9).jpg') }}" class="img-circle"><span>Anniversaire</span>
+                    <a href="{{ path('onecategorie') }}" class="thumbnail">
+                        <img src="{{ categorie.imageCa }}" class="img-circle"><span>{{ categorie.nomCa }}</span>
                     </a>
                 </div>
-                <div class="col-xs-2 col-xs-offset-2">
-                    <a href="#" class="thumbnail">
-                        <img src="{{ asset('image/image (2).jpg') }}" class="img-circle"><span>Mariage</span>
-                    </a>
-                </div>
-                <div class="col-xs-2 col-xs-offset-2">
-                    <a href="#" class="thumbnail">
-                        <img src="{{ asset('image/image (7).jpg') }}" class="img-circle"><span>Voyage</span>
-                    </a>
-                </div>
-
-                <div class="col-xs-12">
-                    <br><br><br>
-                </div>
-
-                <div class="col-xs-2 col-xs-offset-1">
-                    <a href="#" class="thumbnail">
-                        <img src="{{ asset('image/image (15).jpg') }}" class="img-circle"><span>Repas</span>
-                    </a>
-                </div>
-                <div class="col-xs-2 col-xs-offset-2">
-                    <a href="#" class="thumbnail">
-                        <img src="{{ asset('image/image (17).jpg') }}" class="img-circle"><span>...</span>
-                    </a>
-                </div>
-                <div class="col-xs-2 col-xs-offset-2">
-                    <a href="#" class="thumbnail">
-                        <img src="{{ asset('image/image (10).jpg') }}" class="img-circle"><span>...</span>
-                    </a>
-                </div>
-
+                    {% endfor %}
             </div>
         </div>
     </div>
