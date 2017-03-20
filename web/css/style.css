@@ -78,16 +78,24 @@ li {
     text-align: center;
 }
 
-.img-circle span {
-    visibility: hidden;
+/*.img-circle span {*/
+    /*visibility: hidden;*/
+/*}*/
+
+/*.img-circle img:hover + span {*/
+    /*visibility: visible;*/
+/*}*/
+
+#divsondage {
+    font-size: 1.5em;
 }
 
-.img-circle img:hover + span {
-    visibility: visible;
+.picsondage {
+    display: block;
+    max-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
-
 
 /*style de la page admin*/
 
@@ -311,4 +319,6 @@ h2{
     height: 100%;
     background-color: #B0D4C8;
 }
+
+
 
