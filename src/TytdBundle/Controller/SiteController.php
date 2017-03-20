@@ -62,10 +62,8 @@ class SiteController extends Controller
         ));
     }
 
-
     /**
      * Affiche les categories d evenements de l assistant
-     *
      * @Route("assist/event-categories", name="eventcategorieslist")
      * @Method("GET")
      */
@@ -82,15 +80,21 @@ class SiteController extends Controller
 
     /**
      * Affiche une categorie d evenement
-     *
      * @Route("assist/one-categorie/{id}", name="onecategorie")
      * @Method("GET")
      */
-    public function showOneCategorie(Article $onecategorie)
+    public function showOneCategorie(Categorie $idCat)
     {
-        return $this->render(':Default:nav.html.twig', array(
-            'article' => $onecategorie,
+                $em = $this->getDoctrine()->getManager();
+        $onecategorie = $em->getRepository('TytdBundle:Categorie')->findOneCateg($idCat);
+
+        return $this->render(':Default:oneCategorie.html.twig', array(
+            'categorie' => $onecategorie,
         ));
+
+
+
+
     }
 
 
