@@ -24,7 +24,7 @@ class CategorieController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categories = $em->getRepository('TytdBundle:Categorie')->findWithLimit();
+        $categories = $em->getRepository('TytdBundle:Categorie')->findAll();
 
         return $this->render('categorie/index.html.twig', array(
             'categories' => $categories,

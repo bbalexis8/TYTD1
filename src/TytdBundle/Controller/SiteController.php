@@ -21,15 +21,16 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
+        $categories = $em->getRepository('TytdBundle:Categorie')->findAll();
 
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $troisarticles,
+            'categories' =>$categories
         ));
 
 
 
     }
-
 
     /**
      * Affiche la liste des articles présents sur le blog
@@ -86,10 +87,10 @@ class SiteController extends Controller
      * @Route("assist/one-categorie/{id}", name="onecategorie")
      * @Method("GET")
      */
-    public function showOneCategorie(Article $onecategorie)
+    public function showOneCategorie(Categorie $onecategorie)
     {
-        return $this->render(':Default:nav.html.twig', array(
-            'article' => $onecategorie,
+        return $this->render(':Default:oneCategorie.html.twig', array(
+            'categorie' => $onecategorie,
         ));
     }
 
