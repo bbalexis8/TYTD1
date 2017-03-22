@@ -3,10 +3,9 @@
 body {
     padding-top: 50px;
 }
-/*#bodyacc {*/
-    /*height: 100%;*/
-    /*background-color: #F0DBDA;*/
-/*}*/
+#bodyacc {
+    height: 100%;
+}
 
 .navbar-brand {
     margin: 0;
@@ -20,10 +19,10 @@ body {
     margin-top: 10px;
 }
 
-.jumbotron {
-    padding: 15px;
+#bienv {
+    padding: 20px;
     margin: 0;
-    background-color: darkcyan;
+    background-color: #013F4E;
     color: white;
     text-align: justify;
 }
@@ -32,14 +31,16 @@ body {
     max-width: 220px;
 }
 
-.jumbotron h2 {
+#bienv h2 {
+    margin: 0;
+    padding-top: 15px;
     text-align: center;
-    font-weight: bold;
+    color: white;
+    text-shadow: #101010 1px 1px;
 }
 
 #bienv p {
     font-style: italic;
-
 }
 
 .lienacc {
@@ -48,14 +49,25 @@ body {
 }
 
 #divblog {
+    margin-bottom: 0;
+    padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #01717D;
-    color: white;
-
+    color: #013F4E;
+    background-color: white;
 }
 
 #divblog h2 {
-    color: white;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #01717D;
+    text-shadow: #101010 1px 1px;
+}
+
+#divblog img {
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .thumbnail {
@@ -64,30 +76,64 @@ body {
     max-width: 25em;
 }
 
+#divart3 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#divart3 a{
+    text-decoration: none;
+    color: #1C2834;
+}
+
+#divart3 p{
+    font-size: small;
+}
+
 #divevents {
-    padding-bottom: 20px;
-    background-color: #DCB647;
-    color: white;
+    margin-bottom: 0;
+    padding:0;
+    background-color: white;
+
 }
 
 #divevents h2 {
-    color: #1C2834;
+    argin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #01717D;
+    text-shadow: #101010 1px 1px;
+}
+#divevents img {
+    max-width: 300px;
 }
 
 li {
     text-align: center;
 }
 
-.img-circle span {
-    visibility: hidden;
+#divsondage {
+    font-size: 1.2em;
+    background-color: #DCB647;
+    margin-bottom: 0;
+    padding: 10px;
 }
 
-.img-circle img:hover + span {
-    visibility: visible;
+#divsondage h2 {
+    margin: 0;
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+    text-shadow: #C42730 2px 1px;
 }
 
-
-
+.picsondage {
+    display: block;
+    max-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*style de la page admin*/
 
@@ -311,4 +357,6 @@ h2{
     height: 100%;
     background-color: #B0D4C8;
 }
+
+
 

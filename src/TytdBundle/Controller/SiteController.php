@@ -21,9 +21,11 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
+        $categories = $em->getRepository('TytdBundle:Categorie')->findAll();
 
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $troisarticles,
+            'categories' =>$categories
         ));
 
 
@@ -62,8 +64,10 @@ class SiteController extends Controller
         ));
     }
 
+
     /**
      * Affiche les categories d evenements de l assistant
+     *
      * @Route("assist/event-categories", name="eventcategorieslist")
      * @Method("GET")
      */
@@ -80,21 +84,15 @@ class SiteController extends Controller
 
     /**
      * Affiche une categorie d evenement
+     *
      * @Route("assist/one-categorie/{id}", name="onecategorie")
      * @Method("GET")
      */
-    public function showOneCategorie(Categorie $idCat)
+    public function showOneCategorie(Categorie $onecategorie)
     {
-                $em = $this->getDoctrine()->getManager();
-        $onecategorie = $em->getRepository('TytdBundle:Categorie')->findOneCateg($idCat);
-
         return $this->render(':Default:oneCategorie.html.twig', array(
             'categorie' => $onecategorie,
         ));
-
-
-
-
     }
 
 
