@@ -1,0 +1,10 @@
+TytdBundle\Entity\Article:
+    article_{1..88}:
+        categorie: '@categorie*'
+        utilisateur: '@utilisateur*'
+        date: <dateTime('2017-03-17')>
+        titre: <sentence()>
+        description: <text()>
+        texte: <text()>
+        image: <image()>
+

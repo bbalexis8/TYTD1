@@ -1,0 +1,9 @@
+TytdBundle\Entity\Commentaire:
+    commentaire_{1..100}:
+        utilisateur: '@utilisateur*'
+        article: '@article*'
+        texte: <text()>
+        dateC: <dateTime('2017-03-17')>
+        titreC: <sentence()>
+
+
