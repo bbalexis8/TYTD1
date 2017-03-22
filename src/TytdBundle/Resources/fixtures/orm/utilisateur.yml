@@ -1,5 +1,5 @@
 TytdBundle\Entity\Utilisateur:
-    utilisateur{1..45}:
+    utilisateur_{1..45}:
         nom: <lastName()>
         prenom: <firstName()>
         email: <safeEmail()>

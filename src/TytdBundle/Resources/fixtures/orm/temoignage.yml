@@ -1,0 +1,8 @@
+TytdBundle\Entity\Temoignage:
+    temoignage{1..99}:
+        utilisateur: '@utilisateur*'
+        texteT: <text()>
+        dateT: <dateTime('2017-03-17')>
+        titre_t: <sentence()>
+        evenement: '@evenement*'
+        description_t: <text()>

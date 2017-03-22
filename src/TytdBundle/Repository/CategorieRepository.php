@@ -19,6 +19,18 @@ class CategorieRepository extends \Doctrine\ORM\EntityRepository
             ->execute();
     }
 
+    function findOneCateg($idCat)
+    {
+        return $this->createQueryBuilder('c')
+            ->select('c, e')
+
+            ->leftJoin('c.evenement', 'e')
+            ->setParameter('id', $idCat)
+            ->addOrderBy("c.evenement.dateE", 'DESC')
+            ->getQuery()
+            ->execute();
+    }
+
 
     function randomIndex($limite)
     {

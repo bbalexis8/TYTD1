@@ -1,5 +1,32 @@
 {% extends ':Default:basic.html.twig' %}
 
 {% block body %}
+    <div id="pagecat" class="container col-xs-12 text-center">
+        <div class="col-xs-6 col-xs-offset-3">
 
+            <div id="divtem" class="row text-justify">
+                <h2><span class="glyphicon   glyphicon glyphicon-pencil"></span> «{{ categorie.nomCa }}»</h2>
+                <p>Liste des évenements liés à cette catégorie :</p><br>
+
+                <br>
+                <a id="btnlistemcpt" href="{{ path('eventcategorieslist') }}" class="btn btn-default col-xs-4 col-xs-offset-6">
+                    <span class="glyphicon  glyphicon glyphicon-chevron-right "></span> Retour à la liste des catégories</a>
+            </div>
+            <br><br>
+        </div>
+    </div>
 {% endblock %}
+
+
+
+<h2>Nos derniers articles</h2>
+
+<div class="row col-xs-12">
+    {% for article in onecategorie %}
+    <div class="col-lg-2 col-lg-offset-2 col-xs-12">
+        <a href="{{ path('article_show', { 'id': article.id }) }}" class="thumbnail">
+            <img src="/imagesarticles/{{ article.image }}" class="img-circle">
+        </a>
+        {% endfor %}
+    </div>
+</div>
