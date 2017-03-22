@@ -46,6 +46,7 @@ body {
 .lienacc {
     max-width: 100px;
     border: transparent;
+    visibility: inherit;
 }
 
 #divblog {
@@ -330,6 +331,7 @@ h2{
 #btntemcpt, #btnlistemcpt {
     background-color: #DCB647;
     color: #1C2834;
+    font-size: 1em;
 }
 
 #btntemcpt:hover, #btnlistemcpt:hover {
