@@ -23,6 +23,7 @@
                             <li><a href="{{ path('eventcategorieslist') }}">Liste des évènements</a></li>
                             <li role="separator" class="divider"></li>
                             <ul>Catégories :</ul>
+
                             {% for categorie in categories %}
                             <li><a href="{{ path('onecategorie', { 'id': categorie.id }) }}">{{ categorie.nomCa }}</a></li>
                             {% endfor %}
