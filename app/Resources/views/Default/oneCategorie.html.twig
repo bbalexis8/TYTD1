@@ -16,17 +16,3 @@
         </div>
     </div>
 {% endblock %}
-
-
-
-<h2>Nos derniers articles</h2>
-
-<div class="row col-xs-12">
-    {% for article in onecategorie %}
-    <div class="col-lg-2 col-lg-offset-2 col-xs-12">
-        <a href="{{ path('article_show', { 'id': article.id }) }}" class="thumbnail">
-            <img src="/imagesarticles/{{ article.image }}" class="img-circle">
-        </a>
-        {% endfor %}
-    </div>
-</div>

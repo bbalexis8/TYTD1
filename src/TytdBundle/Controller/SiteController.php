@@ -20,18 +20,24 @@ class SiteController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
-        $categories = $em->getRepository('TytdBundle:Categorie')->findAll();
+//        $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
+//        $categories = $em->getRepository('TytdBundle:Categorie')->findAll();
 
         return $this->render(':Default:index.html.twig', array(
-            'troisarticles' => $troisarticles,
-            'categories' =>$categories
+            'troisarticles' => $em->getRepository('TytdBundle:Article')->derniersArticles(3),
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
-
-
-
     }
 
+//    public function recupListCategorie() {
+//
+//        $em = $this->getDoctrine()->getManager();
+//
+//
+//        return $this->render(':Default:nav.html.twig', array(
+//            'categories' =>$categories
+//        ));
+//    }
 
     /**
      * Affiche la liste des articles présents sur le blog
@@ -43,10 +49,9 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $articleslist = $em->getRepository('TytdBundle:Article')->findAll();
-
         return $this->render(':Default:articlesList.html.twig', array(
-            'articles' => $articleslist,
+            'articles' => $em->getRepository('TytdBundle:Article')->findAll(),
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
@@ -59,8 +64,11 @@ class SiteController extends Controller
      */
     public function showOneArticle(Article $onearticle)
     {
+        $em = $this->getDoctrine()->getManager();
+
         return $this->render(':Default:oneArticle.html.twig', array(
             'article' => $onearticle,
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
@@ -75,10 +83,8 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categorielist = $em->getRepository('TytdBundle:Categorie')->findAll();
-
         return $this->render(':Default:eventCategoriesList.html.twig', array(
-            'categories' => $categorielist,
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
@@ -89,9 +95,13 @@ class SiteController extends Controller
      * @Method("GET")
      */
     public function showOneCategorie(Categorie $onecategorie)
+
     {
+        $em = $this->getDoctrine()->getManager();
+
         return $this->render(':Default:oneCategorie.html.twig', array(
             'categorie' => $onecategorie,
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
@@ -106,10 +116,8 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $temoignageslist = $em->getRepository('TytdBundle:Temoignage')->findAll();
-
         return $this->render(':Default:temoignagesListe.html.twig', array(
-            'temoignages' => $temoignageslist,
+            'temoignages' => $em->getRepository('TytdBundle:Temoignage')->findAll()
         ));
     }
 
@@ -121,9 +129,11 @@ class SiteController extends Controller
      */
     public function showOneTemoignage(Temoignage $temoignage)
     {
+        $em = $this->getDoctrine()->getManager();
 
         return $this->render(':Default:oneTemoignage.html.twig', array(
             'temoignage' => $temoignage,
+            'temoignages' => $em->getRepository('TytdBundle:Temoignage')->findAll()
         ));
     }
 }
