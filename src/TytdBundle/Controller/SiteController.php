@@ -108,7 +108,8 @@ class SiteController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         return $this->render(':Default:temoignagesListe.html.twig', array(
-            'temoignages' => $em->getRepository('TytdBundle:Temoignage')->findAll()
+            'temoignages' => $em->getRepository('TytdBundle:Temoignage')->findAll(),
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
@@ -124,7 +125,7 @@ class SiteController extends Controller
 
         return $this->render(':Default:oneTemoignage.html.twig', array(
             'temoignage' => $temoignage,
-            'temoignages' => $em->getRepository('TytdBundle:Temoignage')->findAll()
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 }
