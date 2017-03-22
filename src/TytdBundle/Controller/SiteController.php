@@ -29,15 +29,6 @@ class SiteController extends Controller
         ));
     }
 
-//    public function recupListCategorie() {
-//
-//        $em = $this->getDoctrine()->getManager();
-//
-//
-//        return $this->render(':Default:nav.html.twig', array(
-//            'categories' =>$categories
-//        ));
-//    }
 
     /**
      * Affiche la liste des articles présents sur le blog
