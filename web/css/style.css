@@ -49,8 +49,9 @@ body {
 
 #divblog {
     padding-bottom: 20px;
-    background-color: #01717D;
     color: white;
+    background-color: rgba(1,113,125, 0.7);
+    
 
 }
 
@@ -58,11 +59,32 @@ body {
     color: white;
 }
 
+#divblog img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
 .thumbnail {
     background-color: transparent;
     border: transparent;
     max-width: 25em;
 }
+
+#divart3 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#divart3 a{
+    text-decoration: none;
+    color: white;
+}
+
+#divart3 p{
+    font-size: small;
+}
+
+
 
 #divevents {
     padding-bottom: 20px;
@@ -72,6 +94,9 @@ body {
 
 #divevents h2 {
     color: #1C2834;
+}
+#divevents img {
+    max-width: 300px;
 }
 
 li {

@@ -25,8 +25,8 @@
                         <tr>
                             <td><li><a href="{{ path('article_show', { 'id': article.id }) }}">N°{{ article.id }}</a></li></td>
                             <td>{{ article.titre }}</td>
-                            <td>{{ article.texte }}</td>
-                            <td>{{ article.description }}</td>
+                            <td class="text-justify">{{ article.texte }}</td>
+                            <td class="text-justify">{{ article.description }}</td>
                             <td>{{ article.image }}</td>
                             <td>{{ article.categorie.nomCa }}</td>
                             <td>{{ article.date|date('d-m-Y') }}</td>

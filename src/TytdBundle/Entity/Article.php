@@ -260,7 +260,7 @@ class Article
     /**
      * Get image
      *
-     * @return string
+     * @return string $image
      */
     public function getImage()
     {
