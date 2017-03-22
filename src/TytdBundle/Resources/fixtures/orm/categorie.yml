@@ -1,4 +1,4 @@
 TytdBundle\Entity\Categorie:
     categorie_{1..10}:
         nomCa: <word()>
-        imageCa: <image()>
+        imageCa: <imageURL()>

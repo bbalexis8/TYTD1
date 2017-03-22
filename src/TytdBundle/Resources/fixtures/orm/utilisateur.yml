@@ -10,6 +10,6 @@ TytdBundle\Entity\Utilisateur:
         username: <username()>
         password: <password()>
         type: partenaire
-        description: <image()>
-        image: <word()>
+        description: <text()>
+        image: <imageURL()>
         date_inscription: <dateTime('2017-03-17')>
