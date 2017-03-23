@@ -130,10 +130,29 @@ li {
 }
 
 .picsondage {
-    display: block;
+    /*display: block;*/
     max-height: 150px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#divsondage a{
+    text-decoration: none;
+    color: white;
+}
+
+#btnoksond {
+    border-radius: 15px;
+    border-style: dashed;
+    border-color: #C42730;
+    background-color: #C42730;
+    font-family: "Lie to Me";
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: -96px;
+
+
+
 }
 
 /*style de la page admin*/
