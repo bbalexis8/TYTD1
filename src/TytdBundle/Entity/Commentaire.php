@@ -153,7 +153,7 @@ class Commentaire
     /**
      * Get dateC
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateC()
     {

@@ -10,9 +10,7 @@
                 <p>Liste des évenements liés à cette catégorie :</p>
                 {% for evenement in evenements %}
 
-                    <h2>
-                        <a href="{{ path('evenement_show', {'id':categorie.id}) }}" class="thumbnail">
-                            {{ evenement.nom }}</a></h2>
+                    <h2>{{ evenement.nom }}</h2>
                     <p>{{ evenement.dateE|date('d/m/Y') }}</p>
                     <p>par {{ evenement.utilisateur.username }}</p><hr>
 
