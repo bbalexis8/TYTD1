@@ -10,4 +10,13 @@ namespace TytdBundle\Repository;
  */
 class EvenementRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function findByC($nomCa = 'anniversaire')
+    {
+        return $this->createQueryBuilder('e')
+            ->where('e.nom = :nom')
+            ->setParameter('nom', $nomCa)
+            ->getQuery()
+            ->execute();
+    }
 }

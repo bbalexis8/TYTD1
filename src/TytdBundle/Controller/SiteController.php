@@ -56,11 +56,17 @@ class SiteController extends Controller
     public function showOneArticle(Article $onearticle)
     {
         $em = $this->getDoctrine()->getManager();
+        $commentaires = $em->getRepository('TytdBundle:Commentaire')->findBy(
+            array('article' => $onearticle->getId()), // Critere
+           // array('date' => 'ASC'),        // Tri
+            $limit  = null,                 // Limite
+            $offset = null                 // Offset
+        );
 
         return $this->render(':Default:oneArticle.html.twig', array(
             'article' => $onearticle,
-            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
-        ));
+            'commentaires' => $commentaires)
+        );
     }
 
 
@@ -89,12 +95,27 @@ class SiteController extends Controller
 
     {
         $em = $this->getDoctrine()->getManager();
+        $evenements = $em->getRepository('TytdBundle:Evenement')->findBy(
+            array('categorie' => $onecategorie->getId()), // Critere
+            array('dateE' => 'desc'),        // Tri
+            $limit  = null,                 // Limite
+            $offset = null                 // Offset
+        );
 
-        return $this->render(':Default:oneCategorie.html.twig', array(
+        return $this->render(':Default:oneCategoryAndEvents.html.twig', array(
             'categorie' => $onecategorie,
-            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
-        ));
-    }
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
+            'evenements' => $evenements)
+        );
+
+}
+
+
+
+
+
+
+
 
 
     /**
