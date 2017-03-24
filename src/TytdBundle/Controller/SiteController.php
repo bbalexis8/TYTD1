@@ -65,8 +65,9 @@ class SiteController extends Controller
 
         return $this->render(':Default:oneArticle.html.twig', array(
             'article' => $onearticle,
-            'commentaires' => $commentaires)
-        );
+            'commentaires' => $commentaires,
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
+        ));
     }
 
 

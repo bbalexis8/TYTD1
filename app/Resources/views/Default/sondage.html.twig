@@ -1,6 +1,30 @@
 {% block sondage %}
 
-    <div id="divsondage" class="jumbotron col-xs-12">
+    {#<div id="divsondage" class="jumbotron col-xs-12">#}
+        {#<div class="col-xs-12 text-center">#}
+            {#<h2>Sondage</h2>#}
+            {#<br>#}
+            {#Pour votre anniversaire, la "cerise sur le gâteau" c'est...#}
+
+            {#<div class="radio">#}
+                {#<label><input type="radio" name="optradio"> la présence inattendue de votre famille venue#}
+                    {#de votre lointaine Normandie ET le champagne pour fêter ces retrouvailles !</label>#}
+            {#</div>#}
+            {#<div class="radio">#}
+                {#<label><input type="radio" name="optradio"> le cadeau de folie : un baptême de l'air en amoureux#}
+                    {#ET la caméra embarquée pour se remémorer cet instant magique !  </label>#}
+            {#</div>#}
+
+    {#<div >#}
+    {#<a href="{{ path('onecategorie', {'id': '1'}) }}">#}
+        {#<img src="{{ asset('imagesarticles/cerisesondage.png') }}" class="img-circle btn-default picsondage">#}
+        {#<input type="button" id="btnoksond" value="ok">#}
+    {#</a>#}
+    {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+    <form id="divsondage" class="jumbotron col-xs-12">
         <div class="col-xs-12 text-center">
             <h2>Sondage</h2>
             <br>
@@ -15,12 +39,14 @@
                     ET la caméra embarquée pour se remémorer cet instant magique !  </label>
             </div>
 
-    <div >
-    <a href="{{ path('onecategorie', {'id': '1'}) }}">
-        <img src="{{ asset('imagesarticles/cerisesondage.png') }}" class="img-circle btn-default picsondage">
-        <input type="button" id="btnoksond" value="ok">
-    </a>
-    </div>
+            <div >
+                <a href="{{ path('onecategorie', {'id': '1'}) }}">
+                    <img src="{{ asset('imagesarticles/cerisesondage.png') }}" class="img-circle btn-default picsondage">
+                    <input type="submit" id="btnoksond" value="ok">
+                </a>
+            </div>
         </div>
-    </div>
+    </form>
+
+
 {% endblock %}
