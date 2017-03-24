@@ -5,7 +5,8 @@
     <h2>Modification de l'article {{ article.id }}</h2>
 
     {{ form_start(edit_form) }}
-    {{ form_widget(edit_form) }}<br>
+    {{ form_widget(edit_form) }}
+    {{ form_row(form.image) }}<br>
     <input type="submit" value="Valider les modifications"/><br>
     {{ form_end(edit_form) }}
 

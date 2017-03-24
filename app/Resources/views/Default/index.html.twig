@@ -8,7 +8,7 @@
         </div>
         <div class="text-center">
             <h2>Bienvenue sur To You, To Do !</h2>
-            <p>De l'Organisation à la Surprise, Votre événement comme Vous le rêvez</p>
+            <p>«De l'Organisation à la Surprise, Votre événement comme Vous le rêvez»</p>
         </div>
         <div class="btn-group text-center col-xs-12" role="group" id="btnsacc">
             <img src="{{ asset('image/Btn-assistant4.png') }}" class="img-circle lienacc col-xs-0">
@@ -31,7 +31,7 @@
             <h2>Nos derniers articles</h2>
             <br>
                 {% for article in troisarticles %}
-                    <div id="divart3" class="col-lg-4 colt-xs-12 text-justify">
+                    <div id="divart3" class="col-lg-4 col-md-4 col-xs-12 text-justify">
                     <a href="{{ path('onearticle', { 'id': article.id }) }}">
                             <div class="text-center"><img src="{{ article.image }}" class="img-circle">
                             <h4>{{ article.titre }}</h4></div>
@@ -48,7 +48,7 @@
 
     <div id="divevents" class="jumbotron col-lg-12 col-xs-12">
 
-            <h2>Organisez votre évènement<br><br></h2>
+            <h2>Nos categories d'évènements phares<br><br></h2>
         </div>
 
             <div class="col-lg-4 col-xs-12">

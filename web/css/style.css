@@ -28,11 +28,12 @@ body {
 }
 
 #logogd {
-    max-width: 220px;
+    max-width: 250px;
 }
 
 #bienv h2 {
     margin: 0;
+    font-size: 2.5em;
     padding-top: 15px;
     text-align: center;
     color: white;
@@ -106,7 +107,7 @@ body {
     color: #01717D;
     text-shadow: #101010 1px 1px;
 }
-#divevents img {
+.lienevents {
     max-width: 300px;
 }
 
@@ -130,10 +131,29 @@ li {
 }
 
 .picsondage {
-    display: block;
+    /*display: block;*/
     max-height: 150px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#divsondage a{
+    text-decoration: none;
+    color: white;
+}
+
+#btnoksond {
+    border-radius: 15px;
+    border-style: dashed;
+    border-color: #C42730;
+    background-color: #C42730;
+    font-family: "Lie to Me";
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: -96px;
+
+
+
 }
 
 /*style de la page admin*/
