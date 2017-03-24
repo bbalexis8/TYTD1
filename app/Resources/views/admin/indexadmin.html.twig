@@ -2,19 +2,18 @@
 
 {% block body %}
     <div class="bobody">
-        <h2>Dernières publications ou modifications</h2>
-
+        <h2>Articles récemment publiés</h2>
+        <br>
         <div>
             {% for article in articles %}
-            <p>
-                <h3> <a href="{{ path('article_show', { 'id': article.id }) }}">N°{{ article.id }}</a>
-                {{ article.titre }}</h3>
+
+                <h3><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a></h3>
+                    <p>Par {{ article.utilisateur.username }}, le  {{ article.date|date('d.m.Y')}}
                 <br>{{ article.description }}
-                {#<br>{{ article.utilisateur.username }}#}
-            </p>
-                {% endfor %}
+                </p><hr>
+            {% endfor %}
         </div>
-
-
     </div>
+
+
 {% endblock %}
