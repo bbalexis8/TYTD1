@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <div id="bienv" class="jumbotron col-xs-12 text-center">
+    <div class="bienv" class="jumbotron col-xs-12 text-center">
         <div class="text-center">
             <img id="logogd" src="{{ asset('image/Logo x300.png') }}"><br>
         </div>
@@ -34,8 +34,9 @@
                     <div id="divart3" class="col-lg-4 col-md-4 col-xs-12 text-justify">
                     <a href="{{ path('onearticle', { 'id': article.id }) }}">
                             <div class="text-center"><img src="{{ article.image }}" class="img-circle">
-                            <h4>{{ article.titre }}</h4></div>
-                            <p>{{ article.description }}</p>
+                            <h3>{{ article.titre }}</h3></div>
+                            <p>de {{ article.utilisateur.username }}, le {{ article.date|date('d.m.Y') }}
+                                <br>{{ article.description }}</p>
                         </a>
                     </div>
                     {% endfor %}
