@@ -41,7 +41,7 @@
                         <td>{{ utilisateur.password }}</td>
                         <td>{{ utilisateur.type }}</td>
                         <td>{{ utilisateur.description }}</td>
-                        <td>{{ utilisateur.image }}</td>
+                        <td><img src="{{ utilisateur.image }}"></td>
                         <td>{% if utilisateur.dateinscription %}{{ utilisateur.dateinscription|date('Y-m-d ') }}{% endif %}</td>
                         <td>
                             <ul>

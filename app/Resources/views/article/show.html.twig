@@ -21,7 +21,7 @@
                 <td>{{ article.titre }}</td>
                 <td class="text-justify">{{ article.texte }}</td>
                 <td class="text-justify">{{ article.description }}</td>
-                <td>{{ article.image }}</td>
+                <td><img src="{{ article.image }}"></td>
                 <td>{{ article.categorie.nomCa }}</td>
                 <td>{{ article.date|date('d-m-Y') }}</td>
                 <td>{{ article.utilisateur.username }}</td>
