@@ -107,7 +107,7 @@ body {
     color: #01717D;
     text-shadow: #101010 1px 1px;
 }
-#divevents img {
+.lienevents {
     max-width: 300px;
 }
 

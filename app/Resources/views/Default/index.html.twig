@@ -31,7 +31,7 @@
             <h2>Nos derniers articles</h2>
             <br>
                 {% for article in troisarticles %}
-                    <div id="divart3" class="col-lg-4 colt-xs-12 text-justify">
+                    <div id="divart3" class="col-lg-4 col-md-4 col-xs-12 text-justify">
                     <a href="{{ path('onearticle', { 'id': article.id }) }}">
                             <div class="text-center"><img src="/imagesarticles/{{ article.image }}" class="img-circle">
                             <h4>{{ article.titre }}</h4></div>
@@ -48,22 +48,21 @@
 
     <div id="divevents" class="jumbotron col-lg-12 col-xs-12">
 
-            <h2>Organisez votre évènement<br><br></h2>
+            <h2>Nos categories d'évènements phares<br><br></h2>
         </div>
-
-            <div class="col-lg-4 col-xs-12">
-                <a href="#" class="thumbnail text-center">
-                    <img src="{{ asset('image/image (2).jpeg') }}" class="img-circle">
+            <div class="col-lg-4 col-xs-12 text-center">
+                <a href="#">
+                    <img src="{{ asset('image/image (2).jpeg') }}" class="img-circle lienevents">
                 </a>
             </div>
-            <div class="col-lg-4 col-xs-12">
-                <a href="#" class="thumbnail">
-                    <img src="{{ asset('image/image (8).jpg') }}" class="img-circle">
+            <div class="col-lg-4 col-xs-12 text-center">
+                <a href="#">
+                    <img src="{{ asset('image/image (8).jpg') }}" class="img-circle lienevents">
                 </a>
             </div>
-            <div class="col-lg-4 col-xs-12">
-                <a href="#" class="thumbnail">
-                    <img src="{{ asset('image/image (5).jpg') }}" class="img-circle">
+            <div class="col-lg-4 col-xs-12 text-center">
+                <a href="#">
+                    <img src="{{ asset('image/image (5).jpg') }}" class="img-circle lienevents">
                 </a>
             </div>
 

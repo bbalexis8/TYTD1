@@ -20,7 +20,7 @@ class CategorieType extends AbstractType
                 'label' => 'Nom de la catégorie',
                 "attr" => array('class' => 'tailleautresforms')
             ))
-            ->add('imageCa', FileType::class, array('label' => 'image (PNG file)',
+            ->add('imageCa', FileType::class, array('label' => 'image (jpeg file)',
                     "attr" => array('class' => 'tailleautresforms')
                 ));
     }

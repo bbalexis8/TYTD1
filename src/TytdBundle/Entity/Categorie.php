@@ -3,6 +3,7 @@
 namespace TytdBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Categorie
@@ -29,9 +30,10 @@ class Categorie
     private $nomCa;
 
     /**
-     * @var string
+     * @ORM\Column(name="imageCa", type="string")
      *
-     * @ORM\Column(name="imageCa", type="text", nullable=true)
+     * @Assert\NotBlank(message="Le fichier doit obligatoirement être en jpeg")
+     * @Assert\File(mimeTypes={ "image/jpeg" }))
      */
     private $imageCa;
 
