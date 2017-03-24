@@ -1,13 +1,13 @@
 TytdBundle\Entity\Categorie:
     categorie1:
          nomCa: 'Anniversaire'
-         imageCa: <imageUrl()>
+         imageCa: <imageUrl(100,100)>
 
     categorie2:
          nomCa: 'Repas familial'
-         imageCa: <imageUrl()>
+         imageCa: <imageUrl(100,100)>
 
 
     categorie_{3..10}:
         nomCa: <word()>
-        imageCa: <imageUrl()>
+        imageCa: <imageUrl(100,100)>

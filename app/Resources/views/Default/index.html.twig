@@ -33,7 +33,7 @@
                 {% for article in troisarticles %}
                     <div id="divart3" class="col-lg-4 colt-xs-12 text-justify">
                     <a href="{{ path('onearticle', { 'id': article.id }) }}">
-                            <div class="text-center"><img src="/imagesarticles/{{ article.image }}" class="img-circle">
+                            <div class="text-center"><img src="{{ article.image }}" class="img-circle">
                             <h4>{{ article.titre }}</h4></div>
                             <p>{{ article.description }}</p>
                         </a>
