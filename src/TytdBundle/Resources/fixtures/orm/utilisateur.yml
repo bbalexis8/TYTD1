@@ -1,5 +1,5 @@
 TytdBundle\Entity\Utilisateur:
-    utilisateur_{1..45}:
+    utilisateur_{1..20}:
         nom: <lastName()>
         prenom: <firstName()>
         email: <safeEmail()>
@@ -9,7 +9,7 @@ TytdBundle\Entity\Utilisateur:
         pays: <country()>
         username: <username()>
         password: <password()>
-        type: partenaire
+        type: lecteur
         description: <text()>
         image: <imageUrl(150, 150, people)>
         date_inscription: <dateTime('2017-03-17')>

@@ -1,13 +1,25 @@
 TytdBundle\Entity\Categorie:
     categorie1:
          nomCa: 'Anniversaire'
-         imageCa: <imageUrl(300,300)>
+         imageCa: <imageUrl(300, 300, nightlife)>
 
     categorie2:
          nomCa: 'Repas familial'
-         imageCa: <imageUrl(300,300)>
+         imageCa: <imageUrl(300, 300, food)>
 
+    categorie3:
+        nomCa: 'Mariage'
+        imageCa: <imageUrl(300, 300, people)>
 
-    categorie_{3..10}:
-        nomCa: <word()>
-        imageCa: <imageUrl(300,300, city)>
+    categorie4:
+         nomCa: 'Voyage'
+         imageCa: <imageUrl(300, 300, transport)>
+
+    categorie5:
+         nomCa: 'Naissance'
+         imageCa: <imageUrl(300, 300, nature)>
+
+    categorie6:
+        nomCa: 'Séminaire'
+        imageCa: <imageUrl(300, 300, business)>
+
