@@ -4,17 +4,34 @@
 
     <div id="pageblog" class="container col-xs-12 text-center">
 
-<div class="col-lg-6 col-lg-offset-3 col-xs-8 col-xs-offset-2">
-        <div id="divarticle" class="text-justify">
-            <h2>{{ article.titre }}</h2>
-            <ul> Publié par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</ul>
+        <div class="col-lg-6 col-lg-offset-3 col-xs-8 col-xs-offset-2">
+            <div id="divarticle" class="text-justify">
+                <h2>{{ article.titre }}</h2>
+                <ul> Publié par {{ article.utilisateur.username }}, le {{ article.date|date('d/m/Y') }}</ul>
+                <br>
+                <img src="{{ article.image }}" class="img-responsive" alt="">
+                <br>
+                <p class="text-justify">{{ article.texte }}</p>
+                <br>
+            </div><hr>
+
+            <p>Liste des commentaires :</p>
+            {% for commentaire in commentaires %}
+                <h2>{{ commentaire.titreC }}</h2>
+                <p>Posté le : {{ commentaire.dateC|date('d/m/Y') }}</p>
+                <p>par {{ commentaire.utilisateur.username }}</p>
+                <p>"{{ commentaire.texte }}"</p>
+                <hr>
+
+            {% endfor %}
+
             <br>
-            <img src="{{ article.image }}" class="img-responsive" alt="">
-            <br>
-            <p class="text-justify">{{ article.texte }}</p>
-            <br>
+            <a id="btnlistart" href="{{ path('articleslist') }}"
+               class="btn btn-default col-xs-4 col-xs-offset-6"><span
+                        class="glyphicon  glyphicon glyphicon-chevron-right "></span> Retour à la liste des articles</a>
         </div>
-</div>
+
+
     </div>
 
 {% endblock %}
