@@ -157,7 +157,7 @@ class Evenement
     /**
      * Get dateE
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateE()
     {

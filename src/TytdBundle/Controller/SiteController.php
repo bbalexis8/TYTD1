@@ -26,6 +26,7 @@ class SiteController extends Controller
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $em->getRepository('TytdBundle:Article')->derniersArticles(3),
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
+
         ));
     }
 
@@ -89,13 +90,19 @@ class SiteController extends Controller
 
     {
         $em = $this->getDoctrine()->getManager();
+        $evenements = $em->getRepository('TytdBundle:Evenement')->findBy(
+            array('categorie' => $onecategorie->getId()), // Critere
+            array('dateE' => 'desc'),        // Tri
+            $limit  = null,                 // Limite
+            $offset = null                 // Offset
+        );
 
         return $this->render(':Default:oneCategorie.html.twig', array(
             'categorie' => $onecategorie,
-            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
-        ));
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
+            'evenements' => $evenements)
+        );
     }
-
 
     /**
      * Affiche les temoignages liés aux outils de l assistant
