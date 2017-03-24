@@ -53,7 +53,7 @@ class CategorieController extends Controller
 
             // Move the file to the directory where brochures are stored
             $file->move(
-                $this->getParameter('image_directory'),
+                $this->getParameter('img_cat_directory'),
                 $fileName
             );
 
