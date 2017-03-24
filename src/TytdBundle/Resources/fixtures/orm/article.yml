@@ -6,5 +6,5 @@ TytdBundle\Entity\Article:
         titre: <sentence()>
         description: <text()>
         texte: <text()>
-        image: <imageUrl(100, 70)>
+        image: <imageUrl(200, 150, technics)>
 

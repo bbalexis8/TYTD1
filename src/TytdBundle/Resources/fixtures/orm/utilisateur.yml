@@ -11,5 +11,5 @@ TytdBundle\Entity\Utilisateur:
         password: <password()>
         type: partenaire
         description: <text()>
-        image: <imageUrl(100, 70, people)>
+        image: <imageUrl(150, 150, people)>
         date_inscription: <dateTime('2017-03-17')>
