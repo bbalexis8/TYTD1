@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use TytdBundle\Entity\Article;
 use TytdBundle\Entity\Categorie;
 use TytdBundle\Entity\Temoignage;
+use TytdBundle\Entity\Contact;
+use TytdBundle\Form\ContactType;
 
 class SiteController extends Controller
 {
@@ -117,12 +119,6 @@ class SiteController extends Controller
 
 
 
-
-
-
-
-
-
     /**
      * Affiche les temoignages liés aux outils de l assistant
      *
@@ -156,4 +152,9 @@ class SiteController extends Controller
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
+
+//    public function contactForm() {
+//
+//
+//    }
 }
