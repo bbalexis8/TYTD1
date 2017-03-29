@@ -4,10 +4,17 @@ namespace TytdBundle\Controller;
 
 use TytdBundle\Entity\Evenement;
 use TytdBundle\Entity\Temoignage;
+use TytdBundle\Entity\Todolist;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 
 
@@ -242,5 +249,48 @@ class EventController extends Controller
             ->setMethod('DELETE')
             ->getForm();
     }
+
+    /**
+     * @Route("/todolist_new", name="todolist_new")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function addToDoList(Request $request)
+    {
+        // On crée un objet ToDoList
+        $todolist = new Todolist();
+
+        // On crée le FormBuilder grâce au service form factory
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $todolist);
+
+        // On ajoute les champs de l'entité que l'on veut à notre formulaire
+        $formBuilder
+            ->add('nom',     TextType::class)
+            ->add('prenom',   TextType::class)
+            ->add('datePrevue',    DateType::class)
+            ->add('lieuPrevu', TextType::class)
+            ->add('nbInvites',     TextType::class)
+            ->add('titreEvent',   TextType::class)
+            ->add('budget',     IntegerType::class)
+            ->add('programme',   TextareaType::class)
+            ->add('Enregistrer',      SubmitType::class)
+        ;
+
+        $form = $formBuilder->getForm();
+
+        $em = $this->getDoctrine()->getManager();
+
+
+        // On passe la méthode createView() du formulaire à la vue
+        // afin qu'elle puisse afficher le formulaire toute seule
+        return $this->render(':FormEvenements:anniversaire.html.twig', array(
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
+            'form' => $form->createView()
+        ));
+    }
+
+
+
 }
 
