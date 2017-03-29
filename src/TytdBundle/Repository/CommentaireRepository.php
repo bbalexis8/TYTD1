@@ -10,4 +10,18 @@ namespace TytdBundle\Repository;
  */
 class CommentaireRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function derniersCommentaires($limite = null) {
+        {
+            $qb = $this->createQueryBuilder('c')
+                ->select('c')
+                ->addOrderBy('c.dateC', 'DESC');
+
+            if (false === is_null($limite))
+                $qb->setMaxResults($limite);
+
+            return $qb->getQuery()
+                ->getResult();
+        }
+    }
+
 }

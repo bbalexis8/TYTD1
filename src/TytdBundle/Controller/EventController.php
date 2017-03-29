@@ -33,6 +33,8 @@ class EventController extends Controller
      * Creates a new evenement entity.
      * @Route("/admin/event_new", name="evenement_new")
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function newEvent(Request $request)
     {
@@ -43,7 +45,7 @@ class EventController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($evenement);
-            $em->flush($evenement);
+            $em->flush();
 
             return $this->redirectToRoute('evenement_show', array('id' => $evenement->getId()));
         }
@@ -57,6 +59,8 @@ class EventController extends Controller
     /**
      * @Route("/admin/event/{id}", name="evenement_show")
      * @Method("GET")
+     * @param Evenement $evenement
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showEvent(Evenement $evenement)
     {
@@ -103,7 +107,7 @@ class EventController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($evenement);
-            $em->flush($evenement);
+            $em->flush();
         }
 
         return $this->redirectToRoute('evenement_index');
@@ -144,6 +148,8 @@ class EventController extends Controller
     /**
      * @Route("/admin/temoignage/new", name="temoignage_new")
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function newTemoignage(Request $request)
     {
@@ -205,6 +211,9 @@ class EventController extends Controller
     /**
      * @Route("/admin/temoignage/{id}", name="temoignage_delete")
      * @Method("DELETE")
+     * @param Request $request
+     * @param Temoignage $temoignage
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function deleteTemoignage(Request $request, Temoignage $temoignage)
     {
@@ -214,7 +223,7 @@ class EventController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($temoignage);
-            $em->flush($temoignage);
+            $em->flush();
         }
 
         return $this->redirectToRoute('temoignage_index');
