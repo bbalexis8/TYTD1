@@ -3,16 +3,18 @@
 {% block body %}
 
     <div id="pagetem" class="container col-lg-10 col-lg-offset-1 col-xs-12 text-center">
-        <h1>Témoignage lié à l'évènement : «{{ temoignage.evenement.nom }}» </h1>
+        <h1>Témoignage lié à l'évènement : « {{ temoignage.evenement.nom }} » </h1>
         <hr>
         <br>
-                <div id="divtem" class="text-justify col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1">
-                    <h2><span class="glyphicon   glyphicon glyphicon-pencil"></span> «{{ temoignage.titreT }}»</h2><br>
+                <div class="divtem text-justify col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1">
+                    <h2> « {{ temoignage.titreT }} »</h2><br>
                     {#<p>En rapport avec l'évènement : {{ temoignage.evenement.nom }}</p>#}
                     <p>{{ temoignage.descriptionT }}</p><br>
                     <p id="autdatetem"><span class="glyphicon glyphicon glyphicon-menu-right"></span> Publié par : {{ temoignage.utilisateur.username }} - le {{ temoignage.dateT|date('d/m/Y') }}</p>
                     <br>
                     <a id="btnlistemcpt" href="{{ path('temoignageslist') }}" class="btn btn-default col-lg-6 col-lg-offset-3 col-xs-4 col-xs-offset-7"><span class="glyphicon  glyphicon glyphicon-chevron-right "></span> Retour à la liste des témoignages</a>
+                    
+                    <a id="btnlistemcpt" href="#" class="btn btn-default col-lg-6 col-lg-offset-3 col-xs-4 col-xs-offset-7"><span class="glyphicon  glyphicon glyphicon-chevron-right "></span> Publiez votre témoignage</a>
                 </div>
                 <br><br>
         </div>

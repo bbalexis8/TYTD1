@@ -366,7 +366,7 @@ h3{
 
 /**CSS LISTE TEMOIGNAGES **/
 
-#divtem {
+.divtem {
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 10px;
@@ -376,11 +376,11 @@ h3{
     color: white;
 }
 
-#divtem h2 > a, #divtem h2{
+.divtem h2 > a, #divtem h2{
     color: #8DE6B6;
 }
 
-#divtem img {
+.divtem img {
     max-height: 200px;
 }
 
