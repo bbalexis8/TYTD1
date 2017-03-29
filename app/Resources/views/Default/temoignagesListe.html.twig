@@ -7,7 +7,7 @@
         <hr>
         <br>
             {% for temoignage in temoignages %}
-                <div id="divtem" class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 text-justify">
+                <div class="divtem col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 text-justify">
                     <h2><a href="{{ path('onetemoignage', { 'id': temoignage.id }) }}"><span class="glyphicon   glyphicon glyphicon-pencil"></span> «{{ temoignage.titreT }}»</a></h2>
                     <p>En rapport avec l'évènement : {{ temoignage.evenement.nom }}</p><br>
                     <p>{{ temoignage.descriptionT }}</p><br>
@@ -15,7 +15,8 @@
                     <br>
                     <a id="btntemcpt" href="{{ path('onetemoignage', { 'id': temoignage.id }) }}" class="btn btn-default col-lg-6 col-lg-offset-3 col-xs-4 col-xs-offset-7"><span class="glyphicon  glyphicon glyphicon-chevron-right"></span> Témoignage complet</a>
                 </div>
-                <br><br>
+
             {% endfor %}
         </div>
+
 {% endblock %}
