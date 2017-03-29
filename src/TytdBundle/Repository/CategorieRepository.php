@@ -32,21 +32,4 @@ class CategorieRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-    function randomIndex($limite)
-    {
-        $count = $this->createQueryBuilder('cat')
-            ->select('COUNT(cat)')
-            ->getQuery()
-            ->getSingleScalarResult();
-
-        $this->createQueryBuilder('cat')
-            ->where('cat.nomCa = :nomCa')
-            ->setFirstResult(rand(0, $count - 1))
-            ->setMaxResults($limite);
-
-        return $count->getQuery();
-
-        }
-
-
 }
