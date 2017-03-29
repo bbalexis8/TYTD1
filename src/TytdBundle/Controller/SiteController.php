@@ -52,6 +52,8 @@ class SiteController extends Controller
      *
      * @Route("blog/one-article/{id}", name="onearticle")
      * @Method("GET")
+     * @param Article $onearticle
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showOneArticle(Article $onearticle)
     {
@@ -91,6 +93,8 @@ class SiteController extends Controller
      *
      * @Route("assist/one-categorie/{id}", name="onecategorie")
      * @Method("GET")
+     * @param Categorie $onecategorie
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showOneCategorie(Categorie $onecategorie)
 
@@ -140,6 +144,8 @@ class SiteController extends Controller
      *
      * @Route("assist/one-temoignage/{id}", name="onetemoignage")
      * @Method("GET")
+     * @param Temoignage $temoignage
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showOneTemoignage(Temoignage $temoignage)
     {

@@ -60,6 +60,8 @@ class UtilisateurController extends Controller
     /**
      * @Route("/{id}", name="utilisateur_show")
      * @Method("GET")
+     * @param Utilisateur $utilisateur
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Utilisateur $utilisateur)
     {
@@ -75,6 +77,9 @@ class UtilisateurController extends Controller
      * Displays a form to edit an existing utilisateur entity.
      * @Route("/{id}/edit", name="utilisateur_edit")
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param Utilisateur $utilisateur
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editAction(Request $request, Utilisateur $utilisateur)
     {
@@ -109,7 +114,7 @@ class UtilisateurController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($utilisateur);
-            $em->flush($utilisateur);
+            $em->flush();
         }
 
         return $this->redirectToRoute('utilisateur_index');

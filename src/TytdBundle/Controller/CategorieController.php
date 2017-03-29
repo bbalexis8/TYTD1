@@ -36,6 +36,8 @@ class CategorieController extends Controller
      *
      * @Route("/new", name="categorie_new")
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function newAction(Request $request)
     {
@@ -79,6 +81,8 @@ class CategorieController extends Controller
      *
      * @Route("/{id}", name="categorie_show")
      * @Method("GET")
+     * @param Categorie $categorie
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Categorie $categorie)
     {
@@ -129,7 +133,7 @@ class CategorieController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($categorie);
-            $em->flush($categorie);
+            $em->flush();
         }
 
         return $this->redirectToRoute('categorie_index');
