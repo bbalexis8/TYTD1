@@ -8,7 +8,6 @@ use TytdBundle\Entity\Article;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use TytdBundle\Entity\Commentaire;
-use Symfony\Component\HttpFoundation\File;
 
 
 class AdminController extends Controller
@@ -49,6 +48,8 @@ class AdminController extends Controller
      *
      * @Route("/admin/article_new", name="article_new")
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function newArticle(Request $request)
     {
@@ -76,7 +77,7 @@ class AdminController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
-            $em->flush($article);
+            $em->flush();
 
             return $this->redirectToRoute('article_show', array('id' => $article->getId()));
         }
@@ -150,6 +151,9 @@ class AdminController extends Controller
      *
      * @Route("/admin/article/{id}", name="article_delete")
      * @Method("DELETE")
+     * @param Request $request
+     * @param Article $article
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function deleteArticle(Request $request, Article $article)
     {
@@ -159,7 +163,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($article);
-            $em->flush($article);
+            $em->flush();
         }
 
         return $this->redirectToRoute('article_index');
@@ -212,7 +216,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaire);
-            $em->flush($commentaire);
+            $em->flush();
 
             return $this->redirectToRoute('commentaire_show', array('id' => $commentaire->getId()));
         }
@@ -272,7 +276,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($commentaire);
-            $em->flush($commentaire);
+            $em->flush();
         }
         return $this->redirectToRoute('commentaire_index');
     }
