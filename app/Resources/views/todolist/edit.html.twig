@@ -1,0 +1,34 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block body %}
+
+
+    <div class="bobody">
+        <h1>Modifier le "To Do"</h1>
+
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}<br>
+        <input type="submit" value="Valider les modifications"/>
+        {{ form_end(edit_form) }}
+
+        <br>
+        <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group ">
+                <a href="{{ path('todolist_index') }}">
+                    Retour à la liste </a>
+            </div>
+
+        </div>
+        <br>
+        <div>
+
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+
+        </div>
+        <hr>
+    </div>
+
+
+{% endblock %}

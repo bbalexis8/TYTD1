@@ -118,11 +118,6 @@ class SiteController extends Controller
 
 
 
-
-
-
-
-
     /**
      * Affiche les temoignages liés aux outils de l assistant
      *

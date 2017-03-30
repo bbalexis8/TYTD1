@@ -1,42 +1,20 @@
 {% extends ':Default:basic.html.twig' %}
 
+{% block body %}
 <div id="formbirthday" class="container-viewport">
-    <form>
-    <h1>Formulaire Anniversaire </h1>
 
-        <div class="col-xs-12">
-            <label>Anniversaire de : </label><input class="input1" type="text">
+    <h1>Planifier mon événement </h1>
+        <h2>Je crée ma 'To Do List' :</h2>
+
+
+        <div class="bobody">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}<br>
+            <input type="submit" value="Valider ma 'To Do List'"/>
+            {{ form_end(form) }}
+            <hr>
         </div>
-        <div class="col-xs-12">
-            <label>Nom de l'organisateur : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Âge : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Date et heure : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Lieu : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Nombre d'invités : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Budget : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Thème : </label><input class="input1" type="text">
-        </div>
-        <div class="radio col-xs-12">
-            <label>Repas : </label><label><input type="checkbox"> Oui</label> <label><input type="checkbox"> Non</label>
-        </div>
-        <div class="col-xs-12">
-            <label>Description : </label><input class="input1" type="text">
-        </div>
-        <div class="col-xs-12">
-            <label>Cadeaux potentiels : </label><input class="input1" type="text">
-        </div>
-    </form>
 
 </div>
+{% endblock body %}

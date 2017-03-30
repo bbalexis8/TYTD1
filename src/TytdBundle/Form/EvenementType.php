@@ -39,9 +39,16 @@ class EvenementType extends AbstractType
                 "class" => Utilisateur::class,
                 "choice_label" => 'username',
                 "attr" => array('class' => 'tailleautresforms')
-            ));
+            ))
+        ->add('todolists', EntityType::class, array(
+            'class' => 'TytdBundle\Entity\Todolist',
+            'label' => 'Ne pas oublier : ',
+            'choice_label' => 'nom',
+            'multiple' => true
+        ));
     }
-    
+
+
     /**
      * {@inheritdoc}
      */
