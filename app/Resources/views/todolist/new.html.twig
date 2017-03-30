@@ -1,7 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Todolist creation</h1>
+    <h1>Créer un "to do"</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -10,7 +10,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('todolist_index') }}">Back to the list</a>
+            <a href="{{ path('todolist_index') }}">Retour au listing</a>
         </li>
     </ul>
 {% endblock %}

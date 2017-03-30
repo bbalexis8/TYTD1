@@ -1,7 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Todolist edit</h1>
+    <h1>Modifier le "To Do"</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -10,11 +10,11 @@
 
     <ul>
         <li>
-            <a href="{{ path('todolist_index') }}">Back to the list</a>
+            <a href="{{ path('todolist_index') }}">Retour au listing</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

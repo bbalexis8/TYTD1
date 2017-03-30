@@ -1,7 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Todolists list</h1>
+    <h1>Liste des "To Do's"</h1>
 
     <table>
         <thead>
@@ -19,10 +19,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('todolist_show', { 'id': todolist.id }) }}">show</a>
+                            <a href="{{ path('todolist_show', { 'id': todolist.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('todolist_edit', { 'id': todolist.id }) }}">edit</a>
+                            <a href="{{ path('todolist_edit', { 'id': todolist.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('todolist_new') }}">Create a new todolist</a>
+            <a href="{{ path('todolist_new') }}">Créer un autre "To Do"</a>
         </li>
     </ul>
 {% endblock %}
