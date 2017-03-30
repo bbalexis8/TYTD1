@@ -12,6 +12,7 @@
                     <th>Catégorie</th>
                     <th>Auteur</th>
                     <th>Date</th>
+                    <th>To Do's</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,7 @@
                     <td>{{ evenement.categorie.nomCa }}</td>
                     <td>{{ evenement.utilisateur.username }}</td>
                     <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% for  %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</td>
                 </tr>
 
                 </tbody>

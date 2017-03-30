@@ -16,9 +16,9 @@
                 <tbody>
                 <tr>
                     <td> {{ todolist.nom }}</td>
-                    {% for evenement in todolist.evenements %}
-                    <td> {{ evenement.nom }}</td>
-                    {% endfor %}
+                    <td>{% for evenement in todolist.evenements %}
+                     {{ evenement.nom }}<br>
+                    {% endfor %}</td>
                 </tr>
                 </tbody>
             </table>
