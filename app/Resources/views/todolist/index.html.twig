@@ -1,39 +1,45 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>Liste des "To Do's"</h1>
+    <div class="bobody">
+        <h1>Liste des "To Do's"</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for todolist in todolists %}
-            <tr>
-                <td><a href="{{ path('todolist_show', { 'id': todolist.id }) }}">{{ todolist.id }}</a></td>
-                <td>{{ todolist.nom }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('todolist_show', { 'id': todolist.id }) }}">Voir</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('todolist_edit', { 'id': todolist.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <th>Voir</th>
+                    <th>Nom</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for todolist in todolists %}
+                    <tr>
+                        <td><a href="{{ path('todolist_show', { 'id': todolist.id }) }}">N°{{ todolist.id }}</a></td>
+                        <td>{{ todolist.nom }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('todolist_show', { 'id': todolist.id }) }}">Voir</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('todolist_edit', { 'id': todolist.id }) }}">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ path('todolist_new') }}"><input type="button" value="Créer une nouvelle tâche"></a>
+            </li>
+        </ul>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('todolist_new') }}">Créer un autre "To Do"</a>
-        </li>
-    </ul>
+
+
 {% endblock %}
