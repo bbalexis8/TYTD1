@@ -25,7 +25,6 @@
     <div class="col-lg-12 col-xs-6 text-center"><h1>Espace Administrateur To You To Do</h1></div>
 
 
-
     <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
 
         <div class="btn-group ">
@@ -43,7 +42,7 @@
         </div>
 
         <div class="btn-group ">
-            <a id= "acc" href="{{ path('accueilsite') }}" class="btn deux btn-lg"
+            <a id="acc" href="{{ path('accueilsite') }}" class="btn deux btn-lg"
                aria-haspopup="true"
                aria-expanded="false">
                 Vue Visiteur </a>
@@ -63,18 +62,32 @@
         </div>
     </div>
 
-    <div class="btn-group btn-group-justified divine" role="group" aria-label="...">
     <div class="btn-group ">
+        <button type="button" class="btn un btn-lg dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+            To Do <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="{{ path('todolist_index') }}">Consulter la liste des "To Do"</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ path('todolist_new') }}">Créer un nouveau "To Do"</a></li>
+
+        </ul>
+    </div>
+
+    <div class="btn-group btn-group-justified divine" role="group" aria-label="...">
+        <div class="btn-group ">
             <button type="button" class="btn trois  btn-lg dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
                 Utilisateur <span class="caret"></span>
             </button>
-        <ul class="dropdown-menu">
-            <li><a href="{{ path('utilisateur_index') }}">Consulter la liste des utilisateurs</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ path('utilisateur_new') }}">Créer un nouvel utilisateur</a></li>
-        </ul>
+            <ul class="dropdown-menu">
+                <li><a href="{{ path('utilisateur_index') }}">Consulter la liste des utilisateurs</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ path('utilisateur_new') }}">Créer un nouvel utilisateur</a></li>
+            </ul>
         </div>
 
         <div class="btn-group ">
