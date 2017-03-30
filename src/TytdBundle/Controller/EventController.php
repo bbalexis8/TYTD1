@@ -258,6 +258,16 @@ class EventController extends Controller
      */
     public function addToDoList(Request $request)
     {
+        $evenement = new Evenement();
+        $form = $this->createForm('TytdBundle\Form\EvenementType', $evenement);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($evenement);
+            $em->flush();
+        }
+
         // On crée un objet ToDoList
         $todolist = new Todolist();
 
@@ -267,14 +277,7 @@ class EventController extends Controller
         // On ajoute les champs de l'entité que l'on veut à notre formulaire
         $formBuilder
             ->add('nom',     TextType::class)
-            ->add('prenom',   TextType::class)
-            ->add('datePrevue',    DateType::class)
-            ->add('lieuPrevu', TextType::class)
-            ->add('nbInvites',     TextType::class)
-            ->add('titreEvent',   TextType::class)
-            ->add('budget',     IntegerType::class)
-            ->add('programme',   TextareaType::class)
-            ->add('Enregistrer',      SubmitType::class)
+
         ;
 
         $form = $formBuilder->getForm();
@@ -285,6 +288,7 @@ class EventController extends Controller
         // On passe la méthode createView() du formulaire à la vue
         // afin qu'elle puisse afficher le formulaire toute seule
         return $this->render(':FormEvenements:anniversaire.html.twig', array(
+            'evenement' => $evenement,
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
             'form' => $form->createView()
         ));
