@@ -1,0 +1,22 @@
+{% extends ':Default:basic.html.twig' %}
+{% block nav %}{% endblock %}
+
+{% block body %}
+
+    <div class="divcontact col-lg-12  col-xs-12">
+        <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
+    <h1 class="text-center">Besoin de nous contacter, c'est facile !</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br>
+        <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1 text-center">
+        <input class="btnformcon" type="submit" value="Envoyer" />
+        </div>
+    {{ form_end(form) }}
+        </div>
+    </div>
+
+    {% block footerblock %}{% endblock %}
+
+{% endblock %}
