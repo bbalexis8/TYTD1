@@ -2,11 +2,11 @@
 
 body {
     padding-top: 50px;
-    min-height: 100%;
+    height: 100%;
 }
 
 #bodyacc {
-    min-height: 100%;
+    height: 100%;
 }
 
 .navbar-brand {
@@ -274,6 +274,42 @@ h3{
 
 }
 
+/** CSS DU FORM CONTACT **/
+
+.taillefcontact {
+    width: 70%;
+    height: 40px;
+}
+
+.taillemesscontact {
+    width: 70%;
+    height: 100px;
+}
+
+.divformcontact {
+    background-color: #B0D4C8;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.divcontact {
+    background-color: #013F4E;
+    margin-top: -50px;
+    width: 100%;
+    height: 100%;
+}
+
+.divcontact label {
+    width: 30%;
+    height: 40px;
+}
+.btnformcon {
+    width: 150px;
+    height: 30px;
+}
+
 #clockbox{
     background-color: #B0D4C8;
     padding-top: 10px;
@@ -423,5 +459,13 @@ h3{
     background-color: #B0D4C8;
 }
 
+/** CSS FOOTER **/
+
+.footercss {
+
+    background-color: #013F4E;
+    color: white;
+    text-align: center;
+}
 
 

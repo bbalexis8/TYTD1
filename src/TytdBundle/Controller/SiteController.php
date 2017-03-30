@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use TytdBundle\Entity\Article;
 use TytdBundle\Entity\Categorie;
 use TytdBundle\Entity\Temoignage;
+use TytdBundle\Entity\Contact;
+use TytdBundle\Form\ContactType;
+use Symfony\Component\HttpFoundation\Request;
 
 class SiteController extends Controller
 {
@@ -20,12 +23,14 @@ class SiteController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-//        $troisarticles = $em->getRepository('TytdBundle:Article')->derniersArticles(3);
-//        $categories = $em->getRepository('TytdBundle:Categorie')->findAll();
+
+
+
+        $formcontact1 = $this->createForm('TytdBundle\Form\ContactType');
 
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $em->getRepository('TytdBundle:Article')->derniersArticles(3),
-            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
         ));
     }
 
@@ -110,8 +115,8 @@ class SiteController extends Controller
         return $this->render(':Default:oneCategoryAndEvents.html.twig', array(
             'categorie' => $onecategorie,
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
-            'evenements' => $evenements)
-        );
+            'evenements' => $evenements
+            ));
 
 }
 
@@ -151,4 +156,5 @@ class SiteController extends Controller
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
+
 }
