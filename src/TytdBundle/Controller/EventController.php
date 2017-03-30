@@ -2,6 +2,7 @@
 
 namespace TytdBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use TytdBundle\Entity\Evenement;
 use TytdBundle\Entity\Temoignage;
 use TytdBundle\Entity\Todolist;
@@ -15,7 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-
+use TytdBundle\TytdBundle;
 
 
 class EventController extends Controller
@@ -251,12 +252,21 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/todolist_new", name="todolist_new")
-     * @Method({"GET", "POST"})
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @Route("/addTodolist", name="addTodoList")
+     *
      */
-    public function addToDoList(Request $request)
+    public function addToDoList()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $erEvents = $em->getRepository("TytdBundle:Evenement");
+        $monEvenement = $erEvents->find(1);
+        $monEvenement->addTodo();
+        $em->flush();
+        return new Response("<body></body>");
+    }
+
+
+    public function new()
     {
         $evenement = new Evenement();
         $form = $this->createForm('TytdBundle\Form\EvenementType', $evenement);

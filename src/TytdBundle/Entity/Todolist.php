@@ -31,6 +31,45 @@ class Todolist
 
 
     /**
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Evenement",inversedBy="todolists" )
+     */
+    private $evenements;
+
+
+    public function __construct()
+    {
+        $this ->evenements = new ArrayCollection();
+    }
+
+    /**
+     * @param  $evenement\TytdBundle\Entity\Evenement
+     */
+    public function addMonEvent($evenement)
+    {
+        if (!$this->evenements->contains($evenement)) {
+            $this->evenements[] = $evenement;
+        }
+    }
+
+    /**
+     * @param  $evenement\TytdBundle\Entity\Evenement
+     */
+    public function supprimerMonEvent($evenement)
+    {
+        if (!$this->evenements->contains($evenement)) {
+            $this->evenements ->removeElement($evenement);
+        }
+    }
+
+    /**
+     * @return ArrayCollection |\TytdBundle\Entity\Evenement[]
+     */
+    public function getEvenements()
+    {
+        return $this->evenements;
+    }
+
+    /**
      * Get id
      *
      * @return int
