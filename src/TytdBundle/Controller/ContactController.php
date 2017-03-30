@@ -34,16 +34,18 @@ class ContactController extends Controller
     /**
      * Creates a new contact entity.
      *
-     * @Route("/new", name="contact_new")
+     * @Route("/new-contact", name="contact_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
-        $contact = new Contact();
-        $form = $this->createForm('TytdBundle\Form\ContactType', $contact);
-        $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        $contact = new Contact();
+        $formcontact = $this->createForm('TytdBundle\Form\ContactType', $contact);
+        $formcontact->handleRequest($request);
+
+        if ($formcontact->isSubmitted() && $formcontact->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush();
@@ -53,7 +55,8 @@ class ContactController extends Controller
 
         return $this->render('contact/new.html.twig', array(
             'contact' => $contact,
-            'form' => $form->createView(),
+            'form' => $formcontact->createView(),
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
