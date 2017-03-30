@@ -63,7 +63,7 @@ class Evenement
     }
 
     /**
-     * @param  $todolist\TytdBundle\Entity\Todolist
+     * @param $todolist \TytdBundle\Entity\Todolist
      */
     public function addTodo($todolist)
     {
@@ -73,7 +73,7 @@ class Evenement
     }
 
     /**
-     * @param  $todolist\TytdBundle\Entity\Todolist
+     * @param $todolist \TytdBundle\Entity\Todolist
      */
     public function supprimerTodo($todolist)
     {
@@ -83,7 +83,7 @@ class Evenement
     }
 
     /**
-     * @return ArrayCollection |\TytdBundle\Entity\Todolist[]
+     * @return ArrayCollection|\TytdBundle\Entity\Todolist[]
      */
     public function getTodolists()
     {
