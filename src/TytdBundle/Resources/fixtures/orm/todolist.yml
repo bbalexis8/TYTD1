@@ -1,0 +1,18 @@
+TytdBundle\Entity\Todolist:
+    todolist1:
+         nom: 'cadeaux'
+
+    todolist2:
+         nom: 'couverts'
+
+    todolist3:
+        nomCa: 'vaisselle'
+
+    todolist4:
+         nomCa: 'trousse de secours'
+
+    todolist5:
+         nomCa: 'dentifrice'
+
+    todolist6:
+        nomCa: 'bouteilles eau'
