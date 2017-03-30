@@ -1,32 +1,39 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <h1>To Do</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ todolist.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ todolist.nom }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('todolist_index') }}">Retour</a>
-        </li>
-        <li>
-            <a href="{{ path('todolist_edit', { 'id': todolist.id }) }}">Modifier</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="bobody">
+        <h1>To Do " {{ todolist.nom }} "</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <td>Nom</td>
+                    <td>Evenements</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> {{ todolist.nom }}</td>
+                    {% for evenement in todolist.evenements %}
+                    <td> {{ evenement.nom }}</td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="btn-group  divine btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group ">
+                <a href="{{ path('todolist_index') }}">
+                    Retour à la liste </a>
+            </div>
+            <div class="btn-group ">
+                <a href="{{ path('todolist_edit', { 'id': todolist.id } ) }}">Modifier</a>
+            </div>
+        </div>
+
+    </div>
+
 {% endblock %}
