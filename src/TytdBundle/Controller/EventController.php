@@ -260,7 +260,9 @@ class EventController extends Controller
         $em = $this->getDoctrine()->getManager();
         $erEvents = $em->getRepository("TytdBundle:Evenement");
         $monEvenement = $erEvents->find(1);
-        $monEvenement->addTodo();
+        $erTodolists = $em->getRepository("TytdBundle:Todolist");
+        $monTodo = $erTodolists->find(1);
+        $monEvenement->addTodo($monTodo);
         $em->flush();
         return new Response("<body></body>");
     }
