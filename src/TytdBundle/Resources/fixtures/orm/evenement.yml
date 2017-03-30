@@ -1,6 +1,7 @@
 TytdBundle\Entity\Evenement:
-    evenement_{1..22}:
+    evenement{1..22}:
         nom: <word()>
         dateE: <dateTime('2017-03-17')>
         utilisateur: '@utilisateur*'
         categorie: '@categorie*'
+        todolist: ['@todolist']
