@@ -6,13 +6,13 @@ TytdBundle\Entity\Todolist:
          nom: 'couverts'
 
     todolist3:
-        nomCa: 'vaisselle'
+        nom: 'vaisselle'
 
     todolist4:
-         nomCa: 'trousse de secours'
+         nom: 'trousse de secours'
 
     todolist5:
-         nomCa: 'dentifrice'
+         nom: 'dentifrice'
 
     todolist6:
-        nomCa: 'bouteilles eau'
+        nom: 'bouteilles eau'
