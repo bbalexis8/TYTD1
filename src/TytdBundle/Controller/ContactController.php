@@ -82,7 +82,7 @@ class ContactController extends Controller
     {
         $deleteForm = $this->createDeleteForm($contact);
 
-        return $this->render('contact/show.html.twig', array(
+        return $this->render('contact/showAdmin.html.twig', array(
             'contact' => $contact,
             'delete_form' => $deleteForm->createView(),
         ));

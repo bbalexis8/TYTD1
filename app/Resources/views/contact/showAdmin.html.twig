@@ -1,0 +1,35 @@
+
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block body %}
+<div class="bobody">
+    <h1>Fiche Contact {{ contact.id }} " {{ contact.prenom }}, {{ contact.nom }} "</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="text-uppercase">
+                <td>Email</td>
+                <td>Adresse</td>
+                <td>Code Postal</td>
+                <td>Ville</td>
+                <td>Pays</td>
+                <td>Objet / Type d'evenement</td>
+                <td>Message</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ contact.mail }}</td>
+                <td>{{ contact.adresse }}</td>
+                <td>{{ contact.codepostal }}</td>
+                <td>{{ contact.ville }}</td>
+                <td>{{ contact.pays }}</td>
+                <td>{{ contact.typeevent }}</td>
+                <td>{{ contact.message }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

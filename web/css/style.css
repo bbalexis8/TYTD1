@@ -26,6 +26,7 @@ body {
     background-color: #013F4E;
     color: white;
     text-align: center;
+    margin: 0;
 }
 
 #logogd {
@@ -124,8 +125,10 @@ body {
     text-shadow: #101010 1px 1px;
 }
 
-#divevents a {
+#divevents a, p{
     text-decoration: none;
+    padding-top: 10px;
+    margin: 0;
 }
 
 .lienevents {
@@ -176,21 +179,17 @@ li {
 
 /*style de la page admin*/
 
-h1{
+h1, h2, h3{
     font-family: "Lie to Me";
 }
 
-h2{
-    font-family: "Lie to Me";
-}
 
-h3{
+#acc, #con{
     font-family: "Lie to Me";
-}
-
-#acc{
-    font-family: "Lie to Me";
-    font-size: 20px;
+    font-size: 1.8em;
+    border: ridge 1px #2a2730;
+    text-shadow: #F0DBDA 1px 1px;
+    max-height: 50px;
 }
 
 #headerAdmin {
@@ -220,16 +219,17 @@ h3{
 
 .divine .un {
     background-color: #FFAEA0;
+    font-size: large;
 }
 
 .divine .trois {
     background-color: #D48286;
-
+    font-size: large;
 }
 
 .divine .deux {
     background-color: #D5686E;
-
+    font-size: large;
 }
 
 .divine ul {
@@ -248,7 +248,7 @@ h3{
 
 .bobody table thead{
     background-color:#D48286 ;
-    color: #F5E5E5;
+    color: white;
 }
 
 .bobody li {
@@ -259,6 +259,15 @@ h3{
 
 .bobody{
     padding: 2em;
+    margin-top: 2em;
+    background-color: #F5E5E5;
+    border-radius: 20px;
+}
+
+.hiddendates {
+    visibility: hidden;
+    width: 100px;
+    height: 20px;
 }
 
 .checkboxes {
@@ -449,10 +458,29 @@ h3{
     max-height: 200px;
 }
 
-.btnsListeCat{
- /*ALEXIS*/
+.licat {
+    text-decoration: none;
 }
 
+.hrcat {
+    width: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-color: #C32830;
+}
+
+.divider {
+    border-color: #C32830;
+}
+
+.btnsListeCat{
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.btnsListeCat:hover {
+    background-color: #C32830;
+}
 
 #btntemcpt, #btnlistemcpt {
     background-color: #DCB647;
@@ -488,7 +516,7 @@ h3{
     background-color: #B0D4C8;
 }
 
-/** CSS FOOTER **/
+/** CSS FOOTER + chevron retour haut de page **/
 
 .footercss {
 
@@ -497,4 +525,22 @@ h3{
     text-align: center;
 }
 
+.chevronup{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: hidden;
+    padding-top: 9px;
+    background-color: #C32830;
+}
+
+.chevronup:hover {
+    background-color: #DFA7AA;
+    color: #C32830;
+}
+
+.chevronup:checked {
+    background-color: #D48286;
+    color: #C32830;
+}
 

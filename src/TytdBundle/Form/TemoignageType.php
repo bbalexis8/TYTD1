@@ -5,6 +5,7 @@ namespace TytdBundle\Form;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,20 +24,19 @@ class TemoignageType extends AbstractType
             'label' => 'Titre',
             "attr" => array('class' => 'tailletitlesforms')
             ))
-            ->add('descriptionT', TextType::class, array(
+            ->add('descriptionT', TextareaType::class, array(
                 'label' => 'Description',
                 "attr" => array('class' => 'tailletextsforms')
             ))
-            ->add('texteT', TextType::class, array(
+            ->add('texteT', TextareaType::class, array(
                 'label' => 'Texte',
                 "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('dateT', DateTimeType::class, array(
-                'label' => 'Date',
+                'label' => 'A quel evenement est lié votre témoignage ?',
                 'format' => 'dd:MM:yyyy',
-                'input' => 'datetime',
                 'data' => new \DateTime('now'),
-                "attr" => array('class' => 'tailleautresforms')
+                "attr" => array('class' => 'hiddendates')
             ))
             ->add('evenement', EntityType::class, array(
         "class" => Evenement::class,
