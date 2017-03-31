@@ -1,18 +1,23 @@
-{% extends 'admin/adminbase.html.twig' %}
+
+{% extends ':Default:basic.html.twig' %}
+{% block nav %}{% endblock %}
 
 {% block body %}
-    <div class="bobody">
-        <h2>Rédaction d'un nouveau témoignage</h2>
 
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer"/>
-        {{ form_end(form) }}
+    <div class="divcontact col-lg-12  col-xs-12">
+        <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
+            <h1 class="text-center">Rédaction d'un nouveau témoignage</h1>
 
-        <ul>
-            <li>
-                <a href="{{ path('temoignage_index') }}">Retour à la liste</a>
-            </li>
-        </ul>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <br>
+            <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1 text-center">
+                <input class="btnformcon" type="submit" value="Envoyer" />
+            </div>
+            {{ form_end(form) }}
+        </div>
     </div>
+
+    {% block footerblock %}{% endblock %}
+
 {% endblock %}
