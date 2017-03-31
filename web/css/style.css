@@ -169,21 +169,17 @@ li {
 
 /*style de la page admin*/
 
-h1{
+h1, h2, h3{
     font-family: "Lie to Me";
 }
 
-h2{
-    font-family: "Lie to Me";
-}
 
-h3{
+#acc, #con{
     font-family: "Lie to Me";
-}
-
-#acc{
-    font-family: "Lie to Me";
-    font-size: 20px;
+    font-size: 1.8em;
+    border: ridge 1px #2a2730;
+    text-shadow: #F0DBDA 1px 1px;
+    max-height: 50px;
 }
 
 #headerAdmin {
@@ -213,16 +209,17 @@ h3{
 
 .divine .un {
     background-color: #FFAEA0;
+    font-size: large;
 }
 
 .divine .trois {
     background-color: #D48286;
-
+    font-size: large;
 }
 
 .divine .deux {
     background-color: #D5686E;
-
+    font-size: large;
 }
 
 .divine ul {
@@ -241,7 +238,7 @@ h3{
 
 .bobody table thead{
     background-color:#D48286 ;
-    color: #F5E5E5;
+    color: white;
 }
 
 .bobody li {
@@ -252,6 +249,9 @@ h3{
 
 .bobody{
     padding: 2em;
+    margin-top: 2em;
+    background-color: #F5E5E5;
+    border-radius: 20px;
 }
 
 /** CSS FORMULAIRES ADMIN**/

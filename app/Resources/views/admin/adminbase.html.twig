@@ -61,6 +61,9 @@
             </ul>
         </div>
 
+    </div>
+
+    <div class="btn-group btn-group-justified divine" role="group" aria-label="...">
 
         <div class="btn-group ">
             <button type="button" class="btn trois btn-lg dropdown-toggle" data-toggle="dropdown"
@@ -75,9 +78,44 @@
 
             </ul>
         </div>
+
+        <div class="btn-group ">
+            <a id="con" href="{{ path('contact_index') }}" class="btn deux btn-lg"
+               aria-haspopup="true"
+               aria-expanded="false">
+                Contacts </a>
+        </div>
+
+        <div class="btn-group ">
+            <button type="button" class="btn trois btn-lg dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                Catégorie <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="{{ path('categorie_index') }}">Consulter la liste des catégories</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ path('categorie_new') }}">Créer un nouvelle catégorie</a></li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="btn-group btn-group-justified divine" role="group" aria-label="...">
+
+        <div class="btn-group ">
+            <button type="button" class="btn un btn-lg dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                Evénement <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="{{ path('evenement_index') }}">Consulter la liste des événements</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ path('evenement_new') }}">Créer un nouvel événement</a></li>
+            </ul>
+        </div>
+
         <div class="btn-group ">
             <button type="button" class="btn trois  btn-lg dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true"
@@ -95,32 +133,6 @@
             <button type="button" class="btn un btn-lg dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
-                Evénement <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="{{ path('evenement_index') }}">Consulter la liste des événements</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="{{ path('evenement_new') }}">Créer un nouvel événement</a></li>
-            </ul>
-        </div>
-
-        <div class="btn-group ">
-            <button type="button" class="btn trois btn-lg dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
-                Catégorie <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="{{ path('categorie_index') }}">Consulter la liste des catégories</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="{{ path('categorie_new') }}">Créer un nouvelle catégorie</a></li>
-            </ul>
-        </div>
-
-        <div class="btn-group ">
-            <button type="button" class="btn un btn-lg dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
                 Témoignage <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -129,7 +141,6 @@
                 <li><a href="{{ path('temoignage_new') }}">Créer un nouveau témoignage</a></li>
             </ul>
         </div>
-
     </div>
 
 
