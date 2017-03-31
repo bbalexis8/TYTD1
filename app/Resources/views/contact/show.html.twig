@@ -2,17 +2,19 @@
 {% block nav %}{% endblock %}
 
 {% block body %}
-    <div>
-    <h1>Contact</h1>
+
+<div class="divcontact col-lg-12  col-xs-12">
+    <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
+        <h1 class="text-center">Besoin de nous contacter, c'est facile !</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
+                <th><label>Id</label></th>
                 <td>{{ contact.id }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th><label>Prenom</label></th>
                 <td>{{ contact.prenom }}</td>
             </tr>
             <tr>
@@ -49,7 +51,8 @@
             </tr>
         </tbody>
     </table>
-
+    </div>
+</div>
     {% block footerblock %}{% endblock %}
     </div>
 {% endblock %}

@@ -54,7 +54,12 @@ class ContactController extends Controller
                 ->setSubject('Nouveau mail !')
                 ->setFrom('toyou.todo@gmail.com')
                 ->setTo('toyou.todo@gmail.com')
-                ->setBody('test', 'text/html');
+                ->setBody(
+                    $this->renderView(':contact:show.html.twig', array(
+                        'contact' => $contact
+                    )),
+                    'text/html'
+                );
             $this->get('mailer')->send($message);
 
             return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
