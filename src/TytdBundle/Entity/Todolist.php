@@ -31,7 +31,7 @@ class Todolist
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Evenement",inversedBy="todolists" )
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Evenement",inversedBy="todolists", cascade={"persist"} )
      */
     private $evenements;
 

@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TytdBundle\Entity\Categorie;
+use TytdBundle\Entity\Todolist;
 use TytdBundle\Entity\Utilisateur;
 
 class EvenementType extends AbstractType
@@ -38,6 +39,12 @@ class EvenementType extends AbstractType
             ->add('utilisateur', EntityType::class, array(
                 "class" => Utilisateur::class,
                 "choice_label" => 'username',
+                "attr" => array('class' => 'tailleautresforms')
+            ))
+            ->add('todolists', EntityType::class, array(
+                "class" => Todolist::class,
+                "choice_label" => 'nom',
+                "multiple" =>true,
                 "attr" => array('class' => 'tailleautresforms')
             ));
     }

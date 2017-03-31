@@ -52,7 +52,7 @@ class Evenement
     private $utilisateur;
 
     /**
-     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Todolist",mappedBy="evenement")
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Todolist",mappedBy="evenement", cascade={"persist"})
      */
     private $todolists;
 

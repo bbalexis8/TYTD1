@@ -131,7 +131,7 @@ class TodolistController extends Controller
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('todolist_delete', array('id' => $todolist->getId())))
-            ->setMethod('DELETE')
+            ->setMethod('Suppri')
             ->getForm();
     }
 

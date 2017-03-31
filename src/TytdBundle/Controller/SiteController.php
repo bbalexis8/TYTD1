@@ -5,6 +5,7 @@ namespace TytdBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use TytdBundle\Entity\Article;
 use TytdBundle\Entity\Categorie;
 use TytdBundle\Entity\Temoignage;
@@ -23,10 +24,7 @@ class SiteController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-
-
-        $formcontact1 = $this->createForm('TytdBundle\Form\ContactType');
+        $this->genFixtures();
 
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $em->getRepository('TytdBundle:Article')->derniersArticles(3),
@@ -34,6 +32,27 @@ class SiteController extends Controller
         ));
     }
 
+    /**
+     * @Route("/gen/Fixtures")
+     */
+    public function genFixtures()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $evenementRepository = $em->getRepository('TytdBundle:Evenement');
+        $todoRepository = $em->getRepository('TytdBundle:Todolist');
+
+        $evements = $evenementRepository->findAll();
+        $todos = $todoRepository->findAll();
+        foreach ($todos AS $todo) {
+            for ($i = 0; $i < mt_rand(3, 12); $i++) {
+                $todo->addMonEvent($evements[mt_rand(0, count($evements) - 1)]);
+            }
+        }
+        $em->flush();
+
+        return new Response('ok');
+    }
 
     /**
      * Affiche la liste des articles présents sur le blog
@@ -65,8 +84,8 @@ class SiteController extends Controller
         $em = $this->getDoctrine()->getManager();
         $commentaires = $em->getRepository('TytdBundle:Commentaire')->findBy(
             array('article' => $onearticle->getId()), // Critere
-           // array('date' => 'ASC'),        // Tri
-            $limit  = null,                 // Limite
+            // array('date' => 'ASC'),        // Tri
+            $limit = null,                 // Limite
             $offset = null                 // Offset
         );
 
@@ -108,7 +127,7 @@ class SiteController extends Controller
         $evenements = $em->getRepository('TytdBundle:Evenement')->findBy(
             array('categorie' => $onecategorie->getId()), // Critere
             array('dateE' => 'desc'),        // Tri
-            $limit  = null,                 // Limite
+            $limit = null,                 // Limite
             $offset = null                 // Offset
         );
 
@@ -116,11 +135,9 @@ class SiteController extends Controller
             'categorie' => $onecategorie,
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
             'evenements' => $evenements
-            ));
+        ));
 
-}
-
-
+    }
 
 
     /**
