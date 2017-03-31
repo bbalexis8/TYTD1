@@ -51,6 +51,16 @@ body {
     visibility: inherit;
 }
 
+@media (max-width: 900px) {
+.lienaccH {
+    max-width: 100px;
+    border: transparent;
+    display: none;
+    visibility: inherit;
+
+}}
+
+
 #btnsacc{
     padding-bottom:25px;
 }
@@ -246,6 +256,16 @@ h3{
     padding: 2em;
 }
 
+.checkboxes {
+    display: inline-table;
+    width: 75%;
+    text-align: left;
+    background-color: #9d9d9d;
+    padding: 12px;
+    -webkit-column-count: 3;
+}
+
+
 /** CSS FORMULAIRES ADMIN**/
 
 .table-responsive{
@@ -270,15 +290,13 @@ h3{
 
 .taillechoicesforms {
     width: 400px;
-
-
 }
 
 .bobody label{
     width: 150px;
     height: 50px;
-
 }
+
 
 /** CSS DU FORM CONTACT **/
 

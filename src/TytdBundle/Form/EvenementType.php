@@ -44,8 +44,10 @@ class EvenementType extends AbstractType
             ->add('todolists', EntityType::class, array(
                 "class" => Todolist::class,
                 "choice_label" => 'nom',
+                "label"=> "Vos \"To Do\"",
                 "multiple" =>true,
-                "attr" => array('class' => 'tailleautresforms')
+                "expanded"=>true,
+                "attr" => array('class' => 'checkboxes')
             ));
     }
 
