@@ -254,6 +254,12 @@ h1, h2, h3{
     border-radius: 20px;
 }
 
+.hiddendates {
+    visibility: hidden;
+    width: 100px;
+    height: 20px;
+}
+
 /** CSS FORMULAIRES ADMIN**/
 
 .table-responsive{
@@ -428,10 +434,29 @@ h1, h2, h3{
     max-height: 200px;
 }
 
-.btnsListeCat{
- /*ALEXIS*/
+.licat {
+    text-decoration: none;
 }
 
+.hrcat {
+    width: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-color: #C32830;
+}
+
+.divider {
+    border-color: #C32830;
+}
+
+.btnsListeCat{
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.btnsListeCat:hover {
+    background-color: #C32830;
+}
 
 #btntemcpt, #btnlistemcpt {
     background-color: #DCB647;

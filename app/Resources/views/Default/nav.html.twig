@@ -22,11 +22,12 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('eventcategorieslist') }}">Liste des évènements</a></li>
                             <li role="separator" class="divider"></li>
-                            <ul class="font-weight-bold">Catégories :
+                            <li>Toutes les Catégories :
                             {% for categorie in categories %}
-                            <li><a href="{{ path('onecategorie', { 'id': categorie.id }) }}" class="btnsListeCat">{{ categorie.nomCa }}</a></li>
+                                <hr class="hrcat text-center">
+                            <a class="btnsListeCat text-left" href="{{ path('onecategorie', { 'id': categorie.id }) }}"><span class=" glyphicon glyphicon-chevron-right small"></span> {{ categorie.nomCa }}</a>
                             {% endfor %}
-                            </ul>
+                            </li>
                         </ul>
                     </li>
 
@@ -35,7 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('temoignageslist') }}">Liste des évènements</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Publier son témoignage</a></li>
+                            <li><a href="{{ path('temoignage_new') }}">Publier son témoignage</a></li>
                         </ul>
                     </li>
                 </ul>

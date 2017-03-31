@@ -176,14 +176,14 @@ class EventController extends Controller
                 ->setFrom('toyou.todo@gmail.com')
                 ->setTo('toyou.todo@gmail.com')
                 ->setBody(
-                    $this->renderView(':temoignageUser:show.html.twig', array(
+                    $this->renderView(':temoignage:showUser.html.twig', array(
                         'contact' => $temoignage
                     )),
                     'text/html'
                 );
             $this->get('mailer')->send($message);
 
-            return $this->redirectToRoute('temoignageUser_show', array('id' => $temoignage->getId()));
+            return $this->redirectToRoute('temoignage_showUser', array('id' => $temoignage->getId()));
         }
 
         return $this->render('temoignage/new.html.twig', array(
@@ -196,14 +196,14 @@ class EventController extends Controller
 
 
     /**
-     * @Route("/temoignage/{id}", name="temoignageUser_show")
+     * @Route("/temoignage/{id}", name="temoignage_showUser")
      * @Method("GET")
      */
     public function showTemoignageUser(Temoignage $temoignage)
     {
         $deleteForm = $this->createDeleteFormTemoi($temoignage);
 
-        return $this->render('temoignageUser:show.html.twig', array(
+        return $this->render('temoignage:showUser.html.twig', array(
             'temoignage' => $temoignage,
             'delete_form' => $deleteForm->createView(),
         ));
