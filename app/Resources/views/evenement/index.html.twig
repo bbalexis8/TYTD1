@@ -13,7 +13,6 @@
                     <th>Catégorie</th>
                     <th>Auteur</th>
                     <th>Date</th>
-                    <th>To Do's</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -25,9 +24,6 @@
                         <td>{{ evenement.categorie.nomCa }}</td>
                         <td>{{ evenement.utilisateur.username }}</td>
                         <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d H:i:s') }}{% endif %}</td>
-                        <td>{% for todolist in evenement.todolists %}
-                                {{ todolist.nom }} /
-                            {% endfor %}</td>
                         <td>
                             <ul>
                                 <li>
