@@ -123,6 +123,11 @@ body {
     color: #01717D;
     text-shadow: #101010 1px 1px;
 }
+
+#divevents a {
+    text-decoration: none;
+}
+
 .lienevents {
     max-width: 300px;
 }

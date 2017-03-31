@@ -1,64 +1,58 @@
-{% extends 'base.html.twig' %}
+{% extends ':Default:basic.html.twig' %}
+{% block nav %}{% endblock %}
 
 {% block body %}
-    <h1>Contact</h1>
+
+<div class="divcontact col-lg-12  col-xs-12">
+    <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
+        <h1 class="text-center">Votre message est bien envoyé !</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ contact.id }}</td>
+                <th><label>Id</label></th>
+                <td><label class="taillefcontact">{{ contact.id }}</label></td>
             </tr>
             <tr>
-                <th>Prenom</th>
-                <td>{{ contact.prenom }}</td>
+                <th><label>Prenom</label></th>
+                <td><label class="taillefcontact">{{ contact.prenom }}</label></td>
             </tr>
             <tr>
-                <th>Nom</th>
-                <td>{{ contact.nom }}</td>
+                <th><label>Nom</label></th>
+                <td><label class="taillefcontact">{{ contact.nom }}</label></td>
             </tr>
             <tr>
-                <th>Mail</th>
-                <td>{{ contact.mail }}</td>
+                <th><label>Mail</label></th>
+                <td><label class="taillefcontact">{{ contact.mail }}</label></td>
             </tr>
             <tr>
-                <th>Adresse</th>
-                <td>{{ contact.adresse }}</td>
+                <th><label>Adresse</label></th>
+                <td><label class="taillefcontact">{{ contact.adresse }}</label></td>
             </tr>
             <tr>
-                <th>Codepostal</th>
-                <td>{{ contact.codepostal }}</td>
+                <th><label>Code postal</label></th>
+                <td><label class="taillefcontact">{{ contact.codepostal }}</label></td>
             </tr>
             <tr>
-                <th>Ville</th>
-                <td>{{ contact.ville }}</td>
+                <th><label>Ville</label></th>
+                <td><label class="taillefcontact">{{ contact.ville }}</label></td>
             </tr>
             <tr>
-                <th>Pays</th>
-                <td>{{ contact.pays }}</td>
+                <th><label>Pays</label></th>
+                <td><label class="taillefcontact">{{ contact.pays }}</label></td>
             </tr>
             <tr>
-                <th>Typeevent</th>
-                <td>{{ contact.typeevent }}</td>
+                <th><label>Type d'évenement</label></th>
+                <td><label class="taillefcontact">{{ contact.typeevent }}</label></td>
             </tr>
             <tr>
-                <th>Message</th>
-                <td>{{ contact.message }}</td>
+                <th><label>Message</label></th>
+                <td><label class="taillefcontact">{{ contact.message }}</label></td>
             </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('contact_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    </div>
+</div>
+    {% block footerblock %}{% endblock %}
+    </div>
 {% endblock %}
