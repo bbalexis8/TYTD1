@@ -26,6 +26,7 @@ body {
     background-color: #013F4E;
     color: white;
     text-align: center;
+    margin: 0;
 }
 
 #logogd {
@@ -114,8 +115,10 @@ body {
     text-shadow: #101010 1px 1px;
 }
 
-#divevents a {
+#divevents a, p{
     text-decoration: none;
+    padding-top: 10px;
+    margin: 0;
 }
 
 .lienevents {
@@ -464,7 +467,7 @@ h3{
     background-color: #B0D4C8;
 }
 
-/** CSS FOOTER **/
+/** CSS FOOTER + chevron retour haut de page **/
 
 .footercss {
 
@@ -473,4 +476,22 @@ h3{
     text-align: center;
 }
 
+.chevronup{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: hidden;
+    padding-top: 9px;
+    background-color: #C32830;
+}
+
+.chevronup:hover {
+    background-color: #DFA7AA;
+    color: #C32830;
+}
+
+.chevronup:checked {
+    background-color: #D48286;
+    color: #C32830;
+}
 
