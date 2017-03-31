@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TytdBundle\Entity\Categorie;
+use TytdBundle\Entity\Todolist;
 use TytdBundle\Entity\Utilisateur;
 
 class EvenementType extends AbstractType
@@ -40,12 +41,14 @@ class EvenementType extends AbstractType
                 "choice_label" => 'username',
                 "attr" => array('class' => 'tailleautresforms')
             ))
-        ->add('todolists', EntityType::class, array(
-            'class' => 'TytdBundle\Entity\Todolist',
-            'label' => 'Ne pas oublier : ',
-            'choice_label' => 'nom',
-            'multiple' => true
-        ));
+            ->add('todolists', EntityType::class, array(
+                "class" => Todolist::class,
+                "choice_label" => 'nom',
+                "label"=> "Vos \"To Do\"",
+                "multiple" =>true,
+                "expanded"=>true,
+                "attr" => array('class' => 'checkboxes')
+            ));
     }
 
 

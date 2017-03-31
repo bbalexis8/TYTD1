@@ -1,14 +1,14 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-<div class="bobody">
+<div class="todolist">
     <h1>Créer un "to do"</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Créer" />
     {{ form_end(form) }}
-
+    <br>
     <ul>
         <li>
             <a href="{{ path('todolist_index') }}">Retour au listing</a>

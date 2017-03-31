@@ -2,10 +2,12 @@
 
 namespace TytdBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use TytdBundle\Entity\Todolist;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Todolist controller.
@@ -129,8 +131,32 @@ class TodolistController extends Controller
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('todolist_delete', array('id' => $todolist->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->setMethod('Suppri')
+            ->getForm();
     }
+
+
+    /**
+     * @Route("/gen/Fixtures")
+     */
+    public function genFixtures()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $evenementRepository = $em->getRepository('TytdBundle:Evenement');
+        $todoRepository = $em->getRepository('TytdBundle:Todolist');
+
+        $evements = $evenementRepository->findAll();
+        $todos = $todoRepository->findAll();
+        foreach ($todos AS $todo) {
+            for ($i = 0; $i < mt_rand(3, 12); $i++) {
+                $todo->addMonEvent($evements[mt_rand(0, count($evements) - 1)]);
+            }
+        }
+        $em->flush();
+
+        return new Response('ok');
+    }
+
+
 }
