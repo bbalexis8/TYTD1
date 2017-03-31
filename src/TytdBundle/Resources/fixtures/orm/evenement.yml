@@ -4,4 +4,4 @@ TytdBundle\Entity\Evenement:
         dateE: <dateTime('2017-03-17')>
         utilisateur: '@utilisateur*'
         categorie: '@categorie*'
-        todolist: ['@todolist']
+
