@@ -50,11 +50,12 @@ class ContactController extends Controller
             $em->persist($contact);
             $em->flush();
 
-            $mail = \Swift_Message::newInstance()
+            $message = \Swift_Message::newInstance()
                 ->setSubject('Nouveau mail !')
                 ->setFrom('toyou.todo@gmail.com')
                 ->setTo('toyou.todo@gmail.com')
-                ->setBody($contact);
+                ->setBody('test', 'text/html');
+            $this->get('mailer')->send($message);
 
             return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
         }
