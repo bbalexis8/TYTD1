@@ -275,9 +275,8 @@ class EventController extends Controller
     }
 
     /**
-     * Creates a new evenement entity.
+     * l'utilisateur crée sa to do list liée à un événement
      * @Method({"GET", "POST"})
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Route("/addTodolist", name="addTodoList")
      *
@@ -287,22 +286,20 @@ class EventController extends Controller
         $em = $this->getDoctrine()->getManager();
         $evenement = new Evenement();
         $form = $this->createForm('TytdBundle\Form\EvenementType', $evenement);
-        $form->handleRequest();
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($evenement);
-//            $em->flush();
 
             return $this->redirectToRoute('evenement_index');
         }
 
-        return $this->render('evenement/new.html.twig', array(
+        return $this->redirectToRoute('evenement_new', array(
             'evenement' => $evenement,
             'form' => $form->createView(),
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
+
 
 
 }
