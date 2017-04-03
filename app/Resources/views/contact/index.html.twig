@@ -23,7 +23,7 @@
                     <tbody>
                     {% for contact in contacts %}
                         <tr>
-                            <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
+                            <td><a href="{{ path('contactAdmin_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
                             <td>{{ contact.prenom }}</td>
                             <td>{{ contact.nom }}</td>
                             <td>{{ contact.mail }}</td>

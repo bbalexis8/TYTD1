@@ -1,0 +1,26 @@
+{% extends ':Default:basic.html.twig' %}
+    {% block nav %}{% endblock %}
+
+{% block body %}
+
+        <div class="divcontact col-lg-12 col-xs-12">
+            <div class="divformcontact col-lg-8col-lg-offset-2 col-xs-10 col-xs-offset-1">
+                <h1 class="text-center">Planifier mon événement</h1>
+                <h2>Je crée ma 'To Do List' :</h2>
+                <p class="text-center">Voici le formulaire qui vous permettra de ne rien oublier !<br>
+                    Pour faire de cet événement unique une fête, et oublier tous les efforts des préparatifs !.</p><br>
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <br>
+                <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1 text-center">
+
+                    <input class="btnformcon" type="submit" value="Valider ma 'To Do List'" />
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+        {% block footerblock %}{% endblock %}
+
+{% endblock body %}

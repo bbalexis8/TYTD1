@@ -90,7 +90,7 @@ class TodolistController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('todolist_edit', array('id' => $todolist->getId()));
+            return $this->redirectToRoute('todolist_show', array('id' => $todolist->getId()));
         }
 
         return $this->render('todolist/edit.html.twig', array(
@@ -131,7 +131,7 @@ class TodolistController extends Controller
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('todolist_delete', array('id' => $todolist->getId())))
-            ->setMethod('Suppri')
+            ->setMethod('DELETE')
             ->getForm();
     }
 
@@ -146,11 +146,11 @@ class TodolistController extends Controller
         $evenementRepository = $em->getRepository('TytdBundle:Evenement');
         $todoRepository = $em->getRepository('TytdBundle:Todolist');
 
-        $evements = $evenementRepository->findAll();
+        $evenements = $evenementRepository->findAll();
         $todos = $todoRepository->findAll();
         foreach ($todos AS $todo) {
             for ($i = 0; $i < mt_rand(3, 12); $i++) {
-                $todo->addMonEvent($evements[mt_rand(0, count($evements) - 1)]);
+                $todo->addMonEvent($evenements[mt_rand(0, count($evenements) - 1)]);
             }
         }
         $em->flush();

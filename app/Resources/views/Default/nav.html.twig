@@ -22,6 +22,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('eventcategorieslist') }}">Liste des évènements</a></li>
                             <li role="separator" class="divider"></li>
+                            <li><a href="{{ path('addTodoList') }}">Planifier votre évènement</a></li>
+                            <li role="separator" class="divider"></li>
                             <li>Toutes les Catégories :
                             {% for categorie in categories %}
                                 <hr class="hrcat text-center">
@@ -34,7 +36,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Témoignages <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('temoignageslist') }}">Liste des évènements</a></li>
+                            <li><a href="{{ path('temoignageslist') }}">Liste des témoignages</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ path('temoignage_new') }}">Publier son témoignage</a></li>
                         </ul>

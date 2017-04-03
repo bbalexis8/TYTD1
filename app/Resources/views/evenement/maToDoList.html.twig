@@ -1,0 +1,29 @@
+<h1 class="text-center">Ma 'To Do List'</h1>
+
+<table>
+    <tbody>
+    <tr>
+        <th><label>Titre</label></th>
+        <td><label class="taillefcontact">{{ evenement.nom }}</label></td>
+    </tr>
+    <tr>
+        <th><label>Catégorie</label></th>
+        <td><label class="taillefcontact">{{ evenement.categorie.nomCa }}</label></td>
+    </tr>
+    <tr>
+        <th><label>Nom de l'organisateur</label></th>
+        <td><label class="taillefcontact">{{ evenement.utilisateur.username }}</label></td>
+    </tr>
+    <tr>
+        <th><label>Date de l'événement</label></th>
+        <td>
+            <label class="taillefcontact">{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</label>
+        </td>
+    </tr>
+    </tbody>
+</table>
+        <label>Ne pas Oublier : </label>
+        <p>{% for td in evenement.todolists %}  {{ td.nom }}<br>
+                {% endfor %}</p>
+
+

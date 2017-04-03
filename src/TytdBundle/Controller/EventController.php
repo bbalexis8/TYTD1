@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class EventController extends Controller
@@ -127,7 +128,6 @@ class EventController extends Controller
             ->getForm();
     }
 
-
     /**
      * Lists all temoignage entities.
      *
@@ -185,8 +185,6 @@ class EventController extends Controller
         ));
     }
 
-
-
     /**
      * @Route("/temoignage/{id}", name="temoignage_showUser")
      * @Method("GET")
@@ -200,7 +198,6 @@ class EventController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
 
     /**
      * @Route("/admin/temoignage/{id}", name="temoignage_show")
@@ -275,9 +272,8 @@ class EventController extends Controller
     }
 
     /**
-     * Creates a new evenement entity.
+     * l'utilisateur crée sa to do list liée à un événement
      * @Method({"GET", "POST"})
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Route("/addTodolist", name="addTodoList")
      *
@@ -287,21 +283,57 @@ class EventController extends Controller
         $em = $this->getDoctrine()->getManager();
         $evenement = new Evenement();
         $form = $this->createForm('TytdBundle\Form\EvenementType', $evenement);
-        $form->handleRequest();
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($evenement);
-//            $em->flush();
-
-            return $this->redirectToRoute('evenement_index');
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($evenement);
+            $em->flush();
+            return $this->redirectToRoute('PDF', array(
+                'id' => $evenement->getId(),
+                'evenement' => $evenement,));
         }
 
-        return $this->render('evenement/new.html.twig', array(
-            'evenement' => $evenement,
+        return $this->render('evenement/creaEvenementToDoList.html.twig', array(
             'form' => $form->createView(),
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
+    }
+
+
+    /**
+     * l'utilisateur crée sa to do list liée à un événement
+     * @Method({"GET", "POST"})
+     * @Route("/maTDL/{id}", name="PDF")
+     *
+     */
+    public function htmlPdf(Evenement $evenement)
+    {
+        {
+            $snappy = $this->get('knp_snappy.pdf');
+            $snappy->setOption('no-outline', true);
+            $snappy->setOption('page-size', 'A4');
+            $snappy->setOption('encoding', 'UTF-8');
+
+            $html = $this->renderView('evenement/maToDoList.html.twig', array(
+                'evenement' => $evenement,
+                'title' => "ma To Do List"
+                //..Send some data to your view if you need to //
+            ));
+
+            $filename = 'maToDoList';
+
+            return new Response(
+                $snappy->getOutputFromHtml($html),
+                200,
+                array(
+                    'Content-Type' => 'application/pdf',
+                    'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
+                )
+            );
+        }
+
+
     }
 
 

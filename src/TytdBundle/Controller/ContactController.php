@@ -55,7 +55,7 @@ class ContactController extends Controller
                 ->setFrom('toyou.todo@gmail.com')
                 ->setTo('toyou.todo@gmail.com')
                 ->setBody(
-                    $this->renderView(':contact:show.html.twig', array(
+                    $this->renderView('contact/show.html.twig', array(
                         'contact' => $contact
                     )),
                     'text/html'
@@ -82,11 +82,29 @@ class ContactController extends Controller
     {
         $deleteForm = $this->createDeleteForm($contact);
 
+        return $this->render('contact/show.html.twig', array(
+            'contact' => $contact,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+
+    /**
+     * vue admin
+     *
+     * @Route("/{id}", name="contactAdmin_show")
+     * @Method("GET")
+     */
+    public function showAdmin(Contact $contact)
+    {
+        $deleteForm = $this->createDeleteForm($contact);
+
         return $this->render('contact/showAdmin.html.twig', array(
             'contact' => $contact,
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
 
     /**
      * Displays a form to edit an existing contact entity.
