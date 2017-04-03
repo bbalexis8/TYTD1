@@ -77,6 +77,14 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-hautelook_alice:
-    fixtures_path: 'Resources/fixtures/orm'
-
+# config.yml
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     "wkhtmltopdf"
+        options:
+            no-outline: true
+            page-size: LETTER
+            # Recommended to set UTF-8 as default encoding :)
+            encoding: UTF-8
+    temporary_folder: %kernel.cache_dir%/snappy
