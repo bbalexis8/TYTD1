@@ -1,28 +1,28 @@
 {% extends ':Default:basic.html.twig' %}
 
 {% block body %}
-    <div id="pagecat" class="container col-xs-12 text-center">
-        <div class="col-xs-6 col-xs-offset-3">
-
-            <div id="divtem" class="row text-justify">
+    <div class="container bodyeventcat text-center">
+            <br>
+            <div class="jumbotron eventcat text-justify col-lg-6 col-lg-offset-3 col-xs-10">
                 <h2><span class="glyphicon   glyphicon glyphicon-pencil"></span> «{{ categorie.nomCa }}»</h2>
-                <img src="{{ categorie.imageCa }}"><br><br>
-                <p>Liste des évenements liés à cette catégorie :</p>
+                <img src="{{ categorie.imageCa }}">
+                <div><br></div>
+                <p class="text-center">Liste des événements liés à cette catégorie :</p>
                 {% for evenement in evenements %}
 
-                    <h2>{{ evenement.nom }}</h2>
-                    <p>{{ evenement.dateE|date('d/m/Y') }}</p>
-                    <p>par {{ evenement.utilisateur.username }}</p><hr>
-
+                    <div class="jumbotron-fluid col-lg-10 col-lg-offset-1 jumboevent">
+                    <h2>« {{ evenement.nom }} »</h2>
+                    <p>Date : {{ evenement.dateE|date('d/m/Y') }}</p>
+                    <p>Réaliser par {{ evenement.utilisateur.username }}</p>
+                    </div>
                 {% endfor %}
                 <br>
                 <a id="btnlistemcpt" href="{{ path('eventcategorieslist') }}"
-                   class="btn btn-default col-xs-4 col-xs-offset-6">
+                   class="btn btn-default col-lg-6 col-lg-offset-3 col-xs-4 col-xs-offset-3">
 
                     <span class="glyphicon  glyphicon glyphicon-chevron-right "></span> Retour à la liste des catégories</a>
             </div>
             <br><br>
         </div>
-    </div>
 {% endblock %}
 

@@ -511,9 +511,29 @@ h1, h2, h3{
 
 /** CSS CATEGORIES **/
 
-#bodyeventcat {
+.bodyeventcat {
     height: 100%;
+    width: 100%;
     background-color: #B0D4C8;
+}
+
+.eventcat {
+
+}
+
+.eventcat img {
+    max-width: 13.5em;
+}
+
+.jumboevent {
+    background-color: #013F4E;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    color: #B0D4C8;
+}
+
+.jumboevent h2 {
+    color: #DCB647;
 }
 
 /** CSS FOOTER + chevron retour haut de page **/
