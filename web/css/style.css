@@ -46,14 +46,14 @@ body {
     font-style: italic;
 }
 
-.lienacc {
+.lienacc, .lienacc2 {
     max-width: 100px;
     border: transparent;
     visibility: inherit;
 }
 
 @media (max-width: 900px) {
-.lienaccH {
+.lienacc2 {
     max-width: 100px;
     border: transparent;
     display: none;
