@@ -293,7 +293,7 @@ class EventController extends Controller
             return $this->redirectToRoute('evenement_index');
         }
 
-        return $this->redirectToRoute('evenement_new', array(
+        return $this->render('evenement/creaEvenementToDoList.html.twig', array(
             'evenement' => $evenement,
             'form' => $form->createView(),
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()

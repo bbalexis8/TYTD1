@@ -1,0 +1,58 @@
+{% extends ':Default:basic.html.twig' %}
+{% block nav %}{% endblock %}
+
+{% block body %}
+
+    <div class="divcontact col-lg-12  col-xs-12">
+        <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
+            <h1 class="text-center">Votre message est bien envoyé !</h1>
+
+            <table>
+                <tbody>
+                <tr>
+                    <th><label>Id</label></th>
+                    <td><label class="taillefcontact">{{ contact.id }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Prenom</label></th>
+                    <td><label class="taillefcontact">{{ contact.prenom }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Nom</label></th>
+                    <td><label class="taillefcontact">{{ contact.nom }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Mail</label></th>
+                    <td><label class="taillefcontact">{{ contact.mail }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Adresse</label></th>
+                    <td><label class="taillefcontact">{{ contact.adresse }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Code postal</label></th>
+                    <td><label class="taillefcontact">{{ contact.codepostal }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Ville</label></th>
+                    <td><label class="taillefcontact">{{ contact.ville }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Pays</label></th>
+                    <td><label class="taillefcontact">{{ contact.pays }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Type d'évenement</label></th>
+                    <td><label class="taillefcontact">{{ contact.typeevent }}</label></td>
+                </tr>
+                <tr>
+                    <th><label>Message</label></th>
+                    <td><label class="taillefcontact">{{ contact.message }}</label></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% block footerblock %}{% endblock %}
+    </div>
+{% endblock %}
