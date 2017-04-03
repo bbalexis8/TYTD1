@@ -129,7 +129,6 @@ class EventController extends Controller
             ->getForm();
     }
 
-
     /**
      * Lists all temoignage entities.
      *
@@ -187,7 +186,6 @@ class EventController extends Controller
         ));
     }
 
-
     /**
      * @Route("/temoignage/{id}", name="temoignage_showUser")
      * @Method("GET")
@@ -201,7 +199,6 @@ class EventController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
 
     /**
      * @Route("/admin/temoignage/{id}", name="temoignage_show")
@@ -290,31 +287,36 @@ class EventController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            return $this->redirectToRoute('todolistPDF');
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($evenement);
+            $em->flush();
+            return $this->redirectToRoute('PDF', array(
+                'id' => $evenement->getId(),
+                'evenement' => $evenement,));
         }
 
         return $this->render('evenement/creaEvenementToDoList.html.twig', array(
-            'evenement' => $evenement,
             'form' => $form->createView(),
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
+    
 
     /**
      * l'utilisateur crée sa to do list liée à un événement
      * @Method({"GET", "POST"})
-     * @Route("/maTDL", name="todolistPDF")
+     * @Route("/maTDL/{id}", name="PDF")
      *
      */
-    public function htmlPdf()
+    public function htmlPdf(Evenement $evenement)
     {
         {
             $snappy = $this->get('knp_snappy.pdf');
 
             $html = $this->renderView('evenement/maToDoList.html.twig', array(
-                'todolist' => $todolist,
-                'evenement' => $evenement//..Send some data to your view if you need to //
+                'evenement' => $evenement,
+               'title' => "ma To Do List"
+               //..Send some data to your view if you need to //
             ));
 
             $filename = 'myFirstSnappyPDF';

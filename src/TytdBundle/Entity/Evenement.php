@@ -52,7 +52,7 @@ class Evenement
     private $utilisateur;
 
     /**
-     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Todolist",mappedBy="evenement", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Todolist",mappedBy="evenements", cascade={"persist"})
      */
     private $todolists;
 
@@ -93,8 +93,7 @@ class Evenement
     /**
      * @return mixed
      */
-    public
-    function getUtilisateur()
+    public function getUtilisateur()
     {
         return $this->utilisateur;
     }
@@ -102,8 +101,7 @@ class Evenement
     /**
      * @param mixed $utilisateur
      */
-    public
-    function setUtilisateur($utilisateur)
+    public function setUtilisateur($utilisateur)
     {
         $this->utilisateur = $utilisateur;
     }
@@ -111,8 +109,7 @@ class Evenement
     /**
      * @return mixed
      */
-    public
-    function getTemoignage()
+    public function getTemoignage()
     {
         return $this->temoignage;
     }
@@ -120,8 +117,7 @@ class Evenement
     /**
      * @param mixed $temoignage
      */
-    public
-    function setTemoignage($temoignage)
+    public function setTemoignage($temoignage)
     {
         $this->temoignage = $temoignage;
     }
@@ -131,8 +127,7 @@ class Evenement
      *
      * @return int
      */
-    public
-    function getId()
+    public function getId()
     {
         return $this->id;
     }
@@ -144,8 +139,7 @@ class Evenement
      *
      * @return Evenement
      */
-    public
-    function setNom($nom)
+    public function setNom($nom)
     {
         $this->nom = $nom;
 
@@ -157,8 +151,7 @@ class Evenement
      *
      * @return string
      */
-    public
-    function getNom()
+    public function getNom()
     {
         return $this->nom;
     }
@@ -170,8 +163,7 @@ class Evenement
      *
      * @return Evenement
      */
-    public
-    function setCategorie($categorie)
+    public function setCategorie($categorie)
     {
         $this->categorie = $categorie;
 
@@ -183,8 +175,7 @@ class Evenement
      *
      * @return int
      */
-    public
-    function getCategorie()
+    public function getCategorie()
     {
         return $this->categorie;
     }
@@ -196,8 +187,7 @@ class Evenement
      *
      * @return Evenement
      */
-    public
-    function setDateE($dateE)
+    public function setDateE($dateE)
     {
         $this->dateE = $dateE;
 
@@ -209,8 +199,7 @@ class Evenement
      *
      * @return string
      */
-    public
-    function getDateE()
+    public function getDateE()
     {
         return $this->dateE;
     }

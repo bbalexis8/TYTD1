@@ -22,8 +22,10 @@
                     <td>{{ evenement.categorie.nomCa }}</td>
                     <td>{{ evenement.utilisateur.username }}</td>
                     <td>{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</td>
-
+                    <td>{% for td in evenement.todolists %}  {{ td.nom }}<br>
+                        {% endfor %}</td>
                 </tr>
+
 
                 </tbody>
             </table>

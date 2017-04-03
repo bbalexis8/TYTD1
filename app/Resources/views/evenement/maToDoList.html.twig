@@ -12,77 +12,38 @@
 
 
             <div>
-            <table>
-                <tbody>
-                <tr>
-                    <th><label>Username</label></th>
-                    <td><label class="taillefcontact">{{ ev }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Prenom</label></th>
-                    <td><label class="taillefcontact">{{ contact.prenom }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Nom</label></th>
-                    <td><label class="taillefcontact">{{ contact.nom }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Mail</label></th>
-                    <td><label class="taillefcontact">{{ contact.mail }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Adresse</label></th>
-                    <td><label class="taillefcontact">{{ contact.adresse }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Code postal</label></th>
-                    <td><label class="taillefcontact">{{ contact.codepostal }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Ville</label></th>
-                    <td><label class="taillefcontact">{{ contact.ville }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Pays</label></th>
-                    <td><label class="taillefcontact">{{ contact.pays }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Type d'évenement</label></th>
-                    <td><label class="taillefcontact">{{ contact.typeevent }}</label></td>
-                </tr>
-                <tr>
-                    <th><label>Message</label></th>
-                    <td><label class="taillefcontact">{{ contact.message }}</label></td>
-                </tr>
-                </tbody>
-            </table>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th><label>Titre</label></th>
+                        <td><label class="taillefcontact">{{ evenement.nom }}</label></td>
+                    </tr>
+                    <tr>
+                        <th><label>Catégorie</label></th>
+                        <td><label class="taillefcontact">{{ evenement.categorie.nomCa }}</label></td>
+                    </tr>
+                    <tr>
+                        <th><label>Nom de l'organisateur</label></th>
+                        <td><label class="taillefcontact">{{ evenement.utilisateur.username }}</label></td>
+                    </tr>
+                    <tr>
+                        <th><label>Date de l'événement</label></th>
+                        <td>
+                            <label class="taillefcontact">{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label>Ne pas Oublier : </label></th>
+                        <td><label class="taillefcontact">{% for td in evenement.todolists %}  {{ td.nom }}<br>
+                                {% endfor %}</label></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="{{ path('PDF', { 'id': evenement.id })}}" class="btn" target="_blank">mon pdf</a>
+
         </div>
 
-            <table class="table table-bordered">
-                <thead>
-                <tr class="text-uppercase">
-                    <td>Nom</td>
-                    <td>Evenements</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td> {{ todolist.nom }}</td>
-                    <td>{% for evenement in todolist.evenements %}
-                            {{ evenement.nom }}<br>
-                        {% endfor %}</td>
-                </tr>
-                </tbody>
-            </table>
-
-
-
-
-
-    </div>
-
-
-
-    {% block footerblock %}{% endblock %}
+        {% block footerblock %}{% endblock %}
     </div>
 {% endblock %}
