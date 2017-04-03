@@ -33,7 +33,7 @@ class TemoignageType extends AbstractType
                 "attr" => array('class' => 'tailletextsforms')
             ))
             ->add('dateT', DateTimeType::class, array(
-                'label' => 'A quel evenement est lié votre témoignage ?',
+                'label' => '  ',
                 'format' => 'dd:MM:yyyy',
                 'data' => new \DateTime('now'),
                 "attr" => array('class' => 'hiddendates')

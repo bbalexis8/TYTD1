@@ -311,6 +311,25 @@ h1, h2, h3{
     height: 50px;
 }
 
+.recent {
+    background-color: #F5E5E5;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+.artrecent {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}
+
+.artrecent a {
+    /*text-decoration: none;*/
+    color: #C42730;
+}
+
 
 /** CSS DU FORM CONTACT **/
 

@@ -1,16 +1,31 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <div class="bobody">
-        <h2>Articles récemment publiés</h2>
-        <br>
+    <div class="container-fluid recent col-lg-7 col-md-7 col-xs-12">
+        <h2 class="text-center">Articles récemment publiés</h2>
+        <hr>
         <div>
             {% for article in articles %}
-
+                <div class="artrecent col-lg-12 col-md-12 col-xs-12">
                 <h3><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.titre }}</a></h3>
                     <p>Par {{ article.utilisateur.username }}, le  {{ article.date|date('d.m.Y')}}
                 <br>{{ article.description }}
-                </p><hr>
+                </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container-fluid recent col-lg-4 col-md-4 col-xs-12">
+        <h2 class="text-center">Boîte de réception</h2>
+        <hr>
+        <div>
+            {% for contact in contacts %}
+                <div class="artrecent col-lg-12 col-md-12  col-xs-12">
+                    <h3><a href="{{ path('contact_show', { 'id': contact.id }) }}"><span class="small glyphicon glyphicon-envelope"></span> {{ contact.prenom}}, {{ contact.nom }}</a></h3>
+                    <p>{{ contact.mail }}
+                    </p>
+                </div>
             {% endfor %}
         </div>
     </div>

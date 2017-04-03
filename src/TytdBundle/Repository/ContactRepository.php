@@ -10,4 +10,17 @@ namespace TytdBundle\Repository;
  */
 class ContactRepository extends \Doctrine\ORM\EntityRepository
 {
+//    public function derniersContacts($limite = null) {
+//        {
+//            $qb = $this->createQueryBuilder('a')
+//                ->select('a')
+//                ->addOrderBy('a.date', 'DESC');
+//
+//            if (false === is_null($limite))
+//                $qb->setMaxResults($limite);
+//
+//            return $qb->getQuery()
+//                ->getResult();
+//        }
+//    }
 }
