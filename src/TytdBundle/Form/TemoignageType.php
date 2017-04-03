@@ -22,18 +22,18 @@ class TemoignageType extends AbstractType
         $builder
             ->add('titre_t', TextType::class, array(
             'label' => 'Titre',
-            "attr" => array('class' => 'tailletitlesforms')
+            "attr" => array('class' => 'taillefcontact')
             ))
             ->add('descriptionT', TextareaType::class, array(
                 'label' => 'Description',
-                "attr" => array('class' => 'tailletextsforms')
+                "attr" => array('class' => 'taillemesscontact')
             ))
             ->add('texteT', TextareaType::class, array(
                 'label' => 'Texte',
-                "attr" => array('class' => 'tailletextsforms')
+                "attr" => array('class' => 'taillemesscontact')
             ))
             ->add('dateT', DateTimeType::class, array(
-                'label' => 'A quel evenement est lié votre témoignage ?',
+                'label' => '  ',
                 'format' => 'dd:MM:yyyy',
                 'data' => new \DateTime('now'),
                 "attr" => array('class' => 'hiddendates')
@@ -41,12 +41,12 @@ class TemoignageType extends AbstractType
             ->add('evenement', EntityType::class, array(
         "class" => Evenement::class,
         "choice_label" => 'nom',
-                "attr" => array('class' => 'tailleautresforms')
+                "attr" => array('class' => 'taillefcontact')
     ))
             ->add('utilisateur', EntityType::class, array(
                 "class" => Utilisateur::class,
                 "choice_label" => 'username',
-                "attr" => array('class' => 'tailleautresforms')
+                "attr" => array('class' => 'taillefcontact')
             ));
     }
     

@@ -46,14 +46,14 @@ body {
     font-style: italic;
 }
 
-.lienacc {
+.lienacc, .lienacc2 {
     max-width: 100px;
     border: transparent;
     visibility: inherit;
 }
 
 @media (max-width: 900px) {
-.lienaccH {
+.lienacc2 {
     max-width: 100px;
     border: transparent;
     display: none;
@@ -197,6 +197,7 @@ h1, h2, h3{
     padding: 2em;
     color: white;
     border-radius: 12px;
+    border: dashed 1px white;
 }
 
 #headerAdmin h1 {
@@ -279,6 +280,19 @@ h1, h2, h3{
     -webkit-column-count: 3;
 }
 
+.divformtem {
+    background-color: #B0D4C8;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.divformtem label {
+    width: 30%;
+    height: 40px;
+}
+
 
 /** CSS FORMULAIRES ADMIN**/
 
@@ -309,6 +323,25 @@ h1, h2, h3{
 .bobody label{
     width: 150px;
     height: 50px;
+}
+
+.recent {
+    background-color: #F5E5E5;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: dashed 1px white;
+}
+
+.artrecent {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}
+
+.artrecent a {
+    /*text-decoration: none;*/
+    color: #C42730;
 }
 
 
@@ -371,7 +404,6 @@ h1, h2, h3{
 }
 
 
-
 /**CSS LISTE ARTICLES - BLOG**/
 
 #divarticle {
@@ -395,6 +427,7 @@ h1, h2, h3{
 #btnartcpt {
     background-color: #D48286;
     color: white;
+    font-size: 1em;
 }
 
 #btnartcpt:hover {
@@ -406,13 +439,14 @@ h1, h2, h3{
     color: #606970;
 }
 
-#pageblog{
+.pageblog{
     padding-top: 20px;
-    /*height: 100%;*/
+    /*height: 100vh;*/
+    width: 100%;
     background-color: #F0DBDA;
 }
 
-#pageblog h1 {
+.pageblog h1 {
     color: #1C2834;
     font-weight: bold;
 }
@@ -448,10 +482,11 @@ h1, h2, h3{
     background-color: #01717D;
     border-radius: 20px;
     color: white;
+    margin-bottom: 1em;
 }
 
 .divtem h2 > a, #divtem h2{
-    color: #8DE6B6;
+    color: #DCB647;
 }
 
 .divtem img {
@@ -482,19 +517,19 @@ h1, h2, h3{
     background-color: #C32830;
 }
 
-#btntemcpt, #btnlistemcpt {
+#btntemcpt, .btnlistemcpt {
     background-color: #DCB647;
     color: #1C2834;
     font-size: 1em;
 }
 
-#btntemcpt:hover, #btnlistemcpt:hover {
+#btntemcpt:hover, .btnlistemcpt:hover {
     background-color: #013F4E;
     color: #DCB647;
 }
 
 #autdatetem {
-    color: #E6CB7E;
+    color: #B0D4C8;
 }
 
 #pagetem {
@@ -509,11 +544,37 @@ h1, h2, h3{
     font-weight: bold;
 }
 
+.fondnewtem {
+    background-color: #013F4E;
+    width: 100%;
+    height: 100vh;
+}
+
 /** CSS CATEGORIES **/
 
-#bodyeventcat {
+.bodyeventcat {
     height: 100%;
+    width: 100%;
     background-color: #B0D4C8;
+}
+
+.eventcat {
+
+}
+
+.eventcat img {
+    max-width: 13.5em;
+}
+
+.jumboevent {
+    background-color: #013F4E;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    color: #B0D4C8;
+}
+
+.jumboevent h2 {
+    color: #DCB647;
 }
 
 /** CSS FOOTER + chevron retour haut de page **/

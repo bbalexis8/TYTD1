@@ -2,6 +2,7 @@
 
 namespace TytdBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -54,6 +55,12 @@ class ContactType extends AbstractType
             ->add('message', TextareaType::class, array(
                 'label' => 'Votre Message',
                 'attr' => array('class' => 'taillemesscontact')
+            ))
+            ->add('date', DateTimeType::class, array(
+                'label' => ' ',
+                'format' => 'dd:MM:yyyy',
+                'data' => new \DateTime('now'),
+                "attr" => array('class' => 'hiddendates')
             ));
     }
     
