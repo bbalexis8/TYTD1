@@ -448,10 +448,11 @@ h1, h2, h3{
     background-color: #01717D;
     border-radius: 20px;
     color: white;
+    margin-bottom: 1em;
 }
 
 .divtem h2 > a, #divtem h2{
-    color: #8DE6B6;
+    color: #DCB647;
 }
 
 .divtem img {
@@ -494,7 +495,7 @@ h1, h2, h3{
 }
 
 #autdatetem {
-    color: #E6CB7E;
+    color: #B0D4C8;
 }
 
 #pagetem {
