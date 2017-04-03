@@ -197,6 +197,7 @@ h1, h2, h3{
     padding: 2em;
     color: white;
     border-radius: 12px;
+    border: dashed 1px white;
 }
 
 #headerAdmin h1 {
