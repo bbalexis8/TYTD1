@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 
 
 class EventController extends Controller
@@ -186,7 +188,6 @@ class EventController extends Controller
     }
 
 
-
     /**
      * @Route("/temoignage/{id}", name="temoignage_showUser")
      * @Method("GET")
@@ -290,7 +291,7 @@ class EventController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            return $this->redirectToRoute('evenement_index');
+            return $this->redirectToRoute('todolistPDF');
         }
 
         return $this->render('evenement/creaEvenementToDoList.html.twig', array(
@@ -300,6 +301,36 @@ class EventController extends Controller
         ));
     }
 
+    /**
+     * l'utilisateur crée sa to do list liée à un événement
+     * @Method({"GET", "POST"})
+     * @Route("/maTDL", name="todolistPDF")
+     *
+     */
+    public function htmlPdf()
+    {
+        {
+            $snappy = $this->get('knp_snappy.pdf');
+
+            $html = $this->renderView('evenement/maToDoList.html.twig', array(
+                'todolist' => $todolist,
+                'evenement' => $evenement//..Send some data to your view if you need to //
+            ));
+
+            $filename = 'myFirstSnappyPDF';
+
+            return new Response(
+                $snappy->getOutputFromHtml($html),
+                200,
+                array(
+                    'Content-Type' => 'application/pdf',
+                    'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
+                )
+            );
+        }
+
+
+    }
 
 
 }

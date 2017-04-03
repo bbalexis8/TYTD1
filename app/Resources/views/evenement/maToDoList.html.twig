@@ -5,13 +5,18 @@
 
     <div class="divcontact col-lg-12  col-xs-12">
         <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
-            <h1 class="text-center">Votre message est bien envoyé !</h1>
+            <h1 class="text-center">Ma 'To Do List'</h1>
 
+            <p>Créée avec l'assistant : </p><br>
+            <img height="200" src={{ asset('image/Logo x200.png') }}/>
+
+
+            <div>
             <table>
                 <tbody>
                 <tr>
-                    <th><label>Id</label></th>
-                    <td><label class="taillefcontact">{{ contact.id }}</label></td>
+                    <th><label>Username</label></th>
+                    <td><label class="taillefcontact">{{ ev }}</label></td>
                 </tr>
                 <tr>
                     <th><label>Prenom</label></th>
@@ -52,7 +57,32 @@
                 </tbody>
             </table>
         </div>
+
+            <table class="table table-bordered">
+                <thead>
+                <tr class="text-uppercase">
+                    <td>Nom</td>
+                    <td>Evenements</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> {{ todolist.nom }}</td>
+                    <td>{% for evenement in todolist.evenements %}
+                            {{ evenement.nom }}<br>
+                        {% endfor %}</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+
+
+
     </div>
+
+
+
     {% block footerblock %}{% endblock %}
     </div>
 {% endblock %}
