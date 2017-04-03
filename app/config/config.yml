@@ -81,10 +81,21 @@ swiftmailer:
 knp_snappy:
     pdf:
         enabled:    true
-        binary:     "wkhtmltopdf"
-        options:
-            no-outline: true
-            page-size: LETTER
-            # Recommended to set UTF-8 as default encoding :)
-            encoding: UTF-8
+        binary:    "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+#connexion windows
+#         binary:    "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+#connexion linux
+#         binary:  /usr/local/bin/wkhtmltopdf
+        options:    []
+    image:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+#connexion windows
+#         binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+#connexion linux
+#         binary:  /usr/local/bin/wkhtmltoimage
+        options:    []
     temporary_folder: %kernel.cache_dir%/snappy
+
+#            binary:     /usr/local/bin/wkhtmltopdf #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" for Windows users
+#        binary:     /usr/local/bin/wkhtmltoimage #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\"" for Windows users

@@ -1,49 +1,29 @@
-{% extends ':Default:basic.html.twig' %}
-{% block nav %}{% endblock %}
+<h1 class="text-center">Ma 'To Do List'</h1>
 
-{% block body %}
+<table>
+    <tbody>
+    <tr>
+        <th><label>Titre</label></th>
+        <td><label class="taillefcontact">{{ evenement.nom }}</label></td>
+    </tr>
+    <tr>
+        <th><label>Catégorie</label></th>
+        <td><label class="taillefcontact">{{ evenement.categorie.nomCa }}</label></td>
+    </tr>
+    <tr>
+        <th><label>Nom de l'organisateur</label></th>
+        <td><label class="taillefcontact">{{ evenement.utilisateur.username }}</label></td>
+    </tr>
+    <tr>
+        <th><label>Date de l'événement</label></th>
+        <td>
+            <label class="taillefcontact">{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</label>
+        </td>
+    </tr>
+    </tbody>
+</table>
+        <label>Ne pas Oublier : </label>
+        <p>{% for td in evenement.todolists %}  {{ td.nom }}<br>
+                {% endfor %}</p>
 
-    <div class="divcontact col-lg-12  col-xs-12">
-        <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
-            <h1 class="text-center">Ma 'To Do List'</h1>
 
-            <p>Créée avec l'assistant : </p><br>
-            <img height="200" src={{ asset('image/Logo x200.png') }}/>
-
-
-            <div>
-                <table>
-                    <tbody>
-                    <tr>
-                        <th><label>Titre</label></th>
-                        <td><label class="taillefcontact">{{ evenement.nom }}</label></td>
-                    </tr>
-                    <tr>
-                        <th><label>Catégorie</label></th>
-                        <td><label class="taillefcontact">{{ evenement.categorie.nomCa }}</label></td>
-                    </tr>
-                    <tr>
-                        <th><label>Nom de l'organisateur</label></th>
-                        <td><label class="taillefcontact">{{ evenement.utilisateur.username }}</label></td>
-                    </tr>
-                    <tr>
-                        <th><label>Date de l'événement</label></th>
-                        <td>
-                            <label class="taillefcontact">{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label>Ne pas Oublier : </label></th>
-                        <td><label class="taillefcontact">{% for td in evenement.todolists %}  {{ td.nom }}<br>
-                                {% endfor %}</label></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <a href="{{ path('PDF', { 'id': evenement.id })}}" class="btn" target="_blank">mon pdf</a>
-
-        </div>
-
-        {% block footerblock %}{% endblock %}
-    </div>
-{% endblock %}

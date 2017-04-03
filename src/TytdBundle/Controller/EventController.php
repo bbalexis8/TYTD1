@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
-
 class EventController extends Controller
 {
     /**
@@ -300,7 +299,7 @@ class EventController extends Controller
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
-    
+
 
     /**
      * l'utilisateur crée sa to do list liée à un événement
@@ -312,14 +311,17 @@ class EventController extends Controller
     {
         {
             $snappy = $this->get('knp_snappy.pdf');
+            $snappy->setOption('no-outline', true);
+            $snappy->setOption('page-size', 'A4');
+            $snappy->setOption('encoding', 'UTF-8');
 
             $html = $this->renderView('evenement/maToDoList.html.twig', array(
                 'evenement' => $evenement,
-               'title' => "ma To Do List"
-               //..Send some data to your view if you need to //
+                'title' => "ma To Do List"
+                //..Send some data to your view if you need to //
             ));
 
-            $filename = 'myFirstSnappyPDF';
+            $filename = 'maToDoList';
 
             return new Response(
                 $snappy->getOutputFromHtml($html),
