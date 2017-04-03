@@ -23,7 +23,7 @@ class AdminController extends Controller
 
         return $this->render('admin/indexadmin.html.twig', array(
             'articles' => $articles,
-            'contacts' => $em->getRepository('TytdBundle:Contact')->findAll()
+            'contacts' => $em->getRepository('TytdBundle:Contact')->derniersContacts(6)
         ));
     }
 

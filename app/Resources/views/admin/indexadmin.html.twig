@@ -1,7 +1,7 @@
 {% extends 'admin/adminbase.html.twig' %}
 
 {% block body %}
-    <div class="container-fluid recent col-lg-7 col-md-7 col-xs-12">
+    <div class="container-fluid recent col-lg-8 col-md-8 col-xs-12">
         <h2 class="text-center">Articles récemment publiés</h2>
         <hr>
         <div>
@@ -22,7 +22,7 @@
         <div>
             {% for contact in contacts %}
                 <div class="artrecent col-lg-12 col-md-12  col-xs-12">
-                    <h3><a href="{{ path('contact_show', { 'id': contact.id }) }}"><span class="small glyphicon glyphicon-envelope"></span> {{ contact.prenom}}, {{ contact.nom }}</a></h3>
+                    <h3><a href="{{ path('contact_show', { 'id': contact.id }) }}"><span class="small glyphicon glyphicon-user"></span> {{ contact.prenom}}, {{ contact.nom }}</a></h3>
                     <p>{{ contact.mail }}
                     </p>
                 </div>
