@@ -312,6 +312,7 @@ h1, h2, h3{
 .tailletextsforms {
     width: 800px;
     height: 200px;
+    resize: none;
 }
 
 .taillechoicesforms {
@@ -353,6 +354,7 @@ h1, h2, h3{
 .taillemesscontact {
     width: 70%;
     height: 100px;
+    resize: none;
 }
 
 .divformcontact {
@@ -365,7 +367,6 @@ h1, h2, h3{
 
 .divcontact {
     background-color: #013F4E;
-    margin-top: -50px;
     width: 100%;
     height: 100%;
 }
@@ -488,7 +489,7 @@ h1, h2, h3{
 .tailleinput2 {
     width: 70%;
     height: 100px;
-
+    resize: none;
 }
 
 .tailleinput3 {
@@ -581,6 +582,20 @@ h1, h2, h3{
     padding-top: 50px;
     background-color: #013F4E;
 }
+
+.bodyformevent label {
+    width: 30%;
+    height: 40px;
+}
+
+.btnvalidpdf {
+    background-color: #DCB647;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    height: 2em;
+}
+
 
 /** CSS CATEGORIES **/
 

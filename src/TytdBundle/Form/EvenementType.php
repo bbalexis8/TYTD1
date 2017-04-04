@@ -22,24 +22,24 @@ class EvenementType extends AbstractType
         $builder
             ->add('nom', TextType::class, array(
                 'label' => 'Nom de l\'évènement',
-                "attr" => array('class' => 'tailletitlesforms')
+                "attr" => array('class' => 'taillefcontact')
             ))
             ->add('dateE', DateTimeType::class, array(
                 'label' => 'Date de l\'évènement',
                 'format' => 'dd:MM:yyyy',
                 'input' => 'datetime',
                 'data' => new \DateTime('now'),
-                "attr" => array('class' => 'tailleautresforms')
+                "attr" => array('class' => 'taillefcontact')
             ))
             ->add('categorie', EntityType::class, array(
         "class" => Categorie::class,
         "choice_label" => 'nomCa',
-                "attr" => array('class' => 'tailleautresforms')
+                "attr" => array('class' => 'taillefcontact')
     ))
             ->add('utilisateur', EntityType::class, array(
                 "class" => Utilisateur::class,
                 "choice_label" => 'username',
-                "attr" => array('class' => 'tailleautresforms')
+                "attr" => array('class' => 'taillefcontact')
             ))
             ->add('todolists', EntityType::class, array(
                 "class" => Todolist::class,

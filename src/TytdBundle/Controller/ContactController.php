@@ -80,11 +80,14 @@ class ContactController extends Controller
      */
     public function showAction(Contact $contact)
     {
+        $em = $this->getDoctrine()->getManager();
         $deleteForm = $this->createDeleteForm($contact);
 
         return $this->render('contact/show.html.twig', array(
             'contact' => $contact,
             'delete_form' => $deleteForm->createView(),
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
+
         ));
     }
 
@@ -97,11 +100,13 @@ class ContactController extends Controller
      */
     public function showAdmin(Contact $contact)
     {
+        $em = $this->getDoctrine()->getManager();
         $deleteForm = $this->createDeleteForm($contact);
 
         return $this->render('contact/showAdmin.html.twig', array(
             'contact' => $contact,
             'delete_form' => $deleteForm->createView(),
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
 
