@@ -24,7 +24,7 @@ class SiteController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $this->genFixtures();
+        $this->genFixtures2();
 
         return $this->render(':Default:index.html.twig', array(
             'troisarticles' => $em->getRepository('TytdBundle:Article')->derniersArticles(3),

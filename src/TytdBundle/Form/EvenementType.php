@@ -46,8 +46,7 @@ class EvenementType extends AbstractType
                 "choice_label" => 'nom',
                 "label"=> "Vos \"To Do\"",
                 "multiple" =>true,
-                "expanded"=>true,
-                "attr" => array('class' => 'checkboxes')
+
             ));
     }
 
