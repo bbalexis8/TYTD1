@@ -7,14 +7,14 @@
                 <h1 class="text-center">Planifier mon événement</h1>
                 <h2>Je crée ma 'To Do List' :</h2>
                 <p class="text-center">Voici le formulaire qui vous permettra de ne rien oublier !<br>
-                    Pour faire de cet événement unique une fête, et oublier tous les efforts des préparatifs !.</p><br>
+                    Pour faire de cet événement unique une fête, et oublier tous les efforts des préparatifs !<br>Une fois terminé, il suffit de le valider afin de pouvoir l'enregistrer au format pdf.</p><br>
 
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <br>
                 <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1 text-center">
 
-                    <input class="btnformcon" type="submit" value="Valider ma 'To Do List'" />
+                    <input class="btnvalidpdf col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" type="submit" value="Valider ma 'To Do List'" />
                 </div>
                 {{ form_end(form) }}
             </div>

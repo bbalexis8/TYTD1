@@ -1,10 +1,10 @@
 {% extends ':Default:basic.html.twig' %}
-{% block nav %}{% endblock %}
+
 
 {% block body %}
 
-    <div class="divcontact col-lg-12  col-xs-12">
-        <div class="divformcontact col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
+    <body class="divcontact">
+        <div class="divformcontact col-lg-8 col-lg-offset-2 col-lmd-8 col-lmd-offset-2 col-xs-12">
     <h1 class="text-center">Besoin de nous contacter, c'est facile !</h1>
 
     {{ form_start(form) }}
@@ -15,7 +15,7 @@
         </div>
     {{ form_end(form) }}
         </div>
-    </div>
+    </body >
 
     {% block footerblock %}{% endblock %}
 

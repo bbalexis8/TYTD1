@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 use TytdBundle\Entity\Article;
 use TytdBundle\Entity\Categorie;
 use TytdBundle\Entity\Temoignage;
+use TytdBundle\Entity\Commentaire;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class SiteController extends Controller
 {
@@ -72,12 +75,13 @@ class SiteController extends Controller
      * Affiche un article du blog
      *
      * @Route("blog/one-article/{id}", name="onearticle")
-     * @Method("GET")
+     * @Method({"GET","POST"})
      * @param Article $onearticle
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showOneArticle(Article $onearticle)
+    public function showOneArticle(Article $onearticle, Request $request)
     {
+
         $em = $this->getDoctrine()->getManager();
         $commentaires = $em->getRepository('TytdBundle:Commentaire')->findBy(
             array('article' => $onearticle->getId()), // Critere
@@ -85,11 +89,23 @@ class SiteController extends Controller
             $limit = null,                 // Limite
             $offset = null                 // Offset
         );
+        $commentaire = new Commentaire();
+        $form = $this->createForm('TytdBundle\Form\NewComType', $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush();
+            return $this->redirectToRoute('onearticle', array('id' => $onearticle->getId()));
+        }
 
         return $this->render(':Default:oneArticle.html.twig', array(
             'article' => $onearticle,
             'commentaires' => $commentaires,
-            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
+            'categories' => $em->getRepository('TytdBundle:Categorie')->findAll(),
+            'form' => $form->createView(),
+
         ));
     }
 
@@ -168,6 +184,27 @@ class SiteController extends Controller
         return $this->render(':Default:oneTemoignage.html.twig', array(
             'temoignage' => $temoignage,
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
+        ));
+    }
+
+    //fonction qui permet de creer un nouveau commentaire à partir de la vue d'un article
+    public function newCommentaire(Request $request)
+    {
+        $commentaire = new Commentaire();
+        $form = $this->createForm('TytdBundle\Form\CommentaireType', $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush();
+
+            return $this->redirectToRoute('onearticle', array('id' => $commentaire->getId()));
+        }
+
+        return $this->render(':Default:oneArticle.html.twig', array(
+            'commentaire' => $commentaire,
+            'form' => $form->createView(),
         ));
     }
 

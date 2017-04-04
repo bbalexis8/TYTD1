@@ -266,9 +266,7 @@ h1, h2, h3{
 }
 
 .hiddendates {
-    visibility: hidden;
-    width: 100px;
-    height: 20px;
+    display: none;
 }
 
 .checkboxes {
@@ -314,6 +312,7 @@ h1, h2, h3{
 .tailletextsforms {
     width: 800px;
     height: 200px;
+    resize: none;
 }
 
 .taillechoicesforms {
@@ -355,6 +354,7 @@ h1, h2, h3{
 .taillemesscontact {
     width: 70%;
     height: 100px;
+    resize: none;
 }
 
 .divformcontact {
@@ -367,7 +367,6 @@ h1, h2, h3{
 
 .divcontact {
     background-color: #013F4E;
-    margin-top: -50px;
     width: 100%;
     height: 100%;
 }
@@ -452,12 +451,10 @@ h1, h2, h3{
 }
 
 #divcomart {
-    background-color: rgba(240, 219, 218, 1);
+    background-color: white;
     color: #606970;
-    border: 2px;
-    border-style: solid;
+    /*border: solid 1px #1C2834;*/
     border-radius: 20px;
-    border-color: #1C2834;
     padding: 10px;
 }
 
@@ -470,6 +467,34 @@ h1, h2, h3{
 #btnlistart:hover {
     background-color: #DFA7AA;
     color: #C32830;
+}
+
+.divnewcom {
+    background-color: #606970;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.divnewcom label {
+    width: 30%;
+    height: 30px;
+}
+
+.tailleinput {
+    width: 70%;
+    height: 40px;
+}
+
+.tailleinput2 {
+    width: 70%;
+    height: 100px;
+    resize: none;
+}
+
+.tailleinput3 {
+    idth: 70%;
+    height: 0;
 }
 
 /**CSS LISTE TEMOIGNAGES **/
@@ -557,6 +582,20 @@ h1, h2, h3{
     padding-top: 50px;
     background-color: #013F4E;
 }
+
+.bodyformevent label {
+    width: 30%;
+    height: 40px;
+}
+
+.btnvalidpdf {
+    background-color: #DCB647;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    height: 2em;
+}
+
 
 /** CSS CATEGORIES **/
 
