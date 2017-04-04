@@ -1,10 +1,9 @@
 {% extends ':Default:basic.html.twig' %}
-    {% block nav %}{% endblock %}
 
 {% block body %}
 
-        <div class="divcontact col-lg-12 col-xs-12">
-            <div class="divformcontact col-lg-8col-lg-offset-2 col-xs-10 col-xs-offset-1">
+        <body class="bodyformevent">
+            <div class="divformcontact col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12">
                 <h1 class="text-center">Planifier mon événement</h1>
                 <h2>Je crée ma 'To Do List' :</h2>
                 <p class="text-center">Voici le formulaire qui vous permettra de ne rien oublier !<br>
@@ -19,8 +18,6 @@
                 </div>
                 {{ form_end(form) }}
             </div>
-        </div>
-
-        {% block footerblock %}{% endblock %}
+        </body>
 
 {% endblock body %}

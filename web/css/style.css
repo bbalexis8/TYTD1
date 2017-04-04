@@ -532,9 +532,10 @@ h1, h2, h3{
     color: #B0D4C8;
 }
 
-#pagetem {
-    height: 100vh;
-    padding-top: 20px;
+.pagetem {
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
     background-color: #B0D4C8;
 
 }
@@ -550,6 +551,13 @@ h1, h2, h3{
     height: 100vh;
 }
 
+.bodyformevent {
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+    background-color: #013F4E;
+}
+
 /** CSS CATEGORIES **/
 
 .bodyeventcat {
@@ -559,6 +567,8 @@ h1, h2, h3{
 }
 
 .eventcat {
+    border-radius: 20px;
+    background-color: white;
 
 }
 

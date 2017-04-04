@@ -39,7 +39,7 @@ hautelook_alice:
 knp_snappy:
     pdf:
         enabled:    true
-        binary:    "/usr/bin/wkhtmltopdf"
+        binary:    "/usr/local/bin/wkhtmltopdf"
 #connexion windows
 #         binary:    "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
 #connexion linux
@@ -47,7 +47,7 @@ knp_snappy:
         options:    []
     image:
         enabled:    true
-        binary:     "/usr/bin/wkhtmltoimage"
+        binary:     "/usr/local/bin/wkhtmltoimage"
 #connexion windows
 #         binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
 #connexion linux
