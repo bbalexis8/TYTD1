@@ -158,5 +158,28 @@ class TodolistController extends Controller
         return new Response('ok');
     }
 
+    /**
+     * @Route("/gen/Fixtures2")
+     */
+    public function genFixtures2()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $evenementRepository = $em->getRepository('TytdBundle:Evenement');
+        $todoRepository = $em->getRepository('TytdBundle:Todolist');
+
+        $evenements = $evenementRepository->findAll();
+        $todos = $todoRepository->findAll();
+        foreach ($evenements AS $event) {
+            for ($i = 0; $i < mt_rand(3, 12); $i++) {
+                $event->addTodo($todos[mt_rand(0, count($todos) - 1)]);
+            }
+        }
+        $em->flush();
+
+        return new Response('ok');
+    }
+
+
 
 }

@@ -52,7 +52,7 @@ class Evenement
     private $utilisateur;
 
     /**
-     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Todolist",mappedBy="evenements", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="TytdBundle\Entity\Todolist",inversedBy="evenements", cascade={"persist"})
      */
     private $todolists;
 
@@ -63,7 +63,7 @@ class Evenement
     }
 
     /**
-     * @param $todolist \TytdBundle\Entity\Todolist
+     * @param  $todolist\TytdBundle\Entity\Todolist
      */
     public function addTodo($todolist)
     {

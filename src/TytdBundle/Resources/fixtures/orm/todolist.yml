@@ -1,3 +1,37 @@
 TytdBundle\Entity\Todolist:
-    todolist{1..22}:
-        nom: <word()>
+    todolist1:
+         nom: 'préparer le gâteau'
+
+    todolist2:
+         nom: 'acheter le cadeau'
+
+    todolist3:
+        nom: 'prévoir les bougies'
+
+    todolist4:
+        nom: 'choisir les alliances'
+
+    todolist5:
+        nom: 'choisir le champagne'
+
+    todolist6:
+        nom: 'appeler le fleuriste'
+
+    todolist7:
+        nom: 'gonfler les ballons'
+
+    todolist8:
+        nom: 'maquiller la mariée'
+
+    todolist9:
+        nom: 'apporter son stylo'
+
+    todolist10:
+        nom: 'prendre son passeport'
+
+    todolist11:
+        nom: 'faire sa valise'
+
+    todolist12:
+        nom: 'chargeur de téléphone'
+

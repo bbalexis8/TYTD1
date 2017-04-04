@@ -291,15 +291,13 @@ class EventController extends Controller
             $em->flush();
             return $this->redirectToRoute('PDF', array(
                 'id' => $evenement->getId(),
-                'evenement' => $evenement,));
+                'evenement' => $evenement));
         }
-
         return $this->render('evenement/creaEvenementToDoList.html.twig', array(
             'form' => $form->createView(),
             'categories' => $em->getRepository('TytdBundle:Categorie')->findAll()
         ));
     }
-
 
     /**
      * l'utilisateur crée sa to do list liée à un événement
