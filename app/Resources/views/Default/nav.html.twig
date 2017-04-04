@@ -4,48 +4,63 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Parcourir le menu</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('accueilsite') }}"><img id="logonav" alt="Brand" src="{{ asset('image/Logo x48.png') }}"></a>
+                <a class="navbar-brand" href="{{ path('accueilsite') }}"><img id="logonav" alt="Brand"
+                                                                              src="{{ asset('image/Logo x48.png') }}"></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ path('accueilsite') }}">Accueil</a></li>
-                    <li><a href="{{ path('articleslist') }}" id ="blog">Blog</a></li>
+                    <li><a href="{{ path('accueilsite') }}">Accueil</a></li>
+                    <li class="active"><a href="{{ path('articleslist') }}" id="blog">
+                            <span class="glyphicon glyphicon-sunglasses"></span>&nbsp; Blog</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assistant <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <span class="glyphicon glyphicon-bookmark"></span>&nbsp; Catégories d'événements <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('eventcategorieslist') }}">Liste des évènements</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('addTodoList') }}">Planifier votre évènement</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li>Toutes les Catégories :
                             {% for categorie in categories %}
-                                <hr class="hrcat text-center">
-                            <a class="btnsListeCat text-left" href="{{ path('onecategorie', { 'id': categorie.id }) }}"><span class=" glyphicon glyphicon-chevron-right small"></span> {{ categorie.nomCa }}</a>
+                                <li><a href="{{ path('onecategorie', { 'id': categorie.id }) }}">
+                                        {{ categorie.nomCa }}</a></li>
+                                <li role="separator" class="divider"></li>
                             {% endfor %}
-                            </li>
+                            <li><a href="{{ path('eventcategorieslist') }}">
+                                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp; Toutes les catégories</a></li>
                         </ul>
                     </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Témoignages <span class="caret"></span></a>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-calendar"></span>
+                            &nbsp; Assistant <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('temoignageslist') }}">Liste des témoignages</a></li>
+                            <li><a href="{{ path('addTodoList') }}" target="_blank">
+                                    <span class="glyphicon glyphicon-paperclip"></span>&nbsp; Planifier votre évènement
+                                </a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('temoignage_new') }}">Publier son témoignage</a></li>
+                            <li><a href="{{ path('temoignageslist') }}">
+                                    <span class="glyphicon glyphicon-list"></span> &nbsp; Liste des témoignages
+                                    </a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ path('temoignage_new') }}"> <span class="glyphicon glyphicon-edit"></span>
+                                    &nbsp; Publier votre témoignage
+                                   </a></li>
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li>{% block contact %}<a href="#" onclick="window.open('{{ path('contact_new') }}', 'Popup_Window', 'resizable=0, width=800, height=810'); return false;">Contactez-nous <span class="glyphicon  glyphicon glyphicon-envelope" aria-hidden="true"></span></a>{% endblock %}</li>
-                    <li><a href="{{ path('homeAdmin') }}">Espace admin <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span></a></li>
+                    <li>{% block contact %}<a href="#"
+                                              onclick="window.open('{{ path('contact_new') }}', 'Popup_Window', 'resizable=0, width=800, height=810'); return false;">
+                                Contactez-nous <span class="glyphicon  glyphicon glyphicon-envelope"
+                                                     aria-hidden="true"></span></a>{% endblock %}</li>
+                    <li><a href="{{ path('homeAdmin') }}">Espace admin <span class="glyphicon glyphicon glyphicon-lock"
+                                                                             aria-hidden="true"></span></a></li>
                     {#<li><div class="clock" id="clockbox"></div></li>#}
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -53,20 +68,20 @@
     </nav>
 
     {#<script type="text/javascript">#}
-        {#function GetClock(){#}
-            {#var d=new Date();#}
-            {#var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();#}
-            {#if(nyear<1000) nyear+=1900;#}
-            {#var nhour=d.getHours(),nmin=d.getMinutes();#}
-            {#if(nmin<=9) nmin="0"+nmin;#}
-            {#document.getElementById('clockbox').innerHTML=""+ndate+"."+(nmonth+1)+"."+nyear+" - "+nhour+#}
-                {#":"+nmin+"";#}
-        {#}#}
+    {#function GetClock(){#}
+    {#var d=new Date();#}
+    {#var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();#}
+    {#if(nyear<1000) nyear+=1900;#}
+    {#var nhour=d.getHours(),nmin=d.getMinutes();#}
+    {#if(nmin<=9) nmin="0"+nmin;#}
+    {#document.getElementById('clockbox').innerHTML=""+ndate+"."+(nmonth+1)+"."+nyear+" - "+nhour+#}
+    {#":"+nmin+"";#}
+    {#}#}
 
-        {#window.onload=function(){#}
-            {#GetClock();#}
-            {#setInterval(GetClock,1000);#}
-        {#}#}
+    {#window.onload=function(){#}
+    {#GetClock();#}
+    {#setInterval(GetClock,1000);#}
+    {#}#}
     {#</script>#}
 
 {% endblock %}
