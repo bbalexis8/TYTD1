@@ -136,27 +136,27 @@ class TodolistController extends Controller
     }
 
 
-    /**
-     * @Route("/gen/Fixtures")
-     */
-    public function genFixtures()
-    {
-
-        $em = $this->getDoctrine()->getManager();
-        $evenementRepository = $em->getRepository('TytdBundle:Evenement');
-        $todoRepository = $em->getRepository('TytdBundle:Todolist');
-
-        $evenements = $evenementRepository->findAll();
-        $todos = $todoRepository->findAll();
-        foreach ($todos AS $todo) {
-            for ($i = 0; $i < mt_rand(3, 12); $i++) {
-                $todo->addMonEvent($evenements[mt_rand(0, count($evenements) - 1)]);
-            }
-        }
-        $em->flush();
-
-        return new Response('ok');
-    }
+//    /**
+//     * @Route("/gen/Fixtures")
+//     */
+//    public function genFixtures()
+//    {
+//
+//        $em = $this->getDoctrine()->getManager();
+//        $evenementRepository = $em->getRepository('TytdBundle:Evenement');
+//        $todoRepository = $em->getRepository('TytdBundle:Todolist');
+//
+//        $evenements = $evenementRepository->findAll();
+//        $todos = $todoRepository->findAll();
+//        foreach ($todos AS $todo) {
+//            for ($i = 0; $i < mt_rand(3, 12); $i++) {
+//                $todo->addMonEvent($evenements[mt_rand(0, count($evenements) - 1)]);
+//            }
+//        }
+//        $em->flush();
+//
+//        return new Response('ok');
+//    }
 
     /**
      * @Route("/gen/Fixtures2")

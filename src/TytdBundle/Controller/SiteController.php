@@ -9,9 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 use TytdBundle\Entity\Article;
 use TytdBundle\Entity\Categorie;
 use TytdBundle\Entity\Temoignage;
-use TytdBundle\Entity\Contact;
-use TytdBundle\Form\ContactType;
-use Symfony\Component\HttpFoundation\Request;
 
 class SiteController extends Controller
 {
@@ -33,20 +30,20 @@ class SiteController extends Controller
     }
 
     /**
-     * @Route("/gen/Fixtures")
+     * @Route("/gen/Fixtures2")
      */
-    public function genFixtures()
+    public function genFixtures2()
     {
 
         $em = $this->getDoctrine()->getManager();
         $evenementRepository = $em->getRepository('TytdBundle:Evenement');
         $todoRepository = $em->getRepository('TytdBundle:Todolist');
 
-        $evements = $evenementRepository->findAll();
+        $evenements = $evenementRepository->findAll();
         $todos = $todoRepository->findAll();
-        foreach ($todos AS $todo) {
+        foreach ($evenements AS $event) {
             for ($i = 0; $i < mt_rand(3, 12); $i++) {
-                $todo->addMonEvent($evements[mt_rand(0, count($evements) - 1)]);
+                $event->addTodo($todos[mt_rand(0, count($todos) - 1)]);
             }
         }
         $em->flush();
