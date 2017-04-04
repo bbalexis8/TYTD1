@@ -266,9 +266,7 @@ h1, h2, h3{
 }
 
 .hiddendates {
-    visibility: hidden;
-    width: 100px;
-    height: 20px;
+    display: none;
 }
 
 .checkboxes {
@@ -452,12 +450,10 @@ h1, h2, h3{
 }
 
 #divcomart {
-    background-color: rgba(240, 219, 218, 1);
+    background-color: white;
     color: #606970;
-    border: 2px;
-    border-style: solid;
+    /*border: solid 1px #1C2834;*/
     border-radius: 20px;
-    border-color: #1C2834;
     padding: 10px;
 }
 
@@ -470,6 +466,34 @@ h1, h2, h3{
 #btnlistart:hover {
     background-color: #DFA7AA;
     color: #C32830;
+}
+
+.divnewcom {
+    background-color: #606970;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.divnewcom label {
+    width: 30%;
+    height: 30px;
+}
+
+.tailleinput {
+    width: 70%;
+    height: 40px;
+}
+
+.tailleinput2 {
+    width: 70%;
+    height: 100px;
+
+}
+
+.tailleinput3 {
+    idth: 70%;
+    height: 0;
 }
 
 /**CSS LISTE TEMOIGNAGES **/
