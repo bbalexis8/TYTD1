@@ -180,12 +180,12 @@ li {
 /*style de la page admin*/
 
 h1, h2, h3{
-    font-family: "Lie to Me";
+    font-family: "Lie to Me", serif;
 }
 
 
 #acc, #con{
-    font-family: "Lie to Me";
+    font-family: "Lie to Me", serif;
     font-size: 1.8em;
     border: ridge 1px #2a2730;
     text-shadow: #F0DBDA 1px 1px;
