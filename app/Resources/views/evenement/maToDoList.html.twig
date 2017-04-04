@@ -1,29 +1,40 @@
-<h1 class="text-center">Ma 'To Do List'</h1>
+<!doctype html>
 
-<table>
-    <tbody>
-    <tr>
-        <th><label>Titre</label></th>
-        <td><label class="taillefcontact">{{ evenement.nom }}</label></td>
-    </tr>
-    <tr>
-        <th><label>Catégorie</label></th>
-        <td><label class="taillefcontact">{{ evenement.categorie.nomCa }}</label></td>
-    </tr>
-    <tr>
-        <th><label>Nom de l'organisateur</label></th>
-        <td><label class="taillefcontact">{{ evenement.utilisateur.username }}</label></td>
-    </tr>
-    <tr>
-        <th><label>Date de l'événement</label></th>
-        <td>
-            <label class="taillefcontact">{% if evenement.dateE %}{{ evenement.dateE|date('Y-m-d') }}{% endif %}</label>
-        </td>
-    </tr>
-    </tbody>
-</table>
-        <label>Ne pas Oublier : </label>
-        <p>{% for td in evenement.todolists %}  {{ td.nom }}<br>
-                {% endfor %}</p>
+{% block body %}
+    <div style="height: 30cm; font-family: 'Century Schoolbook'; font-size: 17px; padding: 35px; border: 5px solid #DCB647" >
 
+        <header style="font-style: italic; text-align: center"><img src="C:\Users\elodiee\Documents\COURS\TYTD1\0.0\web\image\Logo x200.png"
+                                                                    style=" width: 150px" ><br>
+            To Do List créée avec " To You, To Do "<br>
+            le site web qui facilite la préparation des
+            meilleurs moments de ma vie !<br></header>
 
+        <h1 style="text-align: center; padding: 30px; border-radius: 15% ">{{ evenement.nom }}</h1>
+
+        <p><label style="font-weight: bold">Catégorie : </label>
+            <label>{{ evenement.categorie.nomCa }}</label></p>
+
+        <p><label style="font-weight: bold">Nom de l'organisateur : </label>
+            <label>{{ evenement.utilisateur.username }}</label></p>
+        <p><label style="font-weight: bold">Date de l'événement :</label>
+            <label>{% if evenement.dateE %}{{ evenement.dateE|date('d-m-Y') }}{% endif %}</label>
+        </p>
+
+        <label style="font-weight: bold">Ne pas Oublier : </label>
+        <div style="padding: 10px">{% for td in evenement.todolists %}  <p style="padding: 3px"><input type="checkbox">&nbsp;<label>{{ td.nom }}</label><br>
+                </p>{% endfor %}
+            <p style="padding: 3px"><input type="checkbox">&nbsp;<label>...................................</label><br>
+            </p>
+            <p style="padding: 3px"><input type="checkbox">&nbsp;<label>...................................</label><br>
+            </p>
+            <p style="padding: 3px"><input type="checkbox">&nbsp;<label>...................................</label><br>
+            </p>
+            <p style="padding: 3px"><input type="checkbox">&nbsp;<label>...................................</label><br>
+        </div>
+
+    </div>&nbsp;
+    <footer style="font-style: italic; text-align: center">To Do List créée avec " To You, To Do " le site web qui facilite la préparation des
+        meilleurs moments de ma vie !<br><hr>
+
+    </footer>
+{% endblock %}
