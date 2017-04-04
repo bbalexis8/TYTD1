@@ -584,6 +584,20 @@ h1, h2, h3{
     background-color: #013F4E;
 }
 
+.bodyformevent label {
+    width: 30%;
+    height: 40px;
+}
+
+.btnvalidpdf {
+    background-color: #DCB647;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    height: 2em;
+}
+
+
 /** CSS CATEGORIES **/
 
 .bodyeventcat {
