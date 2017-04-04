@@ -312,6 +312,7 @@ h1, h2, h3{
 .tailletextsforms {
     width: 800px;
     height: 200px;
+    resize: none;
 }
 
 .taillechoicesforms {
@@ -353,6 +354,7 @@ h1, h2, h3{
 .taillemesscontact {
     width: 70%;
     height: 100px;
+    resize: none;
 }
 
 .divformcontact {
@@ -488,7 +490,7 @@ h1, h2, h3{
 .tailleinput2 {
     width: 70%;
     height: 100px;
-
+    resize: none;
 }
 
 .tailleinput3 {
